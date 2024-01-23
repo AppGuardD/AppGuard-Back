@@ -1,0 +1,12 @@
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+const express_1 = require("express");
+const getMangrullosContll_1 = require("../../controllers/mangrullo/getMangrullos/getMangrullosContll");
+const getIdMangrulloContll_1 = require("../../controllers/mangrullo/getIdMangrullo/getIdMangrulloContll");
+const mangrulloRoutes = (0, express_1.Router)();
+mangrulloRoutes.get("/search", getMangrullosContll_1.searchMangrullos);
+mangrulloRoutes.get("/search/:id", getIdMangrulloContll_1.searchIdMangrullo);
+// mangrulloRoutes.get("/search", searchMangrullos);
+// mangrulloRoutes.get("/search", searchMangrullos);
+// mangrulloRoutes.get("/search", searchMangrullos);
+exports.default = mangrulloRoutes;
