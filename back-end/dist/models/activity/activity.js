@@ -8,15 +8,17 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.Activity = void 0;
 const sequelize_typescript_1 = require("sequelize-typescript");
+const ActivityMangrullo_1 = require("./ActivityMangrullo");
 let Activity = class Activity extends sequelize_typescript_1.Model {
 };
 exports.Activity = Activity;
 __decorate([
     (0, sequelize_typescript_1.Column)({
         type: sequelize_typescript_1.DataType.STRING,
-        allowNull: false
+        allowNull: false,
+        unique: true,
     })
-], Activity.prototype, "userName", void 0);
+], Activity.prototype, "ActivityName", void 0);
 __decorate([
     (0, sequelize_typescript_1.Column)({
         type: sequelize_typescript_1.DataType.STRING,
@@ -29,8 +31,8 @@ __decorate([
         allowNull: false,
         validate: {
             min: 1,
-            max: 5
-        }
+            max: 5,
+        },
     })
 ], Activity.prototype, "qualification", void 0);
 __decorate([
@@ -47,13 +49,22 @@ __decorate([
 ], Activity.prototype, "state", void 0);
 __decorate([
     (0, sequelize_typescript_1.Column)({
+        type: sequelize_typescript_1.DataType.BOOLEAN,
+        allowNull: false,
+    })
+], Activity.prototype, "Active", void 0);
+__decorate([
+    (0, sequelize_typescript_1.Column)({
         type: sequelize_typescript_1.DataType.ENUM("Deportivo", "Sanitario", "Cultural"),
         allowNull: false,
     })
 ], Activity.prototype, "type", void 0);
+__decorate([
+    (0, sequelize_typescript_1.BelongsToMany)(() => Activity, () => ActivityMangrullo_1.ActivityMangrullo)
+], Activity.prototype, "activity", void 0);
 exports.Activity = Activity = __decorate([
     (0, sequelize_typescript_1.Table)({
         timestamps: false,
-        tableName: "activities"
+        tableName: "activities",
     })
 ], Activity);

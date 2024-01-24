@@ -38,8 +38,14 @@ const dotenv = __importStar(require("dotenv"));
 dotenv.config();
 const sequelize_typescript_1 = require("sequelize-typescript");
 const activity_1 = require("../models/activity/activity");
-const user_1 = require("../models/user/user");
+const advice_1 = require("../models/advice/advice");
+const favorite_1 = require("../models/favorite/favorite");
 const mangrullo_1 = require("../models/mangrullo/mangrullo");
+const reviewActivity_1 = require("../models/reviewActivity/reviewActivity");
+const reviewMangrullo_1 = require("../models/reviewMangrullo/reviewMangrullo");
+const user_1 = require("../models/user/user");
+const ActivityMangrullo_1 = require("../models/activity/ActivityMangrullo");
+
 const { DB_HOST, DB_USER, DB_PASSWORD, DB_DATABASE } = process.env;
 exports.connection = new sequelize_typescript_1.Sequelize({
     dialect: "postgres",
@@ -49,15 +55,21 @@ exports.connection = new sequelize_typescript_1.Sequelize({
     database: DB_DATABASE,
     logging: false,
     models: [
-        mangrullo_1.Mangrullo,
         activity_1.Activity,
+        advice_1.Advice,
+        favorite_1.Favorite,
+        mangrullo_1.Mangrullo,
+        reviewActivity_1.Reviewactivitys,
+        reviewMangrullo_1.ReviewsMangrullos,
+        ActivityMangrullo_1.ActivityMangrullo,
         user_1.User,
-    ]
+    ],
+
 });
 function connectionDB() {
     return __awaiter(this, void 0, void 0, function* () {
         try {
-            yield exports.connection.sync({ force: false });
+            yield exports.connection.sync({ force: true });
             console.log("Base de dato sincronizada con Exito");
         }
         catch (error) {
@@ -65,5 +77,4 @@ function connectionDB() {
         }
     });
 }
-;
 exports.default = connectionDB;

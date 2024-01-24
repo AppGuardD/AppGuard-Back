@@ -2,11 +2,11 @@ import { Table, Model, Column, DataType, BelongsToMany } from "sequelize-typescr
 import { Activity } from "../activity/activity";
 
 @Table({
-    timestamps: false,
-    tableName: "mangrullos"
+  timestamps: false,
+  tableName: "mangrullos",
 })
-
 export class Mangrullo extends Model {
+
     @Column({
         type: DataType.STRING,
         allowNull: false,
@@ -31,11 +31,11 @@ export class Mangrullo extends Model {
     })
     state!: string
 
-    @Column({
-        type: DataType.TEXT,
-        allowNull: false,
-    })
-    image!: string
+  @Column({
+    type: DataType.TEXT,
+    allowNull: false,
+  })
+  image!: string;
 
     @Column({
         type: DataType.INTEGER,
@@ -50,13 +50,3 @@ export class Mangrullo extends Model {
     @BelongsToMany(() => Activity, () => ActivityMangrullo)
     activity!: Activity[];
 }
-
-
-
-
-
-
-
-
-
-

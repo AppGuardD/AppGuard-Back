@@ -25,8 +25,8 @@ __decorate([
         allowNull: false,
         validate: {
             min: 1,
-            max: 3
-        }
+            max: 3,
+        },
     })
 ], Mangrullo.prototype, "dangerousness", void 0);
 __decorate([
@@ -48,8 +48,8 @@ __decorate([
         allowNull: false,
         validate: {
             min: 1,
-            max: 5
-        }
+            max: 5,
+        },
     })
 ], Mangrullo.prototype, "qualification", void 0);
 __decorate([
@@ -58,6 +58,6 @@ __decorate([
 exports.Mangrullo = Mangrullo = __decorate([
     (0, sequelize_typescript_1.Table)({
         timestamps: false,
-        tableName: "mangrullos"
+        tableName: "mangrullos",
     })
 ], Mangrullo);
