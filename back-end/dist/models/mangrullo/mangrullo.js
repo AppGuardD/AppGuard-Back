@@ -14,23 +14,23 @@ exports.Mangrullo = Mangrullo;
 __decorate([
     (0, sequelize_typescript_1.Column)({
         type: sequelize_typescript_1.DataType.STRING,
-        allowNull: false
+        allowNull: false,
     })
 ], Mangrullo.prototype, "zone", void 0);
 __decorate([
     (0, sequelize_typescript_1.Column)({
-        type: sequelize_typescript_1.DataType.NUMBER,
+        type: sequelize_typescript_1.DataType.INTEGER,
         allowNull: false,
         validate: {
             min: 1,
-            max: 3
-        }
+            max: 3,
+        },
     })
 ], Mangrullo.prototype, "dangerousness", void 0);
 __decorate([
     (0, sequelize_typescript_1.Column)({
         type: sequelize_typescript_1.DataType.ENUM("Activo", "No Activo"),
-        allowNull: false
+        allowNull: false,
     })
 ], Mangrullo.prototype, "state", void 0);
 __decorate([
@@ -41,17 +41,17 @@ __decorate([
 ], Mangrullo.prototype, "image", void 0);
 __decorate([
     (0, sequelize_typescript_1.Column)({
-        type: sequelize_typescript_1.DataType.NUMBER,
+        type: sequelize_typescript_1.DataType.INTEGER,
         allowNull: false,
         validate: {
             min: 1,
-            max: 5
-        }
+            max: 5,
+        },
     })
 ], Mangrullo.prototype, "qualification", void 0);
 exports.Mangrullo = Mangrullo = __decorate([
     (0, sequelize_typescript_1.Table)({
         timestamps: false,
-        tableName: "mangrullos"
+        tableName: "mangrullos",
     })
 ], Mangrullo);

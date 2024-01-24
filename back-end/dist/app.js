@@ -41,6 +41,7 @@ app.use((0, morgan_1.default)("dev"));
 app.use((0, cors_1.default)());
 app.use(express_1.default.urlencoded({ extended: false }));
 app.use(express_1.default.json());
+app.use(routes_1.default);
 //connection
 (0, database_1.default)().then(() => console.log("Conexion Ready"));
 //routes

@@ -6,19 +6,19 @@ import { Table, Column, Model, DataType, AllowNull } from "sequelize-typescript"
 })
 export class Favorite extends Model {
   @Column({
-    type: DataType.NUMBER,
+    type: DataType.INTEGER,
     allowNull: false,
   })
   idFavorite!: number;
 
   @Column({
-    type: DataType.NUMBER,
+    type: DataType.INTEGER,
     allowNull: false,
   })
   idActivity!: number;
 
   @Column({
-    type: DataType.NUMBER,
+    type: DataType.INTEGER,
     allowNull: false,
   })
   idUser!: number;

@@ -4,7 +4,7 @@ import { Table, Column, Model, DataType, AllowNull } from "sequelize-typescript"
   timestamps: false,
   tableName: "advices",
 })
-export class Advices extends Model {
+export class Advice extends Model {
   @Column({
     type: DataType.TEXT,
     allowNull: false,
@@ -18,7 +18,7 @@ export class Advices extends Model {
   image!: string;
 
   @Column({
-    type: DataType.NUMBER,
+    type: DataType.INTEGER,
     validate: {
       min: 1,
       max: 5,

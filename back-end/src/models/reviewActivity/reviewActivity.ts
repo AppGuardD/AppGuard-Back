@@ -4,9 +4,9 @@ import { Table, Column, Model, DataType } from "sequelize-typescript";
   timestamps: false,
   tableName: "reviewactivitys",
 })
-export class reviewactivitys extends Model {
+export class Reviewactivitys extends Model {
   @Column({
-    type: DataType.NUMBER,
+    type: DataType.INTEGER,
     validate: {
       min: 1,
       max: 5,
@@ -16,12 +16,12 @@ export class reviewactivitys extends Model {
   qualification!: number;
 
   @Column({
-    type: DataType.NUMBER,
+    type: DataType.INTEGER,
   })
   idUsuario!: number;
 
   @Column({
-    type: DataType.NUMBER,
+    type: DataType.INTEGER,
     allowNull: false,
   })
   idActivity!: number;
