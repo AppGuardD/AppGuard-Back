@@ -9,5 +9,4 @@ const activityRoutes_1 = __importDefault(require("./activityRoutes/activityRoute
 const routes = (0, express_1.Router)();
 routes.use("/activities", activityRoutes_1.default);
 routes.use("/mangrullos", mangrulloRoutes_1.default);
-//routes.use("/activity", activityRoutes);
 exports.default = routes;

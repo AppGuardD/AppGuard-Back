@@ -36,5 +36,11 @@ export class User extends Model {
         allowNull: false,
     })
     numberIdentification!: string
+
+    @Column({
+        type: DataType.ENUM('Cliente', 'Admin'),
+        allowNull: false,
+    })
+    rol!: string
 }
 

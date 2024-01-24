@@ -9,29 +9,29 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
     });
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.searchIdMangrullo = void 0;
+exports.modifyMangrullo = void 0;
 const mangrullo_1 = require("../../../models/mangrullo/mangrullo");
-const activity_1 = require("../../../models/activity/activity");
-//Ruta de detalle del Mangrullo
-const searchIdMangrullo = (req, res) => __awaiter(void 0, void 0, void 0, function* () {
+// Ruta para modificar Mangrullos.
+const modifyMangrullo = (req, res) => __awaiter(void 0, void 0, void 0, function* () {
     try {
-        const id = req.params.id;
-        //mangrullo esta definodo como un objeto de mangrullo.
-        const mangrullo = yield mangrullo_1.Mangrullo.findByPk(id, {
-            include: {
-                model: activity_1.Activity,
-                through: {
-                    attributes: []
-                }
-            }
+        const { id } = req.params;
+        const { zone, dangerousness, state, image, qualification } = req.body;
+        // Realiza la actualización y obtén el número de filas afectadas
+        yield mangrullo_1.Mangrullo.update({
+            zone: zone,
+            dangerousness: dangerousness,
+            image: image,
+            qualification: qualification,
+        }, {
+            where: {
+                id: id,
+            },
+            returning: true, // Habilita la opción de devolver las filas actualizadas
         });
-        if (mangrullo)
-            return res.status(201).json(mangrullo);
-        return res.status(201).json({ message: "El Mangrullo no existe en la Base de datos" });
+        return res.status(201).json({ message: "Mangrullo Modificado" });
     }
     catch (error) {
         return res.status(500).json({ message: "Algo salió mal, verifica la función", error: error.message });
     }
 });
-exports.searchIdMangrullo = searchIdMangrullo;
-// attributes: ['userName', 'description', 'calificacion', 'price', 'state', 'type'],
+exports.modifyMangrullo = modifyMangrullo;

@@ -42,6 +42,12 @@ __decorate([
         allowNull: false,
     })
 ], User.prototype, "numberIdentification", void 0);
+__decorate([
+    (0, sequelize_typescript_1.Column)({
+        type: sequelize_typescript_1.DataType.ENUM('Cliente', 'Admin'),
+        allowNull: false,
+    })
+], User.prototype, "rol", void 0);
 exports.User = User = __decorate([
     (0, sequelize_typescript_1.Table)({
         timestamps: false,

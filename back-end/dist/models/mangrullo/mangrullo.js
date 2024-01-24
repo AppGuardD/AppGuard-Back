@@ -8,6 +8,7 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.Mangrullo = void 0;
 const sequelize_typescript_1 = require("sequelize-typescript");
+const activity_1 = require("../activity/activity");
 let Mangrullo = class Mangrullo extends sequelize_typescript_1.Model {
 };
 exports.Mangrullo = Mangrullo;
@@ -15,6 +16,7 @@ __decorate([
     (0, sequelize_typescript_1.Column)({
         type: sequelize_typescript_1.DataType.STRING,
         allowNull: false,
+        unique: true
     })
 ], Mangrullo.prototype, "zone", void 0);
 __decorate([
@@ -31,6 +33,7 @@ __decorate([
     (0, sequelize_typescript_1.Column)({
         type: sequelize_typescript_1.DataType.ENUM("Activo", "No Activo"),
         allowNull: false,
+        defaultValue: "Activo"
     })
 ], Mangrullo.prototype, "state", void 0);
 __decorate([
@@ -49,6 +52,9 @@ __decorate([
         },
     })
 ], Mangrullo.prototype, "qualification", void 0);
+__decorate([
+    (0, sequelize_typescript_1.BelongsToMany)(() => activity_1.Activity, () => ActivityMangrullo)
+], Mangrullo.prototype, "activity", void 0);
 exports.Mangrullo = Mangrullo = __decorate([
     (0, sequelize_typescript_1.Table)({
         timestamps: false,

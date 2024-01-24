@@ -45,6 +45,7 @@ const reviewActivity_1 = require("../models/reviewActivity/reviewActivity");
 const reviewMangrullo_1 = require("../models/reviewMangrullo/reviewMangrullo");
 const user_1 = require("../models/user/user");
 const ActivityMangrullo_1 = require("../models/activity/ActivityMangrullo");
+
 const { DB_HOST, DB_USER, DB_PASSWORD, DB_DATABASE } = process.env;
 exports.connection = new sequelize_typescript_1.Sequelize({
     dialect: "postgres",
@@ -63,6 +64,7 @@ exports.connection = new sequelize_typescript_1.Sequelize({
         ActivityMangrullo_1.ActivityMangrullo,
         user_1.User,
     ],
+
 });
 function connectionDB() {
     return __awaiter(this, void 0, void 0, function* () {

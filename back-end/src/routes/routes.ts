@@ -6,6 +6,5 @@ const routes = Router();
 
 routes.use("/activities", ActivityRouter);
 routes.use("/mangrullos", mangrulloRoutes);
-//routes.use("/activity", activityRoutes);
 
 export default routes;

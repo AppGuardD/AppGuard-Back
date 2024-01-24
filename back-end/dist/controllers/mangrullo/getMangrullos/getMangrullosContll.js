@@ -11,9 +11,15 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.searchMangrullos = void 0;
 const mangrullo_1 = require("../../../models/mangrullo/mangrullo");
+//Ruta para consultar todos los Mangrullos.
 const searchMangrullos = (_req, res) => __awaiter(void 0, void 0, void 0, function* () {
     try {
-        const mangrullos = yield mangrullo_1.Mangrullo.findAll();
+        //mangrullos esta definido como un array de objetos de mangrullos.
+        const mangrullos = yield mangrullo_1.Mangrullo.findAll({
+            where: {
+                state: "Activo",
+            },
+        });
         return res.status(201).json(mangrullos);
     }
     catch (error) {
