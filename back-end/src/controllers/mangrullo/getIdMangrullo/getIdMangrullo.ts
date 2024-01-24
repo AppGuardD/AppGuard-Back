@@ -3,7 +3,7 @@ import { Mangrullo } from "../../../models/mangrullo/mangrullo";
 import { Activity } from "../../../models/activity/activity";
 
 //Ruta de detalle del Mangrullo
-export const searchIdMangrullo: RequestHandler = async (req, res) => {
+export const getIdMangrullo: RequestHandler = async (req, res) => {
   try {
     const id: string = req.params.id;
     //mangrullo esta definodo como un objeto de mangrullo.
@@ -32,7 +32,10 @@ export const searchIdMangrullo: RequestHandler = async (req, res) => {
   } catch (error: any) {
     return res
       .status(500)
-      .json({ message: "Algo salió mal, verifica la función", error: error.message });
+      .json({
+        message: "Algo salió mal, verifica la función",
+        error: error.message,
+      });
   }
 };
 // attributes: ['userName', 'description', 'calificacion', 'price', 'state', 'type'],

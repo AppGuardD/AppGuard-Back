@@ -1,23 +1,10 @@
-import { Activity } from "../../../models/activity/activity";
 import { Request, Response } from "express";
+import { Activity } from "../../../models/activity/activity";
 import { Mangrullo } from "../../../models/mangrullo/mangrullo";
 import { ActivityMangrullo } from "../../../models/activity/ActivityMangrullo";
 
-export const createActivity = async (req: Request, res: Response) => {
+export const postActivity = async (req: Request, res: Response) => {
   try {
-    /*  let createData: Activity = await Activity.create({
-      ActivityName: "jose",
-      description: "paseo en bote",
-      qualification: 5,
-      price: 1000,
-      state: "Pago",
-      type: "Deportivo",
-      Active: true,
-    }); */
-    /* interface ActivityMangrullo extends Activity {
-      Mangrullo: Activity[];
-    } */
-
     let Data: Activity = req.body; // magrullo 1, mangrullo 2 {} {} [{},{}]
     // req.body.mangrullos = [{},{}]
     if (
@@ -33,7 +20,9 @@ export const createActivity = async (req: Request, res: Response) => {
     });
 
     if (searchData.length > 0) {
-      return res.status(201).send({ success: false, message: "este objeto ya existe" });
+      return res
+        .status(201)
+        .send({ success: false, message: "este objeto ya existe" });
     }
 
     await Activity.create({
@@ -62,7 +51,7 @@ export const createActivity = async (req: Request, res: Response) => {
     }
 
     res.status(201).send({
-      succes: true,
+      success: true,
       message: "los  datos han sido creados correctamente",
     });
   } catch (error: any) {

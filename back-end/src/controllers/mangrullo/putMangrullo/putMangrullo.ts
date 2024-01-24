@@ -2,7 +2,7 @@ import { RequestHandler } from "express";
 import { Mangrullo } from "../../../models/mangrullo/mangrullo";
 
 // Ruta para modificar Mangrullos.
-export const modifyMangrullo: RequestHandler = async (req, res) => {
+export const putMangrullo: RequestHandler = async (req, res) => {
   try {
     const { id } = req.params;
     const { zone, dangerousness, state, image, qualification } = req.body;
@@ -20,10 +20,16 @@ export const modifyMangrullo: RequestHandler = async (req, res) => {
           id: id,
         },
         returning: true, // Habilita la opción de devolver las filas actualizadas
-      }
+      },
     );
     return res.status(201).json({ message: "Mangrullo Modificado" });
   } catch (error: any) {
-    return res.status(500).json({ message: "Algo salió mal, verifica la función", error: error.message });
+    return res
+      .status(500)
+      .json({
+        message: "Algo salió mal, verifica la función",
+        error: error.message,
+      });
   }
 };
+
