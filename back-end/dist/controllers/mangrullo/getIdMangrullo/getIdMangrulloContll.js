@@ -20,17 +20,29 @@ const searchIdMangrullo = (req, res) => __awaiter(void 0, void 0, void 0, functi
         const mangrullo = yield mangrullo_1.Mangrullo.findByPk(id, {
             include: {
                 model: activity_1.Activity,
+                attributes: [
+                    "activityName",
+                    "description",
+                    "qualification",
+                    "price",
+                    "state",
+                    "type",
+                ],
                 through: {
-                    attributes: []
-                }
-            }
+                    attributes: [],
+                },
+            },
         });
         if (mangrullo)
             return res.status(201).json(mangrullo);
-        return res.status(201).json({ message: "El Mangrullo no existe en la Base de datos" });
+        return res
+            .status(201)
+            .json({ message: "El Mangrullo no existe en la Base de datos" });
     }
     catch (error) {
-        return res.status(500).json({ message: "Algo salió mal, verifica la función", error: error.message });
+        return res
+            .status(500)
+            .json({ message: "Algo salió mal, verifica la función", error: error.message });
     }
 });
 exports.searchIdMangrullo = searchIdMangrullo;

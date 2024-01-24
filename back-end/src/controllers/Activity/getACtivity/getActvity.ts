@@ -1,5 +1,6 @@
 import { Activity } from "../../../models/activity/activity";
 import { Request, Response } from "express";
+import { Mangrullo } from "../../../models/mangrullo/mangrullo";
 
 export const getAlltActivities = async (req: Request, res: Response) => {
   try {

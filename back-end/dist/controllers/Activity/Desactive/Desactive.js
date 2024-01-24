@@ -9,9 +9,9 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
     });
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.DesactivedActivity = void 0;
+exports.desactivedActivity = void 0;
 const activity_1 = require("../../../models/activity/activity");
-const DesactivedActivity = (req, res) => __awaiter(void 0, void 0, void 0, function* () {
+const desactivedActivity = (req, res) => __awaiter(void 0, void 0, void 0, function* () {
     try {
         const id = parseInt(req.params.id);
         const Data = yield activity_1.Activity.findOne({ where: { id } });
@@ -29,4 +29,4 @@ const DesactivedActivity = (req, res) => __awaiter(void 0, void 0, void 0, funct
         res.status(500).send({ success: false, message: error.message });
     }
 });
-exports.DesactivedActivity = DesactivedActivity;
+exports.desactivedActivity = desactivedActivity;
