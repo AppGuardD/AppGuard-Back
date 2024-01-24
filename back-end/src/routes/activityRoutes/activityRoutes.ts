@@ -1,16 +1,16 @@
 import { Router } from "express";
-import { getAlltActivities } from "../../controllers/Activity/getACtivity/getActvity";
-import { getIdActivity } from "../../controllers/Activity/getACtivity/getIdActivity";
-import { createActivity } from "../../controllers/Activity/createActivity/createActivity";
-import { updateActivity } from "../../controllers/Activity/updateActivity/updateActivity";
-import { desactivedActivity } from "../../controllers/Activity/desactive/desactive";
+import { getActivities } from "../../controllers/activity/getActivities/getActivities";
+import { getIdActivity } from "../../controllers/activity/getIdActivity/getIdActivity";
+import { postActivity } from "../../controllers/activity/postActivity/postActivity";
+import { putActivity } from "../../controllers/activity/putActivity/putActivity";
+import { disableActivity } from "../../controllers/activity/disableActivity/disableActivity";
 
 const ActivityRouter = Router();
 
-ActivityRouter.get("/search", getAlltActivities);
+ActivityRouter.get("/search", getActivities);
 ActivityRouter.get("/search/:id", getIdActivity);
-ActivityRouter.post("/create", createActivity);
-ActivityRouter.put("/update", updateActivity);
-ActivityRouter.put("/desactive/:id", desactivedActivity);
+ActivityRouter.post("/create", postActivity);
+ActivityRouter.put("/update", putActivity);
+ActivityRouter.put("/desactive/:id", disableActivity);
 
 export default ActivityRouter;

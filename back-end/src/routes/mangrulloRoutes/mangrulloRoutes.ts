@@ -1,20 +1,17 @@
 import { Router } from "express";
-
-import { searchMangrullos } from "../../controllers/mangrullo/getMangrullos/getMangrullosContll";
-import { searchIdMangrullo } from "../../controllers/mangrullo/getIdMangrullo/getIdMangrulloContll";
-import { createMangrullo } from "../../controllers/mangrullo/postMangrullo/postMangrulloContll";
-import { modifyMangrullo } from "../../controllers/mangrullo/putMangrullo/putMangrulloContll";
-import { deactivateMangrullo } from "../../controllers/mangrullo/deleteMangrullo/deleteMangrulloContll";
-
+import { getMangrullos } from "../../controllers/mangrullo/getMangrullos/getMangrullos";
+import { getIdMangrullo } from "../../controllers/mangrullo/getIdMangrullo/getIdMangrullo";
+import { putMangrullo } from "../../controllers/mangrullo/putMangrullo/putMangrullo";
+import { postMangrullos } from "../../controllers/mangrullo/postMangrullo/postMangrullo";
+import { disableMangrullo } from "../../controllers/mangrullo/disableMangrullo/disableMangrullo";
 
 const mangrulloRoutes = Router();
 
-mangrulloRoutes.get("/search", searchMangrullos);
-mangrulloRoutes.get("/search/:id", searchIdMangrullo);
-mangrulloRoutes.post("/create", createMangrullo);
-mangrulloRoutes.put("/modify/:id", modifyMangrullo);
-mangrulloRoutes.put("/deactivate/:id", deactivateMangrullo);
-
-
+mangrulloRoutes.get("/search", getMangrullos);
+mangrulloRoutes.get("/search/:id", getIdMangrullo);
+mangrulloRoutes.post("/create", postMangrullos);
+mangrulloRoutes.put("/modify/:id", putMangrullo);
+mangrulloRoutes.put("/deactivate/:id", disableMangrullo);
 
 export default mangrulloRoutes;
+
