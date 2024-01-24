@@ -2,7 +2,7 @@ import { Router } from "express";
 import { getAlltActivities } from "../../controllers/Activity/getACtivity/getActvity";
 import { getIdActivity } from "../../controllers/Activity/getACtivity/getIdActivity";
 import { createActivity } from "../../controllers/Activity/createActivity/createActivity";
-import { updateActivity } from "../../controllers/Activity/UpdateActivity/updateActivity";
+import { updateActivity } from "../../controllers/Activity/updateActivity/updateActivity";
 import { desactivedActivity } from "../../controllers/Activity/desactive/desactive";
 
 const ActivityRouter = Router();

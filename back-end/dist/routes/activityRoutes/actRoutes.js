@@ -4,7 +4,7 @@ const express_1 = require("express");
 const getActvity_1 = require("../../controllers/Activity/getACtivity/getActvity");
 const getIdActivity_1 = require("../../controllers/Activity/getACtivity/getIdActivity");
 const createActivity_1 = require("../../controllers/Activity/createActivity/createActivity");
-const updateActivity_1 = require("../../controllers/Activity/updateActivity/updateActivity");
+const updateActivity_1 = require("../../controllers/Activity/UpdateActivity/updateActivity");
 const desactive_1 = require("../../controllers/Activity/desactive/desactive");
 const ActivityRouter = (0, express_1.Router)();
 ActivityRouter.get("/search", getActvity_1.getAlltActivities);
