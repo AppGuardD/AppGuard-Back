@@ -1,11 +1,11 @@
 import { Router } from "express";
 import mangrulloRoutes from "./mangrulloRoutes/mangrulloRoutes";
 import activityRouter from "./activityRoutes/activityRoutes";
-import adviceRoutes from "./adviceRoutes/adviceRoutes";
-import favoritelloRoutes from "./favoritelloRoutes/favoritelloRoutes";
-import userRoutes from "./favoritelloRoutes/favoritelloRoutes";
-import reviewActivityRoutes from "./reviewActivityRoutes/reviewActivityRoutes";
-import reviewMangrullosRoutes from "./reviewMangrullosRoutes/reviewMangrullosRoutes";
+//import adviceRoutes from "./adviceRoutes/adviceRoutes";
+//import favoritelloRoutes from "./favoritelloRoutes/favoritelloRoutes";
+import userRoutes from "./userRoutes/userRoutes";
+//import reviewActivityRoutes from "./reviewActivityRoutes/reviewActivityRoutes";
+//import reviewMangrullosRoutes from "./reviewMangrullosRoutes/reviewMangrullosRoutes";
 
 
 const routes = Router();
@@ -17,7 +17,7 @@ routes.use("/favorite", favoritelloRoutes);
 routes.use("/user", userRoutes);
 routes.use("/reviewActivity", reviewActivityRoutes);
 routes.use("/reviewMangrullos", reviewMangrullosRoutes);
-//routes.use("/ticket", ticketRoutes);
+routes.use("/ticket", ticketRoutes);
 
 
 

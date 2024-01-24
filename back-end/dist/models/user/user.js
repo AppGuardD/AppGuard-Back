@@ -16,12 +16,17 @@ __decorate([
         type: sequelize_typescript_1.DataType.STRING,
         allowNull: false
     })
-], User.prototype, "UserName", void 0);
+], User.prototype, "userName", void 0);
 __decorate([
     (0, sequelize_typescript_1.Column)({
         type: sequelize_typescript_1.DataType.STRING,
         allowNull: false,
-        unique: true
+        unique: true,
+        validate: {
+            isEmail: {
+                msg: "El formato del correo electrónico no es válido"
+            }
+        }
     })
 ], User.prototype, "email", void 0);
 __decorate([
@@ -46,8 +51,16 @@ __decorate([
     (0, sequelize_typescript_1.Column)({
         type: sequelize_typescript_1.DataType.ENUM('Cliente', 'Admin'),
         allowNull: false,
+        defaultValue: "Cliente"
     })
 ], User.prototype, "rol", void 0);
+__decorate([
+    (0, sequelize_typescript_1.Column)({
+        type: sequelize_typescript_1.DataType.ENUM('Activo', 'No Activo'),
+        allowNull: false,
+        defaultValue: "Activo",
+    })
+], User.prototype, "state", void 0);
 exports.User = User = __decorate([
     (0, sequelize_typescript_1.Table)({
         timestamps: false,
