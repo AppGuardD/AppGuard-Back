@@ -9,11 +9,11 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
     });
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.CreateActivity = void 0;
+exports.createActivity = void 0;
 const activity_1 = require("../../../models/activity/activity");
 const mangrullo_1 = require("../../../models/mangrullo/mangrullo");
 const ActivityMangrullo_1 = require("../../../models/activity/ActivityMangrullo");
-const CreateActivity = (req, res) => __awaiter(void 0, void 0, void 0, function* () {
+const createActivity = (req, res) => __awaiter(void 0, void 0, void 0, function* () {
     try {
         /*  let createData: Activity = await Activity.create({
           ActivityName: "jose",
@@ -29,21 +29,21 @@ const CreateActivity = (req, res) => __awaiter(void 0, void 0, void 0, function*
         } */
         let Data = req.body; // magrullo 1, mangrullo 2 {} {} [{},{}]
         // req.body.mangrullos = [{},{}]
-        if (!Data.ActivityName ||
+        if (!Data.activityName ||
             !Data.price ||
             !Data.description ||
             !Data.qualification ||
             !Data.state) {
         }
         let searchData = yield activity_1.Activity.findAll({
-            where: { ActivityName: Data.ActivityName },
+            where: { activityName: Data.activityName },
         });
         if (searchData.length > 0) {
             return res.status(201).send({ success: false, message: "este objeto ya existe" });
         }
         yield activity_1.Activity.create(Object.assign(Object.assign({}, Data), { Active: true }));
         let requestNewData = yield activity_1.Activity.findOne({
-            where: { ActivityName: Data.ActivityName },
+            where: { activityName: Data.activityName },
         });
         if (!requestNewData) {
             return res
@@ -52,7 +52,7 @@ const CreateActivity = (req, res) => __awaiter(void 0, void 0, void 0, function*
         }
         for (let index = 0; index < req.body.Mangrullo.length; index++) {
             let mangrullo = yield mangrullo_1.Mangrullo.findOne({
-                where: { id: req.body.Mangrullo[index].id },
+                where: { id: req.body.Mangrullo[index] },
             });
             if (mangrullo === null || mangrullo === void 0 ? void 0 : mangrullo.id) {
                 yield ActivityMangrullo_1.ActivityMangrullo.create({
@@ -70,4 +70,4 @@ const CreateActivity = (req, res) => __awaiter(void 0, void 0, void 0, function*
         res.status(500).send({ success: false, message: error.message });
     }
 });
-exports.CreateActivity = CreateActivity;
+exports.createActivity = createActivity;

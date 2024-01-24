@@ -9,6 +9,7 @@ Object.defineProperty(exports, "__esModule", { value: true });
 exports.Mangrullo = void 0;
 const sequelize_typescript_1 = require("sequelize-typescript");
 const activity_1 = require("../activity/activity");
+const ActivityMangrullo_1 = require("../activity/ActivityMangrullo");
 let Mangrullo = class Mangrullo extends sequelize_typescript_1.Model {
 };
 exports.Mangrullo = Mangrullo;
@@ -16,7 +17,7 @@ __decorate([
     (0, sequelize_typescript_1.Column)({
         type: sequelize_typescript_1.DataType.STRING,
         allowNull: false,
-        unique: true
+        unique: true,
     })
 ], Mangrullo.prototype, "zone", void 0);
 __decorate([
@@ -24,8 +25,14 @@ __decorate([
         type: sequelize_typescript_1.DataType.INTEGER,
         allowNull: false,
         validate: {
-            min: 1,
-            max: 3,
+            min: {
+                args: [1],
+                msg: "El valor no puede ser menor que 1",
+            },
+            max: {
+                args: [3],
+                msg: "El valor no puede ser mayor que 3",
+            },
         },
     })
 ], Mangrullo.prototype, "dangerousness", void 0);
@@ -33,7 +40,7 @@ __decorate([
     (0, sequelize_typescript_1.Column)({
         type: sequelize_typescript_1.DataType.ENUM("Activo", "No Activo"),
         allowNull: false,
-        defaultValue: "Activo"
+        defaultValue: "Activo",
     })
 ], Mangrullo.prototype, "state", void 0);
 __decorate([
@@ -47,13 +54,19 @@ __decorate([
         type: sequelize_typescript_1.DataType.INTEGER,
         allowNull: false,
         validate: {
-            min: 1,
-            max: 5,
+            min: {
+                args: [1],
+                msg: "El valor no puede ser menor que 1",
+            },
+            max: {
+                args: [5],
+                msg: "El valor no puede ser mayor que 5",
+            },
         },
     })
 ], Mangrullo.prototype, "qualification", void 0);
 __decorate([
-    (0, sequelize_typescript_1.BelongsToMany)(() => activity_1.Activity, () => ActivityMangrullo)
+    (0, sequelize_typescript_1.BelongsToMany)(() => activity_1.Activity, () => ActivityMangrullo_1.ActivityMangrullo)
 ], Mangrullo.prototype, "activity", void 0);
 exports.Mangrullo = Mangrullo = __decorate([
     (0, sequelize_typescript_1.Table)({

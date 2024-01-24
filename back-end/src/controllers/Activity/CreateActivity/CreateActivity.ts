@@ -3,7 +3,7 @@ import { Request, Response } from "express";
 import { Mangrullo } from "../../../models/mangrullo/mangrullo";
 import { ActivityMangrullo } from "../../../models/activity/ActivityMangrullo";
 
-export const CreateActivity = async (req: Request, res: Response) => {
+export const createActivity = async (req: Request, res: Response) => {
   try {
     /*  let createData: Activity = await Activity.create({
       ActivityName: "jose",
@@ -21,7 +21,7 @@ export const CreateActivity = async (req: Request, res: Response) => {
     let Data: Activity = req.body; // magrullo 1, mangrullo 2 {} {} [{},{}]
     // req.body.mangrullos = [{},{}]
     if (
-      !Data.ActivityName ||
+      !Data.activityName ||
       !Data.price ||
       !Data.description ||
       !Data.qualification ||
@@ -29,7 +29,7 @@ export const CreateActivity = async (req: Request, res: Response) => {
     ) {
     }
     let searchData: Activity[] = await Activity.findAll({
-      where: { ActivityName: Data.ActivityName },
+      where: { activityName: Data.activityName },
     });
 
     if (searchData.length > 0) {
@@ -42,7 +42,7 @@ export const CreateActivity = async (req: Request, res: Response) => {
     });
 
     let requestNewData: Activity | null = await Activity.findOne({
-      where: { ActivityName: Data.ActivityName },
+      where: { activityName: Data.activityName },
     });
     if (!requestNewData) {
       return res
@@ -51,7 +51,7 @@ export const CreateActivity = async (req: Request, res: Response) => {
     }
     for (let index = 0; index < req.body.Mangrullo.length; index++) {
       let mangrullo: Mangrullo | null = await Mangrullo.findOne({
-        where: { id: req.body.Mangrullo[index].id },
+        where: { id: req.body.Mangrullo[index] },
       });
       if (mangrullo?.id) {
         await ActivityMangrullo.create({

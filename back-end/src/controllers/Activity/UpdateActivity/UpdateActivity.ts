@@ -1,7 +1,7 @@
 import { Activity } from "../../../models/activity/activity";
 import { Request, Response } from "express";
 
-export const UpdateActivity = async (req: Request, res: Response) => {
+export const updateActivity = async (req: Request, res: Response) => {
   try {
     /*  let createData: Activity = await Activity.create({
       ActivityName: "jose",

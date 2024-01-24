@@ -11,7 +11,7 @@ export class Activity extends Model {
     allowNull: false,
     unique: true,
   })
-  ActivityName!: string;
+  activityName!: string;
 
   @Column({
     type: DataType.STRING,
@@ -23,8 +23,14 @@ export class Activity extends Model {
     type: DataType.INTEGER,
     allowNull: false,
     validate: {
-      min: 1,
-      max: 5,
+      min: {
+        args: [1],
+        msg: "El valor no puede ser menor que 1",
+      },
+      max: {
+        args: [5],
+        msg: "El valor no puede ser mayor que 5",
+      },
     },
   })
   qualification!: Number;

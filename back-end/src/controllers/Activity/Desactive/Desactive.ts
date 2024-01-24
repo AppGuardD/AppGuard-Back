@@ -1,7 +1,7 @@
 import { Activity } from "../../../models/activity/activity";
 import { Request, Response } from "express";
 
-export const DesactivedActivity = async (req: Request, res: Response) => {
+export const desactivedActivity = async (req: Request, res: Response) => {
   try {
     const id: number = parseInt(req.params.id);
     const Data: Activity | null = await Activity.findOne({ where: { id } });

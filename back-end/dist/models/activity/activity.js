@@ -18,7 +18,7 @@ __decorate([
         allowNull: false,
         unique: true,
     })
-], Activity.prototype, "ActivityName", void 0);
+], Activity.prototype, "activityName", void 0);
 __decorate([
     (0, sequelize_typescript_1.Column)({
         type: sequelize_typescript_1.DataType.STRING,
@@ -30,8 +30,14 @@ __decorate([
         type: sequelize_typescript_1.DataType.INTEGER,
         allowNull: false,
         validate: {
-            min: 1,
-            max: 5,
+            min: {
+                args: [1],
+                msg: "El valor no puede ser menor que 1",
+            },
+            max: {
+                args: [5],
+                msg: "El valor no puede ser mayor que 5",
+            },
         },
     })
 ], Activity.prototype, "qualification", void 0);

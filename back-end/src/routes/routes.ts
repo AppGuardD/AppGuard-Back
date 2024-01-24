@@ -1,10 +1,10 @@
 import { Router } from "express";
 import mangrulloRoutes from "./mangrulloRoutes/mangrulloRoutes";
-import ActivityRouter from "./activityRoutes/activityRoutes";
+import activityRouter from "./activityRoutes/activityRoutes";
 
 const routes = Router();
 
-routes.use("/activities", ActivityRouter);
+routes.use("/activities", activityRouter);
 routes.use("/mangrullos", mangrulloRoutes);
 
 export default routes;

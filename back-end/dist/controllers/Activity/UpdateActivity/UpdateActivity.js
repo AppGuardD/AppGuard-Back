@@ -9,9 +9,9 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
     });
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.UpdateActivity = void 0;
+exports.updateActivity = void 0;
 const activity_1 = require("../../../models/activity/activity");
-const UpdateActivity = (req, res) => __awaiter(void 0, void 0, void 0, function* () {
+const updateActivity = (req, res) => __awaiter(void 0, void 0, void 0, function* () {
     try {
         /*  let createData: Activity = await Activity.create({
           ActivityName: "jose",
@@ -38,4 +38,4 @@ const UpdateActivity = (req, res) => __awaiter(void 0, void 0, void 0, function*
         res.status(500).send({ success: false, message: error.message });
     }
 });
-exports.UpdateActivity = UpdateActivity;
+exports.updateActivity = updateActivity;
