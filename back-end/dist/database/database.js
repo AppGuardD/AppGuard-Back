@@ -37,6 +37,9 @@ exports.connection = void 0;
 const dotenv = __importStar(require("dotenv"));
 dotenv.config();
 const sequelize_typescript_1 = require("sequelize-typescript");
+const activity_1 = require("../models/activity/activity");
+const user_1 = require("../models/user/user");
+const mangrullo_1 = require("../models/mangrullo/mangrullo");
 const { DB_HOST, DB_USER, DB_PASSWORD, DB_DATABASE } = process.env;
 exports.connection = new sequelize_typescript_1.Sequelize({
     dialect: "postgres",
@@ -45,7 +48,11 @@ exports.connection = new sequelize_typescript_1.Sequelize({
     password: DB_PASSWORD,
     database: DB_DATABASE,
     logging: false,
-    models: []
+    models: [
+        mangrullo_1.Mangrullo,
+        activity_1.Activity,
+        user_1.User,
+    ]
 });
 function connectionDB() {
     return __awaiter(this, void 0, void 0, function* () {

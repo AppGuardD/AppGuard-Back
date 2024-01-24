@@ -1,4 +1,5 @@
-import { Table, Model, Column, DataType } from "sequelize-typescript";
+import { Table, Model, Column, DataType, BelongsToMany } from "sequelize-typescript";
+import { Activity } from "../activity/activity";
 
 @Table({
     timestamps: false,
@@ -8,12 +9,13 @@ import { Table, Model, Column, DataType } from "sequelize-typescript";
 export class Mangrullo extends Model {
     @Column({
         type: DataType.STRING,
-        allowNull: false
+        allowNull: false,
+        unique: true
     })
     zone!: string //zona
 
     @Column({
-        type: DataType.NUMBER,
+        type: DataType.INTEGER,
         allowNull: false,
         validate: {
             min: 1,
@@ -24,7 +26,8 @@ export class Mangrullo extends Model {
 
     @Column({
         type: DataType.ENUM("Activo", "No Activo"),
-        allowNull: false
+        allowNull: false,
+        defaultValue: "Activo"
     })
     state!: string
 
@@ -35,7 +38,7 @@ export class Mangrullo extends Model {
     image!: string
 
     @Column({
-        type: DataType.NUMBER,
+        type: DataType.INTEGER,
         allowNull: false,
         validate: {
             min: 1,
@@ -43,5 +46,17 @@ export class Mangrullo extends Model {
         }
     })
     qualification!: number
+
+    @BelongsToMany(() => Activity, () => ActivityMangrullo)
+    activity!: Activity[];
 }
+
+
+
+
+
+
+
+
+
 

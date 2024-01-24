@@ -19,7 +19,7 @@ export class Activity extends Model {
     description!: string
 
     @Column({
-        type: DataType.NUMBER,
+        type: DataType.INTEGER,
         allowNull: false,
         validate: {
             min: 1,
@@ -29,7 +29,7 @@ export class Activity extends Model {
     qualification!: number
 
     @Column({
-        type: DataType.NUMBER,
+        type: DataType.INTEGER,
         allowNull: false,
     })
     price!: number

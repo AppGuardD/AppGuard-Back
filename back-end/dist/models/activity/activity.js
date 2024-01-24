@@ -25,7 +25,7 @@ __decorate([
 ], Activity.prototype, "description", void 0);
 __decorate([
     (0, sequelize_typescript_1.Column)({
-        type: sequelize_typescript_1.DataType.NUMBER,
+        type: sequelize_typescript_1.DataType.INTEGER,
         allowNull: false,
         validate: {
             min: 1,
@@ -35,7 +35,7 @@ __decorate([
 ], Activity.prototype, "qualification", void 0);
 __decorate([
     (0, sequelize_typescript_1.Column)({
-        type: sequelize_typescript_1.DataType.NUMBER,
+        type: sequelize_typescript_1.DataType.INTEGER,
         allowNull: false,
     })
 ], Activity.prototype, "price", void 0);

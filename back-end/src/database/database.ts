@@ -2,6 +2,9 @@
 import * as dotenv from 'dotenv';
 dotenv.config();
 import { Sequelize } from "sequelize-typescript";
+import { Activity } from '../models/activity/activity';
+import { User } from '../models/user/user';
+import { Mangrullo } from '../models/mangrullo/mangrullo';
 const {
     DB_HOST,
     DB_USER,
@@ -17,7 +20,9 @@ export const connection = new Sequelize({
     database: DB_DATABASE,
     logging: false,
     models: [
-
+        Mangrullo,
+        Activity,
+        User,
     ]
 });
 
