@@ -9,7 +9,7 @@ export const postMangrullos: RequestHandler = async (req, res) => {
     // Verificar que los campos no estén vacíos.
     if (!zone || !dangerousness || !image || !qualification) {
       return res
-        .status(200)
+        .status(400)
         .json({ message: "Todos los campos son obligatorios" });
     }
 
@@ -21,7 +21,7 @@ export const postMangrullos: RequestHandler = async (req, res) => {
 
     if (mangrulloDB) {
       return res
-        .status(200)
+        .status(400)
         .json({ message: "El nombre de la zona ingresada ya existe" });
     }
 

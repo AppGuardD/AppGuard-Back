@@ -10,6 +10,7 @@ import { Reviewactivitys } from "../models/reviewActivity/reviewActivity";
 import { ReviewsMangrullos } from "../models/reviewMangrullo/reviewMangrullo";
 import { User } from "../models/user/user";
 import { ActivityMangrullo } from "../models/activity/ActivityMangrullo";
+import { Ticket } from "../models/ticket/ticket";
 
 const { DB_HOST, DB_USER, DB_PASSWORD, DB_DATABASE } = process.env;
 
@@ -29,6 +30,7 @@ export const connection = new Sequelize({
     ReviewsMangrullos,
     ActivityMangrullo,
     User,
+    Ticket
   ],
 });
 

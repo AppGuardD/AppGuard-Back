@@ -12,7 +12,7 @@ export const disableUser: RequestHandler = async (req, res) => {
 
     if (!user)
       return res
-        .status(200)
+        .status(400)
         .json({ message: "User no encontrado en la base de datos" });
 
     if (user.state === "Activo") {
