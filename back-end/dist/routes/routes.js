@@ -7,18 +7,19 @@ const express_1 = require("express");
 const mangrulloRoutes_1 = __importDefault(require("./mangrulloRoutes/mangrulloRoutes"));
 const activityRoutes_1 = __importDefault(require("./activityRoutes/activityRoutes"));
 const adviceRoutes_1 = __importDefault(require("./adviceRoutes/adviceRoutes"));
-const favoritelloRoutes_1 = __importDefault(require("./favoritelloRoutes/favoritelloRoutes"));
+/* import favoritelloRoutes from "./favoritelloRoutes/favoritelloRoutes"; */
 const userRoutes_1 = __importDefault(require("./userRoutes/userRoutes"));
 const reviewActivityRoutes_1 = __importDefault(require("./reviewActivityRoutes/reviewActivityRoutes"));
-const reviewMangrullosRoutes_1 = __importDefault(require("./reviewMangrullosRoutes/reviewMangrullosRoutes"));
+/* import reviewMangrullosRoutes from "./reviewMangrullosRoutes/reviewMangrullosRoutes"; */
 const ticketRoutes_1 = __importDefault(require("./ticketRoutes/ticketRoutes"));
 const routes = (0, express_1.Router)();
 routes.use("/activities", activityRoutes_1.default);
 routes.use("/mangrullos", mangrulloRoutes_1.default);
 routes.use("/advice", adviceRoutes_1.default);
-routes.use("/favorite", favoritelloRoutes_1.default);
+/* routes.use("/favorite", favoritelloRoutes); */
 routes.use("/user", userRoutes_1.default);
 routes.use("/reviewActivity", reviewActivityRoutes_1.default);
-routes.use("/reviewMangrullos", reviewMangrullosRoutes_1.default);
+/* routes.use("/reviewMangrullos", reviewMangrullosRoutes); */
 routes.use("/ticket", ticketRoutes_1.default);
+routes.use("/reviewActivity", reviewActivityRoutes_1.default);
 exports.default = routes;

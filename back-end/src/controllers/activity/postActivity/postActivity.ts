@@ -12,7 +12,8 @@ export const postActivity = async (req: Request, res: Response) => {
       !Data.price ||
       !Data.description ||
       !Data.qualification ||
-      !Data.state
+      !Data.state ||
+      !Data.type
     ) {
     }
     let searchData: Activity[] = await Activity.findAll({
@@ -25,7 +26,8 @@ export const postActivity = async (req: Request, res: Response) => {
 
     await Activity.create({
       ...Data,
-      Active: true,
+      active: true,
+      state: Data.state,
     });
 
     let requestNewData: Activity | null = await Activity.findOne({
