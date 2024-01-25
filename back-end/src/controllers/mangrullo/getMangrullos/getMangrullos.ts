@@ -24,7 +24,7 @@ export const getMangrullos: RequestHandler = async (req, res) => {
       offset: offset,
     });
 
-    return res.status(200).json(mangrullos);
+    return res.status(201).json(mangrullos);
   } catch (error: any) {
     return res.status(500).json({
       message: "Algo salió mal, verifica la función",

@@ -11,7 +11,7 @@ export const getIdUser: RequestHandler = async (req, res) => {
     if (user) return res.status(201).json(user);
 
     return res
-      .status(201)
+      .status(400)
       .json({ message: "El User no existe en la Base de datos" });
   } catch (error: any) {
     return res

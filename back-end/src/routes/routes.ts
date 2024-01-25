@@ -6,7 +6,7 @@ import favoritelloRoutes from "./favoritelloRoutes/favoritelloRoutes";
 import userRoutes from "./userRoutes/userRoutes";
 import reviewActivityRoutes from "./reviewActivityRoutes/reviewActivityRoutes";
 import reviewMangrullosRoutes from "./reviewMangrullosRoutes/reviewMangrullosRoutes";
-
+import ticketRoutes from "./ticketRoutes/ticketRoutes";
 
 const routes = Router();
 
@@ -18,7 +18,6 @@ routes.use("/user", userRoutes);
 routes.use("/reviewActivity", reviewActivityRoutes);
 routes.use("/reviewMangrullos", reviewMangrullosRoutes);
 routes.use("/ticket", ticketRoutes);
-
 
 
 export default routes;

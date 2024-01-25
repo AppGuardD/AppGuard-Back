@@ -10,7 +10,7 @@ export const postUser: RequestHandler = async (req, res) => {
     // Verificar que los campos no estén vacíos.
     if (!userName || !email || !password || !typeIdentification || !numberIdentification) {
       return res
-        .status(200)
+        .status(400)
         .json({ message: "Todos los campos son obligatorios" });
     }
 
@@ -22,7 +22,7 @@ export const postUser: RequestHandler = async (req, res) => {
 
     if (userDB) {
       return res
-        .status(200)
+        .status(400)
         .json({ message: "El email ingresado ya existe" });
     }
 

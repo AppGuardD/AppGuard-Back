@@ -11,7 +11,7 @@ export const disableMangrullo: RequestHandler = async (req, res) => {
 
     if (!mangrullo)
       return res
-        .status(200)
+        .status(400)
         .json({ message: "Mangrullo no encontrado en la base de datos" });
 
     if (mangrullo.state === "Activo") {

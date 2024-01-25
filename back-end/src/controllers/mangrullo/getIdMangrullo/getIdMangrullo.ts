@@ -27,7 +27,7 @@ export const getIdMangrullo: RequestHandler = async (req, res) => {
     if (mangrullo) return res.status(201).json(mangrullo);
 
     return res
-      .status(201)
+      .status(400)
       .json({ message: "El Mangrullo no existe en la Base de datos" });
   } catch (error: any) {
     return res
@@ -38,4 +38,3 @@ export const getIdMangrullo: RequestHandler = async (req, res) => {
       });
   }
 };
-// attributes: ['userName', 'description', 'calificacion', 'price', 'state', 'type'],
