@@ -13,6 +13,12 @@ let Advice = class Advice extends sequelize_typescript_1.Model {
 exports.Advice = Advice;
 __decorate([
     (0, sequelize_typescript_1.Column)({
+        type: sequelize_typescript_1.DataType.STRING,
+        allowNull: false,
+    })
+], Advice.prototype, "title", void 0);
+__decorate([
+    (0, sequelize_typescript_1.Column)({
         type: sequelize_typescript_1.DataType.TEXT,
         allowNull: false,
     })
