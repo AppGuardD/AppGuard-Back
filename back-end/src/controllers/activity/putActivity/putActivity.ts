@@ -3,17 +3,16 @@ import { Request, Response } from "express";
 
 export const putActivity = async (req: Request, res: Response) => {
   try {
+    let id: number = parseInt(req.params.id);
     let Data: Activity = req.body;
     let requestData: Activity | null = await Activity.findOne({
-      where: { id: Data?.id },
+      where: { id },
     });
     if (!requestData) {
-      return res
-        .status(201)
-        .send({ success: false, message: "el elemento no existe " });
+      return res.status(201).send({ success: false, message: "el elemento no existe " });
     }
 
-    await Activity.update({ ...Data }, { where: { id: Data.id } });
+    await Activity.update({ ...Data }, { where: { id } });
 
     res.status(200).send({
       success: true,

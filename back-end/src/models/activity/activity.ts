@@ -51,7 +51,7 @@ export class Activity extends Model {
     type: DataType.BOOLEAN,
     allowNull: false,
   })
-  Active!: boolean;
+  active!: boolean;
 
   @Column({
     type: DataType.ENUM("Deportivo", "Sanitario", "Cultural"),

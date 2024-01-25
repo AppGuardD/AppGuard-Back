@@ -9,7 +9,7 @@ const activityRoutes_1 = __importDefault(require("./activityRoutes/activityRoute
 const adviceRoutes_1 = __importDefault(require("./adviceRoutes/adviceRoutes"));
 //import favoritelloRoutes from "./favoritelloRoutes/favoritelloRoutes";
 const userRoutes_1 = __importDefault(require("./userRoutes/userRoutes"));
-//import reviewActivityRoutes from "./reviewActivityRoutes/reviewActivityRoutes";
+const reviewActivityRoutes_1 = __importDefault(require("./reviewActivityRoutes/reviewActivityRoutes"));
 //import reviewMangrullosRoutes from "./reviewMangrullosRoutes/reviewMangrullosRoutes";
 const ticketRoutes_1 = __importDefault(require("./ticketRoutes/ticketRoutes"));
 const routes = (0, express_1.Router)();

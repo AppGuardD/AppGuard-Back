@@ -20,9 +20,7 @@ export const postActivity = async (req: Request, res: Response) => {
     });
 
     if (searchData.length > 0) {
-      return res
-        .status(201)
-        .send({ success: false, message: "este objeto ya existe" });
+      return res.status(201).send({ success: false, message: "este objeto ya existe" });
     }
 
     await Activity.create({
@@ -38,15 +36,17 @@ export const postActivity = async (req: Request, res: Response) => {
         .status(201)
         .send({ success: false, message: "este objeto no se pudo crear" });
     }
-    for (let index = 0; index < req.body.Mangrullo.length; index++) {
-      let mangrullo: Mangrullo | null = await Mangrullo.findOne({
-        where: { id: req.body.Mangrullo[index] },
-      });
-      if (mangrullo?.id) {
-        await ActivityMangrullo.create({
-          activityId: requestNewData.id,
-          mangrulloId: mangrullo.id,
+    if (req.body?.Mangrullo) {
+      for (let index = 0; index < req.body.Mangrullo.length; index++) {
+        let mangrullo: Mangrullo | null = await Mangrullo.findOne({
+          where: { id: req.body.Mangrullo[index] },
         });
+        if (mangrullo?.id) {
+          await ActivityMangrullo.create({
+            activityId: requestNewData.id,
+            mangrulloId: mangrullo.id,
+          });
+        }
       }
     }
 

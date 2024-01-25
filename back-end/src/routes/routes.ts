@@ -8,6 +8,7 @@ import reviewActivityRoutes from "./reviewActivityRoutes/reviewActivityRoutes";
 import reviewMangrullosRoutes from "./reviewMangrullosRoutes/reviewMangrullosRoutes";
 import ticketRoutes from "./ticketRoutes/ticketRoutes";
 
+
 const routes = Router();
 
 routes.use("/activities", activityRouter);

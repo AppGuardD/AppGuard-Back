@@ -26,6 +26,6 @@ export class Reviewactivitys extends Model {
   })
   idActivity!: number;
 
-  @Column({ type: DataType.STRING, allowNull: false })
+  @Column({ type: DataType.STRING, allowNull: true })
   comment!: string;
 }
