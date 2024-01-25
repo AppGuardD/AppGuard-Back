@@ -33,7 +33,7 @@ __decorate([
     })
 ], Reviewactivitys.prototype, "idActivity", void 0);
 __decorate([
-    (0, sequelize_typescript_1.Column)({ type: sequelize_typescript_1.DataType.STRING, allowNull: false })
+    (0, sequelize_typescript_1.Column)({ type: sequelize_typescript_1.DataType.STRING, allowNull: true })
 ], Reviewactivitys.prototype, "comment", void 0);
 exports.Reviewactivitys = Reviewactivitys = __decorate([
     (0, sequelize_typescript_1.Table)({

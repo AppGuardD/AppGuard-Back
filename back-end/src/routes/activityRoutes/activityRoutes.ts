@@ -10,7 +10,7 @@ const ActivityRouter = Router();
 ActivityRouter.get("/search", getActivities);
 ActivityRouter.get("/search/:id", getIdActivity);
 ActivityRouter.post("/create", postActivity);
-ActivityRouter.put("/update", putActivity);
+ActivityRouter.put("/update/:id", putActivity);
 ActivityRouter.put("/desactive/:id", disableActivity);
 
 export default ActivityRouter;

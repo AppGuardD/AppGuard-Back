@@ -58,7 +58,7 @@ __decorate([
         type: sequelize_typescript_1.DataType.BOOLEAN,
         allowNull: false,
     })
-], Activity.prototype, "Active", void 0);
+], Activity.prototype, "active", void 0);
 __decorate([
     (0, sequelize_typescript_1.Column)({
         type: sequelize_typescript_1.DataType.ENUM("Deportivo", "Sanitario", "Cultural"),

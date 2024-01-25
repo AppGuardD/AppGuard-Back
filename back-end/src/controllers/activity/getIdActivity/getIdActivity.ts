@@ -15,7 +15,7 @@ export const getIdActivity = async (req: Request, res: Response) => {
       return res.status(404).send({ message: "el elemento no se ha encontrado" });
     }
 
-    res.send({ succes: true, data: requestData });
+    res.send({ succes: true, requestData });
   } catch (error: any) {
     res.status(500).send({ success: false, message: error.message });
   }
