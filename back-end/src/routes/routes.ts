@@ -1,11 +1,11 @@
 import { Router } from "express";
 import mangrulloRoutes from "./mangrulloRoutes/mangrulloRoutes";
 import activityRouter from "./activityRoutes/activityRoutes";
-//import adviceRoutes from "./adviceRoutes/adviceRoutes";
-//import favoritelloRoutes from "./favoritelloRoutes/favoritelloRoutes";
+import adviceRoutes from "./adviceRoutes/adviceRoutes";
+import favoritelloRoutes from "./favoritelloRoutes/favoritelloRoutes";
 import userRoutes from "./userRoutes/userRoutes";
-//import reviewActivityRoutes from "./reviewActivityRoutes/reviewActivityRoutes";
-//import reviewMangrullosRoutes from "./reviewMangrullosRoutes/reviewMangrullosRoutes";
+import reviewActivityRoutes from "./reviewActivityRoutes/reviewActivityRoutes";
+import reviewMangrullosRoutes from "./reviewMangrullosRoutes/reviewMangrullosRoutes";
 
 
 const routes = Router();
