@@ -1,4 +1,5 @@
-import { Table, Column, Model, DataType } from "sequelize-typescript";
+import { Table, Column, Model, DataType, ForeignKey, BelongsTo } from "sequelize-typescript";
+import { Activity } from "../activity/activity";
 
 @Table({
     timestamps: false,
@@ -35,4 +36,12 @@ export class Ticket extends Model {
         defaultValue: "No Pago"
     })
     state!: string;
+
+
+    //Relacion ticket y Activity
+    @ForeignKey(() => Activity)
+    activityId!: number
+    //un ticket pertenece a un solo activity.
+    @BelongsTo(() => Activity)
+    activity!: Activity[];
 }

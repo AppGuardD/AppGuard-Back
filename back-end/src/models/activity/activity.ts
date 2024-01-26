@@ -1,5 +1,8 @@
-import { Table, Model, Column, DataType, BelongsToMany } from "sequelize-typescript";
+import { Table, Model, Column, DataType, BelongsToMany, HasMany } from "sequelize-typescript";
 import { ActivityMangrullo } from "./ActivityMangrullo";
+import { ReviewActivity } from "../reviewActivity/reviewActivity";
+import { Advice } from "../advice/advice";
+import { Ticket } from "../ticket/ticket";
 
 @Table({
   timestamps: false,
@@ -65,6 +68,22 @@ export class Activity extends Model {
   })
   type!: string;
 
+  //relacion mucho a mucho con mangrullo
   @BelongsToMany(() => Activity, () => ActivityMangrullo)
   activity!: Activity[];
+
+
+  //relacion un activity que puede tener muchos reviewActivity.
+  @HasMany(() => ReviewActivity)
+  reviewActivity!: ReviewActivity[];
+
+
+  //relacion un activity que puede tener muchos advice.
+  @HasMany(() => Advice)
+  advice!: Advice[];
+
+
+  //relacion un activity que puede tener muchos ticket.
+  @HasMany(() => Ticket)
+  ticket!: Ticket[];
 }
