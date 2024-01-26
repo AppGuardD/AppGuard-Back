@@ -20,6 +20,12 @@ export class Activity extends Model {
   description!: string;
 
   @Column({
+    type: DataType.TEXT,
+    allowNull: false,
+  })
+  image!: string;
+
+  @Column({
     type: DataType.INTEGER,
     allowNull: false,
     validate: {

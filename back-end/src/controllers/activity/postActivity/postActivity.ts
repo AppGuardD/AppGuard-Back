@@ -2,6 +2,7 @@ import { Request, Response } from "express";
 import { Activity } from "../../../models/activity/activity";
 import { Mangrullo } from "../../../models/mangrullo/mangrullo";
 import { ActivityMangrullo } from "../../../models/activity/ActivityMangrullo";
+import { createImage } from "../../../claudinary/getStarted";
 
 export const postActivity = async (req: Request, res: Response) => {
   try {
@@ -13,7 +14,8 @@ export const postActivity = async (req: Request, res: Response) => {
       !Data.description ||
       !Data.qualification ||
       !Data.state ||
-      !Data.type
+      !Data.type ||
+      !Data.image
     ) {
     }
     let searchData: Activity[] = await Activity.findAll({
@@ -23,11 +25,19 @@ export const postActivity = async (req: Request, res: Response) => {
     if (searchData.length > 0) {
       return res.status(201).send({ success: false, message: "este objeto ya existe" });
     }
-
+    const image: any = await createImage(Data.image);
+    if (image?.error) {
+      return res.status(400).send({
+        succes: false,
+        message: "la imagen no se puede crear, revisa la extencion de la imagen",
+      });
+    }
+    console.log(image);
     await Activity.create({
       ...Data,
       active: true,
       state: Data.state,
+      image: image,
     });
 
     let requestNewData: Activity | null = await Activity.findOne({
@@ -51,10 +61,13 @@ export const postActivity = async (req: Request, res: Response) => {
         }
       }
     }
-
+    let requestData = await Activity.findOne({
+      where: { activityName: Data.activityName },
+    });
     res.status(201).send({
       success: true,
       message: "los  datos han sido creados correctamente",
+      requestData,
     });
   } catch (error: any) {
     res.status(500).send({ success: false, message: error.message });

@@ -1,3 +1,5 @@
+import { UploadApiErrorResponse } from "cloudinary";
+import { createImage, handlerError } from "../../../claudinary/getStarted";
 import { Activity } from "../../../models/activity/activity";
 import { Request, Response } from "express";
 
@@ -12,7 +14,9 @@ export const putActivity = async (req: Request, res: Response) => {
       return res.status(201).send({ success: false, message: "el elemento no existe " });
     }
 
-    await Activity.update({ ...Data }, { where: { id } });
+    let newImg = await createImage(Data.image);
+
+    await Activity.update({ ...Data, image: newImg }, { where: { id } });
 
     res.status(200).send({
       success: true,

@@ -30,7 +30,7 @@ export const connection = new Sequelize({
     ReviewsMangrullos,
     ActivityMangrullo,
     User,
-    Ticket
+    Ticket,
   ],
 });
 
