@@ -10,7 +10,7 @@ const mangrulloRoutes = Router();
 mangrulloRoutes.get("/search", getMangrullos);
 mangrulloRoutes.get("/search/:id", getIdMangrullo);
 mangrulloRoutes.post("/create", postMangrullos);
-mangrulloRoutes.put("/modify/:id", putMangrullo);
+mangrulloRoutes.put("/update/:id", putMangrullo);
 mangrulloRoutes.put("/deactivate/:id", disableMangrullo);
 
 export default mangrulloRoutes;
