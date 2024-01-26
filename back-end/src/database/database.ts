@@ -6,8 +6,8 @@ import { Activity } from "../models/activity/activity";
 import { Advice } from "../models/advice/advice";
 import { Favorite } from "../models/favorite/favorite";
 import { Mangrullo } from "../models/mangrullo/mangrullo";
-import { Reviewactivitys } from "../models/reviewActivity/reviewActivity";
-import { ReviewsMangrullos } from "../models/reviewMangrullo/reviewMangrullo";
+import { ReviewActivity } from "../models/reviewActivity/reviewActivity";
+import { ReviewMangrullo } from "../models/reviewMangrullo/reviewMangrullo";
 import { User } from "../models/user/user";
 import { ActivityMangrullo } from "../models/activity/ActivityMangrullo";
 import { Ticket } from "../models/ticket/ticket";
@@ -26,8 +26,8 @@ export const connection = new Sequelize({
     Advice,
     Favorite,
     Mangrullo,
-    Reviewactivitys,
-    ReviewsMangrullos,
+    ReviewActivity,
+    ReviewMangrullo,
     ActivityMangrullo,
     User,
     Ticket,

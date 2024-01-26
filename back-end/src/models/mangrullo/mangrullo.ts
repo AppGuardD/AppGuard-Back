@@ -1,6 +1,8 @@
-import { Table, Model, Column, DataType, BelongsToMany } from "sequelize-typescript";
+import { Table, Model, Column, DataType, BelongsToMany, HasMany } from "sequelize-typescript";
 import { Activity } from "../activity/activity";
 import { ActivityMangrullo } from "../activity/ActivityMangrullo";
+import { ReviewMangrullo } from "../reviewMangrullo/reviewMangrullo";
+import { Advice } from "../advice/advice";
 
 @Table({
   timestamps: false,
@@ -57,7 +59,17 @@ export class Mangrullo extends Model {
     },
   })
   qualification!: number;
-
+  //relacion mucho a mucho mangrullo activity
   @BelongsToMany(() => Activity, () => ActivityMangrullo)
   activity!: Activity[];
+
+
+  //relacion un mangrullo que puede tener muchos reviewMangrullo.
+  @HasMany(() => ReviewMangrullo)
+  reviewMangrullo!: ReviewMangrullo[];
+
+
+  //relacion un mangrullo que puede tener muchos advice.
+  @HasMany(() => Advice)
+  advice!: Advice[];
 }
