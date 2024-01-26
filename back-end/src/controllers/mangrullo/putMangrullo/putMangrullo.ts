@@ -1,6 +1,6 @@
 import { RequestHandler } from "express";
 import { Mangrullo } from "../../../models/mangrullo/mangrullo";
-import { createImage } from "../../../claudinary/getStarted";
+import { createImage } from "../../../cloudinary/getStarted";
 
 // Ruta para modificar Mangrullos.
 export const putMangrullo: RequestHandler = async (req, res) => {
