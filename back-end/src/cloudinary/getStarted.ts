@@ -21,9 +21,9 @@ export const createImage = async (img: string): Promise<any> => {
     if (!re.test(img)) {
       throw new Error("el formato de la imagen no es valido");
     }
-
     const { secure_url }: UploadApiResponse = await cloudinary.uploader.upload(img);
     return secure_url;
+    
   } catch (error: any) {
     return {
       error: error.message
@@ -32,4 +32,3 @@ export const createImage = async (img: string): Promise<any> => {
     };
   }
 };
-

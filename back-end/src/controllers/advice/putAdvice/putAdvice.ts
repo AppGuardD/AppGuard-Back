@@ -1,5 +1,6 @@
 import { RequestHandler } from "express";
 import { Advice } from "../../../models/advice/advice";
+import { createImage } from "../../../cloudinary/getStarted";
 
 export const updateAdvice: RequestHandler = async (req, res) => {
     try {
@@ -17,11 +18,14 @@ export const updateAdvice: RequestHandler = async (req, res) => {
         return res.status(404).json({ message: "Consejo no encontradp"})
     } 
 
+    //subida a cloudinary
+    let imageUpdate = await createImage(image)
+
     // actualizar los campos 
 
     adviceToUpdate.title= title;
     adviceToUpdate.comment= comment;
-    adviceToUpdate.image= image;
+    adviceToUpdate.image= imageUpdate;
     adviceToUpdate.gravity= gravity;
 
     // guardo los campos
