@@ -1,13 +1,11 @@
-import { Activity } from "../../../models/activity/activity";
+import { Favorite } from "../../../models/favorite/favorite";
 import { Request, Response } from "express";
 
 interface Filter {
   item: string;
   page: string;
-  type: string;
 }
-
-export const getActivities = async (req: Request<{}, {}, {}, Filter>, res: Response) => {
+export const getFavorites = async (req: Request<{}, {}, {}, Filter>, res: Response) => {
   try {
     const filter: Filter = req.query;
     console.log(typeof filter.item);
@@ -17,14 +15,10 @@ export const getActivities = async (req: Request<{}, {}, {}, Filter>, res: Respo
       offset: (parseInt(filter.page) - 1) * parseInt(filter.item),
     };
 
-    let { count, rows }: any = filter.type
-      ? await Activity.findAndCountAll({
-          ...operation,
-          where: { type: filter.type },
-        })
-      : filter.page && filter.item
-      ? await Activity.findAndCountAll({ ...operation })
-      : await Activity.findAndCountAll();
+    let { count, rows }: { count: number; rows: Favorite[] } =
+      filter.page && filter.item
+        ? await Favorite.findAndCountAll({ ...operation })
+        : await Favorite.findAndCountAll();
 
     if (rows.length < 0) {
       return res.status(404).send({ message: "el elemento no se ha encontrado" });
