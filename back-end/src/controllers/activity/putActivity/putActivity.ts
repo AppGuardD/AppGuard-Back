@@ -14,9 +14,12 @@ export const putActivity = async (req: Request, res: Response) => {
       return res.status(201).send({ success: false, message: "el elemento no existe " });
     }
 
-    let newImg = await createImage(Data.image);
-
-    await Activity.update({ ...Data, image: newImg }, { where: { id } });
+    if (Data?.image) {
+      let newImg = await createImage(Data.image);
+      await Activity.update({ ...Data, image: newImg }, { where: { id } });
+    } else {
+      await Activity.update({ ...Data }, { where: { id } });
+    }
 
     res.status(200).send({
       success: true,
