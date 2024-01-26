@@ -1,5 +1,6 @@
 import { RequestHandler } from "express";
 import { Advice } from "../../../models/advice/advice";
+import { createImage } from "../../../cloudinary/getStarted";
 
 export const createAdvice: RequestHandler = async (req, res)=> {
     try {
@@ -17,13 +18,19 @@ export const createAdvice: RequestHandler = async (req, res)=> {
         });
 
         if (adviceDb){
-            return res.status (200).json({ message : "El consejo ya existe"})
+            return res.status (400).json({ message : "El consejo ya existe"})
         }
 
+        // subida a cloudinary
+        const imageUpload: any = await createImage(image);
+         
+
+        // creacion nuevo objeto
         const advice: Advice = await Advice.create({
             title: title,
             comment: comment,
-            image: image, 
+            image: imageUpload, // asigno URL de cloudinary
+
             gravity: gravity, 
         });
         return res.status(201).json(advice);
