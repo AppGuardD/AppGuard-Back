@@ -10,7 +10,7 @@ const ticketRoutes = Router();
 ticketRoutes.get("/search", getTickets);
 ticketRoutes.get("/search/:id", getIdTicket);
 ticketRoutes.post("/create", postTicket);
-ticketRoutes.put("/modify/:id", putTicket);
+ticketRoutes.put("/update/:id", putTicket);
 ticketRoutes.put("/deactivate/:id", disableTicket);
 
 export default ticketRoutes;

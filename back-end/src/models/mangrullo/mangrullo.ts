@@ -10,7 +10,6 @@ export class Mangrullo extends Model {
   @Column({
     type: DataType.STRING,
     allowNull: false,
-    unique: true,
   })
   zone!: string; //zona
 

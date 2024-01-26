@@ -1,5 +1,5 @@
 import { UploadApiErrorResponse } from "cloudinary";
-import { createImage, handlerError } from "../../../claudinary/getStarted";
+import { createImage, handlerError } from "../../../cloudinary/getStarted";
 import { Activity } from "../../../models/activity/activity";
 import { Request, Response } from "express";
 

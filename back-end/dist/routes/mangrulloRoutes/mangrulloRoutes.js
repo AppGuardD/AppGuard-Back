@@ -10,6 +10,6 @@ const mangrulloRoutes = (0, express_1.Router)();
 mangrulloRoutes.get("/search", getMangrullos_1.getMangrullos);
 mangrulloRoutes.get("/search/:id", getIdMangrullo_1.getIdMangrullo);
 mangrulloRoutes.post("/create", postMangrullo_1.postMangrullos);
-mangrulloRoutes.put("/modify/:id", putMangrullo_1.putMangrullo);
+mangrulloRoutes.put("/update/:id", putMangrullo_1.putMangrullo);
 mangrulloRoutes.put("/deactivate/:id", disableMangrullo_1.disableMangrullo);
 exports.default = mangrulloRoutes;
