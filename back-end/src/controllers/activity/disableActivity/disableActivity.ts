@@ -9,12 +9,14 @@ export const disableActivity = async (req: Request, res: Response) => {
       return res.status(201).send({ success: false, message: "el elemento no existe" });
     }
     Data.active
-      ? await Activity.update({ ...Data, Active: false }, { where: { id } })
-      : await Activity.update({ ...Data, Active: true }, { where: { id } });
+      ? await Activity.update({ ...Data, active: false }, { where: { id } })
+      : await Activity.update({ ...Data, active: true }, { where: { id } });
 
     res.status(201).send({
       success: true,
-      message: "la Actividad ha sido Desactivada correctamente",
+      message: Data.active
+        ? "la actividad se ha desactivado correctamente"
+        : "la actividad se ha activado correctamente",
     });
   } catch (error: any) {
     res.status(500).send({ success: false, message: error.message });
