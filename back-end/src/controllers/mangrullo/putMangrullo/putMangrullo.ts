@@ -1,18 +1,21 @@
 import { RequestHandler } from "express";
 import { Mangrullo } from "../../../models/mangrullo/mangrullo";
+import { createImage } from "../../../claudinary/getStarted";
 
 // Ruta para modificar Mangrullos.
 export const putMangrullo: RequestHandler = async (req, res) => {
   try {
     const { id } = req.params;
-    const { zone, dangerousness, state, image, qualification } = req.body;
+    const { zone, dangerousness, image, qualification } = req.body;
+
+    const imgUrl = await createImage(image);
 
     // Realiza la actualización y obtén el número de filas afectadas
     await Mangrullo.update(
       {
         zone: zone,
         dangerousness: dangerousness,
-        image: image,
+        image: imgUrl,
         qualification: qualification,
       },
       {
