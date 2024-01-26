@@ -2,7 +2,7 @@ import { Request, Response } from "express";
 import { Activity } from "../../../models/activity/activity";
 import { Mangrullo } from "../../../models/mangrullo/mangrullo";
 import { ActivityMangrullo } from "../../../models/activity/ActivityMangrullo";
-import { createImage } from "../../../claudinary/getStarted";
+import { createImage } from "../../../cloudinary/getStarted";
 
 export const postActivity = async (req: Request, res: Response) => {
   try {

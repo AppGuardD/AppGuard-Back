@@ -1,5 +1,6 @@
 import { RequestHandler } from "express";
 import { Mangrullo } from "../../../models/mangrullo/mangrullo";
+import { createImage } from "../../../cloudinary/getStarted";
 
 //Ruta para crear Mangrullos.
 export const postMangrullos: RequestHandler = async (req, res) => {
@@ -25,12 +26,14 @@ export const postMangrullos: RequestHandler = async (req, res) => {
         .json({ message: "El nombre de la zona ingresada ya existe" });
     }
 
+    const imgUrl = await createImage(image);
+
     //mangrullo esta definido como un objeto de mangrullo.
     const mangrullo: Mangrullo = await Mangrullo.create({
       zone: zone,
       dangerousness: dangerousness,
       state: "Activo",
-      image: image,
+      image: imgUrl,
       qualification: qualification,
     });
     return res.status(201).json(mangrullo);
