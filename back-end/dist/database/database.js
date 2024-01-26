@@ -63,7 +63,7 @@ exports.connection = new sequelize_typescript_1.Sequelize({
         reviewMangrullo_1.ReviewsMangrullos,
         ActivityMangrullo_1.ActivityMangrullo,
         user_1.User,
-        ticket_1.Ticket
+        ticket_1.Ticket,
     ],
 });
 function connectionDB() {
