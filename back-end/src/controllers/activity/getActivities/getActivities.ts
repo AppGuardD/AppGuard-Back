@@ -1,8 +1,5 @@
 import { Activity } from "../../../models/activity/activity";
 import { Request, Response } from "express";
-import { ParameterizedQuery } from "pg-promise";
-import { GroupedCountResultItem, Op } from "sequelize";
-import { Mangrullo } from "../../../models/mangrullo/mangrullo";
 
 interface Filter {
   item: string;
