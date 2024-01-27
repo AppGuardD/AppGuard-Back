@@ -1,4 +1,15 @@
-import { Table, Column, Model, DataType, AllowNull } from "sequelize-typescript";
+import {
+  Table,
+  Column,
+  Model,
+  DataType,
+  AllowNull,
+  BelongsToMany,
+} from "sequelize-typescript";
+import { ActivityFavorite } from "../activity/ActivityFavorite";
+import { Activity } from "../activity/activity";
+import { Mangrullo } from "../mangrullo/mangrullo";
+import { MangrulloFavorite } from "../mangrullo/MangrulloFavorite";
 
 @Table({
   timestamps: false,
@@ -16,4 +27,12 @@ export class Favorite extends Model {
     allowNull: false,
   })
   idUser!: number;
+
+  //relacion mucho a mucho con favorite
+  @BelongsToMany(() => Activity, () => ActivityFavorite)
+  activity!: Activity[];
+
+  //relacion mucho a mucho con favorite
+  @BelongsToMany(() => Mangrullo, () => MangrulloFavorite)
+  mangrullo!: Mangrullo[];
 }

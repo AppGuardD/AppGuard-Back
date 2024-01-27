@@ -11,6 +11,8 @@ import { ReviewMangrullo } from "../models/reviewMangrullo/reviewMangrullo";
 import { User } from "../models/user/user";
 import { ActivityMangrullo } from "../models/activity/ActivityMangrullo";
 import { Ticket } from "../models/ticket/ticket";
+import { ActivityFavorite } from "../models/activity/ActivityFavorite";
+import { MangrulloFavorite } from "../models/mangrullo/MangrulloFavorite";
 
 const { DB_HOST, DB_USER, DB_PASSWORD, DB_DATABASE } = process.env;
 
@@ -29,6 +31,8 @@ export const connection = new Sequelize({
     ReviewActivity,
     ReviewMangrullo,
     ActivityMangrullo,
+    ActivityFavorite,
+    MangrulloFavorite,
     User,
     Ticket,
   ],

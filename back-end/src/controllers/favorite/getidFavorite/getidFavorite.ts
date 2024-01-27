@@ -1,7 +1,7 @@
 import { Request, Response } from "express";
 import { Favorite } from "../../../models/favorite/favorite";
 
-export const getIdActivity = async (req: Request, res: Response) => {
+export const getIdFavorite = async (req: Request, res: Response) => {
   try {
     let param: string = req.params.id;
     if (!param) {

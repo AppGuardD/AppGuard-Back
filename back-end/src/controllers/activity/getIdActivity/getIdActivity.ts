@@ -1,5 +1,6 @@
 import { Activity } from "../../../models/activity/activity";
 import { Request, Response } from "express";
+import { Mangrullo } from "../../../models/mangrullo/mangrullo";
 
 export const getIdActivity = async (req: Request, res: Response) => {
   try {
@@ -10,6 +11,7 @@ export const getIdActivity = async (req: Request, res: Response) => {
     }
     let requestData: Activity | null = await Activity.findOne({
       where: { id: parseInt(param) },
+      /*   include: { model: Mangrullo }, */
     });
     if (requestData === null) {
       return res.status(404).send({ message: "el elemento no se ha encontrado" });
