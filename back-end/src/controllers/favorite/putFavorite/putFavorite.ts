@@ -9,6 +9,7 @@ export const putFavorite = async (req: Request, res: Response) => {
         message: "no se puede actualizar el favorito sin el id",
       });
     }
+    const param: number = parseInt(req.params?.id);
     const Data: Favorite = req.body;
     const upFavorite: Favorite | null = await Favorite.findOne({
       where: { id: req.params?.id },
