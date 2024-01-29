@@ -1,20 +1,30 @@
 import { RequestHandler } from "express";
-import { ReviewActivity } from "../../../models/reviewActivity/reviewActivity";
+import { Mangrullo } from "../../../models/mangrullo/mangrullo";
+import { ReviewMangrullo } from "../../../models/reviewMangrullo/reviewMangrullo";
+import { User } from "../../../models/user/user";
 
 export const postReviewMangrullo: RequestHandler = async (req, res) => {
   try {
-    const { qualification, idUsuario, idActivity, comment } = req.body
-    if (!qualification || !idUsuario || !idActivity || !comment) {
+    const { qualification, comment, userId, mangrulloId } = req.body
+    if (!qualification || !userId || !comment || !mangrulloId) {
       return res.status(400).json({
         message: "No pueden ir datos vacios",
       });
     }
-    const review: ReviewActivity | null = await ReviewActivity.create({
+
+    const mangrullo: object | null = await Mangrullo.findByPk(mangrulloId);
+    const user: object | null = await User.findByPk(userId);
+
+    if (!mangrullo || !user) {
+      return res.status(400).json({ message: "El mangrullo o el usuario con ese id no existe en la base de datos" })
+    }
+
+    const review: ReviewMangrullo | null = await ReviewMangrullo.create({
       qualification: qualification,
-      idUsuario: idUsuario,
-      idActivity: idActivity,
+      userId: userId,
       comment: comment,
-      state: "Activo"
+      state: "Activo",
+      mangrulloId: mangrulloId
     });
     res
       .status(201)

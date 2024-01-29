@@ -5,7 +5,7 @@ import { Ticket } from "../../../models/ticket/ticket";
 //Ruta para desactivar modelo Ticket.
 export const disableTicket: RequestHandler = async (req, res) => {
   try {
-    const { id } = req.params;
+    const id: string = req.params.id;
 
     //ticket esta definido como un objeto del modelo Ticket.
     const ticket = await Ticket.findByPk(id);
@@ -15,10 +15,10 @@ export const disableTicket: RequestHandler = async (req, res) => {
         .status(200)
         .json({ message: "Ticket no encontrado en la base de datos" });
 
-    if (ticket.state === "No Pagado") {
+    if (ticket.state === "No Pago") {
       await Ticket.update(
         {
-          state: "Pagado",
+          state: "Pago",
         },
         {
           where: {
@@ -30,7 +30,7 @@ export const disableTicket: RequestHandler = async (req, res) => {
     } else {
       await Ticket.update(
         {
-          state: "No Pagado",
+          state: "No Pago",
         },
         {
           where: {

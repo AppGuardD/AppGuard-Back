@@ -1,9 +1,10 @@
 import { Table, Column, Model, DataType, BelongsTo, ForeignKey } from "sequelize-typescript";
 import { Activity } from "../activity/activity";
+import { User } from "../user/user";
 
 @Table({
   timestamps: false,
-  tableName: "reviewactivitys",
+  tableName: "reviewactivities",
 })
 
 export class ReviewActivity extends Model {
@@ -31,26 +32,33 @@ export class ReviewActivity extends Model {
   state!: string;
 
   @Column({
-    type: DataType.INTEGER,
-  })
-  idUsuario!: number;
-
-  @Column({
-    type: DataType.INTEGER,
-    allowNull: false,
-  })
-  idActivity!: number;
-
-  @Column({
     type: DataType.STRING,
     allowNull: true
   })
   comment!: string;
 
+  //Relacionado.
   //Relacion reviewActivity y Activity
   @ForeignKey(() => Activity)
+  @Column({
+    type: DataType.INTEGER,
+    allowNull: false
+  })
   activityId!: number
   //un reviewActivity pertenece a un solo activity.
   @BelongsTo(() => Activity)
   activity!: Activity[];
+
+
+  //Relacionado.
+  //Relacion reviewActivity y User
+  @ForeignKey(() => User)
+  @Column({
+    type: DataType.INTEGER,
+    allowNull: false
+  })
+  userId!: number
+  //un reviewActivity pertenece a un solo user.
+  @BelongsTo(() => User)
+  user!: User[];
 }

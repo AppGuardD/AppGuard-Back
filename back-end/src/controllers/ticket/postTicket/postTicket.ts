@@ -6,30 +6,28 @@ import { Ticket } from "../../../models/ticket/ticket";
 // Ruta para crear Ticket.
 export const postTicket: RequestHandler = async (req, res) => {
   try {
-    const { idUser, idActivity, price } = req.body;
+    const { userId, activityId, price } = req.body;
 
-    if (!idUser || !idActivity || !price) {
+    if (!userId || !activityId || !price) {
       return res
         .status(400)
         .json({ message: "Todos los campos son obligatorios" });
     }
 
-    const user: User | null = await User.findByPk(idUser);
-    const activity: Activity | null = await Activity.findByPk(idActivity);
+    const user: User | null = await User.findByPk(userId);
+    const activity: Activity | null = await Activity.findByPk(activityId);
 
     if (!user || !activity) {
       return res
-        .status(404)
+        .status(400)
         .json({ message: "Usuario o actividad no encontrados en la base de datos" });
     }
 
-    const nameUser: string | number = user.userName;
-    const nameActivity: string | number = activity.activityName;
-
     const ticket: Ticket = await Ticket.create({
-      idUser: user,
-      idActivity: activity,
+      userId: userId,
+      activityId: activityId,
       price: price,
+      date: new Date().toISOString().split('T')[0],
       state: "No Pago",
     });
 
@@ -43,3 +41,5 @@ export const postTicket: RequestHandler = async (req, res) => {
       });
   }
 };
+
+

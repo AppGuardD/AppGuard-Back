@@ -1,11 +1,10 @@
 import { Table, Column, Model, DataType, AllowNull, ForeignKey, BelongsTo } from "sequelize-typescript";
-import { Mangrullo } from "../mangrullo/mangrullo";
-import { Activity } from "../activity/activity";
 
 @Table({
   timestamps: false,
   tableName: "advices",
 })
+
 export class Advice extends Model {
   @Column({
     type: DataType.STRING,
@@ -27,26 +26,17 @@ export class Advice extends Model {
 
   @Column({
     type: DataType.INTEGER,
-    validate: {
-      min: 1,
-      max: 5,
-    },
     allowNull: false,
+    validate: {
+      min: {
+        args: [1],
+        msg: "El valor no puede ser menor que 1",
+      },
+      max: {
+        args: [5],
+        msg: "El valor no puede ser mayor que 5",
+      },
+    },
   })
   gravity!: number;
-
-  //Relacion advice y Mangrullo
-  @ForeignKey(() => Mangrullo)
-  mangrulloId!: number
-  //un advice pertenece a un solo mangrullo.
-  @BelongsTo(() => Mangrullo)
-  mangrullo!: Mangrullo[];
-
-
-  //Relacion advice y Activity
-  @ForeignKey(() => Activity)
-  activityId!: number
-  //un advice pertenece a un solo activity.
-  @BelongsTo(() => Activity)
-  activity!: Activity[];
 }

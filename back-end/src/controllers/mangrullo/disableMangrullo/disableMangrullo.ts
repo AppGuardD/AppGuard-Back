@@ -4,7 +4,7 @@ import { Mangrullo } from "../../../models/mangrullo/mangrullo";
 //Ruta para desactivar Mangrullos.
 export const disableMangrullo: RequestHandler = async (req, res) => {
   try {
-    const { id } = req.params;
+    const id: number = parseInt(req.params.id);
 
     //mangrullo esta definido como un objeto de mangrullo.
     const mangrullo = await Mangrullo.findByPk(id);
