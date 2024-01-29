@@ -5,13 +5,13 @@ import { ReviewMangrullo } from "../../../models/reviewMangrullo/reviewMangrullo
 export const putReviewMangrullo: RequestHandler = async (req, res) => {
     try {
         const { id } = req.params;
-        const { qualification, idUsuario, idMangrullo, comment } = req.body;
+        const { qualification, userId, mangrulloId, comment } = req.body;
 
         await ReviewMangrullo.update(
             {
                 qualification,
-                idUsuario,
-                idMangrullo,
+                userId,
+                mangrulloId,
                 comment
             },
             {

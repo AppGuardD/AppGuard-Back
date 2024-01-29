@@ -1,39 +1,36 @@
+import { RequestHandler } from "express";
 import { Favorite } from "../../../models/favorite/favorite";
-import { Request, Response } from "express";
-import { User } from "../../../models/user/user";
-import { Activity } from "../../../models/activity/activity";
+import { Mangrullo } from "../../../models/mangrullo/mangrullo";
 
-export const postFavorites = async (req: Request, res: Response) => {
+//Ruta para crear Favorito.
+export const postFavorites: RequestHandler = async (req, res) => {
   try {
-    if (!req.body?.idUser || !req.body.idActivity) {
-      return res.status(400).send({
-        success: false,
-        message: "nno se puede añadir a favoritos, falta  el usuario o  la actividad",
-      });
-    }
-    const { idUser, idActivity }: { idUser: User; idActivity: Activity } = req.body;
-    const [user, activity] = await Promise.all([
-      User.findOne({ where: { id: idUser } }),
-      Activity.findOne({ where: { id: idActivity } }),
-    ]);
+    const { zone, dangerousness, image, qualification } = req.body;
 
-    if (!user?.id || !activity?.id) {
-      throw new Error(
-        "El usuario y la actividad son necesarios para poder añadir a favoritos"
-      );
+    // Verificar que los campos no estén vacíos.
+    if (!zone || !dangerousness || !image || !qualification) {
+      return res
+        .status(400)
+        .json({ message: "Todos los campos son obligatorios" });
     }
 
-    const newData = await Favorite.create({ idActivity, idUser });
-    res.status(201).send({
-      success: true,
-      message: "se ha añadido la actividad " + activity.activityName + " correctamente",
-      requestData: newData,
+    //favorito esta definido como un objeto de favorito.
+    const favorite: Favorite = await Favorite.create({
+      zone: zone,
+      dangerousness: dangerousness,
+      state: "Activo",
+      image: image,
+      qualification: qualification,
     });
+
+    return res.status(201).json(favorite);
   } catch (error: any) {
-    const string: string =
-      "El usuario y la actividad son necesarios para poder añadir a favoritos";
     return res
-      .status(error.message === string ? 400 : 500)
-      .send({ success: false, message: error.message });
+      .status(500)
+      .json({
+        message: "Algo salió mal, verifica la función",
+        error: error.message,
+      });
   }
 };
+

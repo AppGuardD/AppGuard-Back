@@ -1,4 +1,7 @@
-import { Table, Model, Column, DataType } from "sequelize-typescript";
+import { Table, Model, Column, DataType, HasMany } from "sequelize-typescript";
+import { Ticket } from "../ticket/ticket";
+import { ReviewActivity } from "../reviewActivity/reviewActivity";
+import { ReviewMangrullo } from "../reviewMangrullo/reviewMangrullo";
 
 @Table({
   timestamps: false,
@@ -55,5 +58,21 @@ export class User extends Model {
     defaultValue: "Activo",
   })
   state!: string
+
+  //Relacionado.
+  //relacion un user que puede tener muchos ticket.
+  @HasMany(() => Ticket)
+  ticket!: Ticket[];
+
+  //Relacionado.
+  //relacion un user que puede tener muchos reviewActivity.
+  @HasMany(() => ReviewActivity)
+  reviewActivity!: ReviewActivity[];
+
+
+  //Relacionado.
+  //relacion un user que puede tener muchos reviewMangrullo.
+  @HasMany(() => ReviewMangrullo)
+  reviewMangrullo!: ReviewMangrullo[];
 }
 

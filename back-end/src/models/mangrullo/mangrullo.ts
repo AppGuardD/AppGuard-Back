@@ -1,22 +1,17 @@
-import {
-  Table,
-  Model,
-  Column,
-  DataType,
-  BelongsToMany,
-  HasMany,
-} from "sequelize-typescript";
+import { Table, Model, Column, DataType, BelongsToMany, HasMany } from "sequelize-typescript";
+
 import { Activity } from "../activity/activity";
 import { ActivityMangrullo } from "../activity/ActivityMangrullo";
 import { ReviewMangrullo } from "../reviewMangrullo/reviewMangrullo";
 import { Advice } from "../advice/advice";
-import { MangrulloFavorite } from "./MangrulloFavorite";
 import { Favorite } from "../favorite/favorite";
+import { FavoriteMangrullo } from "../favorite/FavoriteMangrullo";
 
 @Table({
   timestamps: false,
   tableName: "mangrullos",
 })
+
 export class Mangrullo extends Model {
   @Column({
     type: DataType.STRING,
@@ -68,19 +63,19 @@ export class Mangrullo extends Model {
     },
   })
   qualification!: number;
+
+  //Relacionado.
   //relacion mucho a mucho mangrullo activity
   @BelongsToMany(() => Activity, () => ActivityMangrullo)
   activity!: Activity[];
 
-  //relacion mucho a mucho mangrullo favorite
-  @BelongsToMany(() => Favorite, () => MangrulloFavorite)
+  //Relacionado
+  //relacion mucho a mucho mangrullo con favorite.
+  @BelongsToMany(() => Favorite, () => FavoriteMangrullo)
   favorite!: Favorite[];
 
+  //Relacionado.
   //relacion un mangrullo que puede tener muchos reviewMangrullo.
   @HasMany(() => ReviewMangrullo)
   reviewMangrullo!: ReviewMangrullo[];
-
-  //relacion un mangrullo que puede tener muchos advice.
-  @HasMany(() => Advice)
-  advice!: Advice[];
 }

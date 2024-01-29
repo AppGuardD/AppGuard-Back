@@ -5,13 +5,13 @@ import { ReviewActivity } from "../../../models/reviewActivity/reviewActivity";
 export const putReviewActivity: RequestHandler = async (req, res) => {
     try {
         const { id } = req.params;
-        const { qualification, idUsuario, idActivity, comment } = req.body;
+        const { qualification, userId, activityId, comment } = req.body;
 
         await ReviewActivity.update(
             {
                 qualification,
-                idUsuario,
-                idActivity,
+                userId,
+                activityId,
                 comment
             },
             {

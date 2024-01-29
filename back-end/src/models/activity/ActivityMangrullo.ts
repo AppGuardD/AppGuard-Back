@@ -1,9 +1,6 @@
 import {
   Table,
-  Column,
   Model,
-  DataType,
-  AllowNull,
   ForeignKey,
 } from "sequelize-typescript";
 import { Activity } from "./activity";

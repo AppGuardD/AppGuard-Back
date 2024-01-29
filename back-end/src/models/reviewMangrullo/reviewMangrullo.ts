@@ -1,9 +1,10 @@
 import { Table, Column, Model, DataType, BelongsTo, ForeignKey } from "sequelize-typescript";
 import { Mangrullo } from "../mangrullo/mangrullo";
+import { User } from "../user/user";
 
 @Table({
   timestamps: false,
-  tableName: "ReviewMangrullos",
+  tableName: "reviewMangrullos",
 })
 
 export class ReviewMangrullo extends Model {
@@ -36,21 +37,33 @@ export class ReviewMangrullo extends Model {
   idUsuario!: number;
 
   @Column({
-    type: DataType.INTEGER,
-    allowNull: false,
-  })
-  idMangrullo!: number;
-
-  @Column({
     type: DataType.ENUM("Activo", "No Activo"),
     allowNull: false,
   })
   state!: string;
 
+  //Relacionado.
   //Relacion reviewMangrullo y Mangrullo
   @ForeignKey(() => Mangrullo)
-  mangrulloId!: number
+  @Column({
+    type: DataType.INTEGER,
+    allowNull: false
+  })
+  mangrulloId!: number;
   //un reviewMangrullo pertenece a un solo mangrullo.
   @BelongsTo(() => Mangrullo)
   mangrullo!: Mangrullo[];
+
+
+  //Relacionado.
+  //Relacion reviewMangrullo y User
+  @ForeignKey(() => User)
+  @Column({
+    type: DataType.INTEGER,
+    allowNull: false
+  })
+  userId!: number
+  //un reviewMangrullo pertenece a un solo user.
+  @BelongsTo(() => User)
+  user!: User[];
 }

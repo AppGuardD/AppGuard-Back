@@ -1,38 +1,72 @@
-import {
-  Table,
-  Column,
-  Model,
-  DataType,
-  AllowNull,
-  BelongsToMany,
-} from "sequelize-typescript";
-import { ActivityFavorite } from "../activity/ActivityFavorite";
-import { Activity } from "../activity/activity";
+import { Table, Column, Model, DataType, BelongsToMany } from "sequelize-typescript";
 import { Mangrullo } from "../mangrullo/mangrullo";
-import { MangrulloFavorite } from "../mangrullo/MangrulloFavorite";
+import { FavoriteMangrullo } from "./FavoriteMangrullo";
 
 @Table({
   timestamps: false,
   tableName: "favorites",
 })
 export class Favorite extends Model {
+
+  @Column({
+    type: DataType.STRING,
+    allowNull: false,
+  })
+  zone!: string; //zona
+
+  @Column({
+    type: DataType.INTEGER,
+    allowNull: false,
+    validate: {
+      min: {
+        args: [1],
+        msg: "El valor no puede ser menor que 1",
+      },
+      max: {
+        args: [3],
+        msg: "El valor no puede ser mayor que 3",
+      },
+    },
+  })
+  dangerousness!: number; //peligrosidad
+
+  @Column({
+    type: DataType.ENUM("Activo", "No Activo"),
+    allowNull: false,
+    defaultValue: "Activo",
+  })
+  state!: string;
+
+  @Column({
+    type: DataType.TEXT,
+    allowNull: false,
+  })
+  image!: string;
+
+  @Column({
+    type: DataType.INTEGER,
+    allowNull: false,
+    validate: {
+      min: {
+        args: [1],
+        msg: "El valor no puede ser menor que 1",
+      },
+      max: {
+        args: [5],
+        msg: "El valor no puede ser mayor que 5",
+      },
+    },
+  })
+  qualification!: number;
+
   @Column({
     type: DataType.INTEGER,
     allowNull: false,
   })
-  idActivity!: number;
+  userId!: number;
 
-  @Column({
-    type: DataType.INTEGER,
-    allowNull: false,
-  })
-  idUser!: number;
-
-  //relacion mucho a mucho con favorite
-  @BelongsToMany(() => Activity, () => ActivityFavorite)
-  activity!: Activity[];
-
-  //relacion mucho a mucho con favorite
-  @BelongsToMany(() => Mangrullo, () => MangrulloFavorite)
+  //Relacionado.
+  //relacion mucho a mucho con mangrullo
+  @BelongsToMany(() => Mangrullo, () => FavoriteMangrullo)
   mangrullo!: Mangrullo[];
 }
