@@ -5,16 +5,20 @@ import { getIdReviewMangrullo } from "../../controllers/reviewMangrullo/getIdRev
 import { postReviewMangrullo } from "../../controllers/reviewMangrullo/postReviewMangrullo/postReviewMangrullo";
 import { putReviewMangrullo } from "../../controllers/reviewMangrullo/putReviewMangrullo/putReviewMangrullo";
 import { disableReviewMangrullo } from "../../controllers/reviewMangrullo/disableReviewMangrullo/disableReviewMangrullo";
-
+import { userMiddleware } from "../../middlewares/userMiddlewares/userMiddleware";
 
 const reviewMangrulloRoutes = Router();
-
+//-----------con webtokens-------------
+/* reviewMangrulloRoutes.get("/search", getReviewMangrullos);
+reviewMangrulloRoutes.get("/search/:id", getIdReviewMangrullo);
+reviewMangrulloRoutes.post("/create", userMiddleware, postReviewMangrullo);
+reviewMangrulloRoutes.put("/update/:id", userMiddleware, putReviewMangrullo);
+reviewMangrulloRoutes.delete("/search/:id", userMiddleware, disableReviewMangrullo); */
+//----------Desarollo------------------
 reviewMangrulloRoutes.get("/search", getReviewMangrullos);
 reviewMangrulloRoutes.get("/search/:id", getIdReviewMangrullo);
 reviewMangrulloRoutes.post("/create", postReviewMangrullo);
 reviewMangrulloRoutes.put("/update/:id", putReviewMangrullo);
 reviewMangrulloRoutes.delete("/search/:id", disableReviewMangrullo);
-
-
 
 export default reviewMangrulloRoutes;

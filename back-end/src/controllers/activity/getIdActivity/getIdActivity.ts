@@ -14,7 +14,9 @@ export const getIdActivity = async (req: Request, res: Response) => {
       /*   include: { model: Mangrullo }, */
     });
     if (requestData === null) {
-      return res.status(404).send({ message: "el elemento no se ha encontrado" });
+      return res
+        .status(404)
+        .send({ success: false, message: "el elemento no se ha encontrado" });
     }
 
     res.send({ succes: true, requestData });

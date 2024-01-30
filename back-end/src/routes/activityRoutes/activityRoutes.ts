@@ -8,9 +8,16 @@ import { adminMiddleware } from "../../middlewares/adminMiddlewares/adminMiddlew
 
 const ActivityRouter = Router();
 
-ActivityRouter.get("/search", getActivities);
+//---------- con webtokens ------------------
+/* ActivityRouter.get("/search", getActivities);
 ActivityRouter.get("/search/:id", getIdActivity);
 ActivityRouter.post("/create", adminMiddleware, postActivity);
+ActivityRouter.put("/update/:id", adminMiddleware, putActivity);
+ActivityRouter.put("/desactive/:id", adminMiddleware, disableActivity); */
+//--------------Desarollo----------------
+ActivityRouter.get("/search", getActivities);
+ActivityRouter.get("/search/:id", getIdActivity);
+ActivityRouter.post("/create", postActivity);
 ActivityRouter.put("/update/:id", putActivity);
 ActivityRouter.put("/desactive/:id", disableActivity);
 
