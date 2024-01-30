@@ -3,6 +3,7 @@ import { Activity } from "../../../models/activity/activity";
 import { Mangrullo } from "../../../models/mangrullo/mangrullo";
 import { ActivityMangrullo } from "../../../models/activity/ActivityMangrullo";
 import { createImage } from "../../../cloudinary/getStarted";
+import { verificatonJWT } from "../../../helper/jwt/jwt";
 
 export const postActivity = async (req: Request, res: Response) => {
   try {
@@ -17,7 +18,11 @@ export const postActivity = async (req: Request, res: Response) => {
       !Data.type ||
       !Data.image
     ) {
+      return res
+        .status(400)
+        .send({ success: false, message: "algunos de los campos no  puede estar vacio" });
     }
+    //---------------------------------------------------------------------------
     let searchData: Activity[] = await Activity.findAll({
       where: { activityName: Data.activityName },
     });
