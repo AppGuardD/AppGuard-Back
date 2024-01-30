@@ -1,5 +1,6 @@
 import { RequestHandler } from "express";
 import { User } from "../../../models/user/user";
+import { hashPassword } from "../../../helper/encrypt/encrypt";
 
 //Ruta para crear User.
 export const postUser: RequestHandler = async (req, res) => {
@@ -26,11 +27,12 @@ export const postUser: RequestHandler = async (req, res) => {
         .json({ message: "El email ingresado ya existe" });
     }
 
+    const passwordHash = await hashPassword(password);
     //user esta definido como un objeto de modelo User.
     const user: User = await User.create({
       userName: userName,
       email: email,
-      password: password,
+      password: passwordHash,
       typeIdentification: typeIdentification,
       numberIdentification: numberIdentification,
       rol: "Cliente",

@@ -7,6 +7,7 @@ import userRoutes from "./userRoutes/userRoutes";
 import reviewActivityRoutes from "./reviewActivityRoutes/reviewActivityRoutes";
 import reviewMangrullosRoutes from "./reviewMangrullosRoutes/reviewMangrullosRoutes";
 import ticketRoutes from "./ticketRoutes/ticketRoutes";
+import authRoutes from "./authRoutes/authRoutes";
 
 const routes = Router();
 
@@ -19,5 +20,7 @@ routes.use("/reviewActivity", reviewActivityRoutes);
 routes.use("/reviewMangrullos", reviewMangrullosRoutes);
 routes.use("/ticket", ticketRoutes);
 routes.use("/reviewActivity", reviewActivityRoutes);
+routes.use("/auth", authRoutes);
+
 
 export default routes;
