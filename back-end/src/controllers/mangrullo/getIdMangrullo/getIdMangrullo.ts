@@ -30,11 +30,9 @@ export const getIdMangrullo: RequestHandler = async (req, res) => {
       .status(400)
       .json({ message: "El Mangrullo no existe en la Base de datos" });
   } catch (error: any) {
-    return res
-      .status(500)
-      .json({
-        message: "Algo salió mal, verifica la función",
-        error: error.message,
-      });
+    return res.status(500).json({
+      message: "Algo salió mal, verifica la función",
+      error: error.message,
+    });
   }
 };
