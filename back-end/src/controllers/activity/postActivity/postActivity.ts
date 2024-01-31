@@ -33,6 +33,7 @@ export const postActivity = async (req: Request, res: Response) => {
       return res.status(400).send({
         succes: false,
         message: "la imagen no se puede crear, revisa la extencion de la imagen",
+        error: image.error,
       });
     }
     console.log(image);
