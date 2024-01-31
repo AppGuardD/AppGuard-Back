@@ -62,7 +62,9 @@ export const postActivity = async (req: Request, res: Response) => {
             mangrulloId: mangrullo.id,
           });
         } else {
-          throw new Error("no se puede crear la actividad");
+          throw new Error(
+            "no se puede crear la actividad por que el magrullo asociado no existe"
+          );
         }
       }
     }
