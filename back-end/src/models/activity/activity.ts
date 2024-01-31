@@ -1,4 +1,11 @@
-import { Table, Model, Column, DataType, BelongsToMany, HasMany } from "sequelize-typescript";
+import {
+  Table,
+  Model,
+  Column,
+  DataType,
+  BelongsToMany,
+  HasMany,
+} from "sequelize-typescript";
 import { ActivityMangrullo } from "./ActivityMangrullo";
 import { ReviewActivity } from "../reviewActivity/reviewActivity";
 import { Ticket } from "../ticket/ticket";
@@ -47,12 +54,14 @@ export class Activity extends Model {
   @Column({
     type: DataType.INTEGER,
     allowNull: false,
+    defaultValue: 0,
   })
   price!: Number;
 
   @Column({
     type: DataType.ENUM("Pago", "Gratis"),
     allowNull: false,
+    defaultValue: "Gratis",
   })
   state!: string;
 
@@ -72,7 +81,6 @@ export class Activity extends Model {
   //relacion mucho a mucho con mangrullo
   @BelongsToMany(() => Mangrullo, () => ActivityMangrullo)
   mangrullo!: Mangrullo[];
-
 
   //Relacionado.
   //relacion un activity que puede tener muchos reviewActivity.
