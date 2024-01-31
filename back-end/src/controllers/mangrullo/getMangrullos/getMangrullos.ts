@@ -5,19 +5,7 @@ export const getMangrullos: RequestHandler = async (req, res) => {
   try {
     const { page = 1, pageSize = 6, qualification } = req.query;
 
-    // Construir condiciones de búsqueda
-    const conditions: any = {
-      state: "Activo",
-    };
-
-    if (qualification) {
-      conditions.qualification = qualification;
-    }
-
-    // Consultar el número total de Mangrullos que cumplen con las condiciones
-    const totalCount: number = await Mangrullo.count({
-      where: conditions,
-    });
+    const totalCount: number = await Mangrullo.count();
 
     const totalPages: number = Math.ceil(totalCount / parseInt(pageSize.toString()));
 
@@ -25,7 +13,6 @@ export const getMangrullos: RequestHandler = async (req, res) => {
 
     // Consultar los Mangrullos con paginación y filtro
     const mangrullos: Mangrullo[] = await Mangrullo.findAll({
-      where: conditions,
       limit: parseInt(pageSize.toString()),
       offset: offset,
     });

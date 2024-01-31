@@ -3,7 +3,7 @@ import { verificatonJWT } from "../../helper/jwt/jwt";
 
 export const adminMiddleware = (req: Request, res: Response, next: NextFunction) => {
   try {
-    if (!req.body.token) {
+    if (!req.body.token) {//el token va al momento de crear la actividad.
       return res.status(400).send({ success: false, message: "se necesita el token" });
     }
 

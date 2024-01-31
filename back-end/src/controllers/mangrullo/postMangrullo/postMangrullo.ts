@@ -5,10 +5,10 @@ import { createImage } from "../../../cloudinary/getStarted";
 //Ruta para crear Mangrullos.
 export const postMangrullos: RequestHandler = async (req, res) => {
   try {
-    const { zone, dangerousness, image, qualification } = req.body;
+    const { zone, dangerousness, image, qualification, description } = req.body;
 
     // Verificar que los campos no estén vacíos.
-    if (!zone || !dangerousness || !image || !qualification) {
+    if (!zone || !dangerousness || !image || !qualification || !description) {
       return res
         .status(400)
         .json({ message: "Todos los campos son obligatorios" });
@@ -35,6 +35,7 @@ export const postMangrullos: RequestHandler = async (req, res) => {
       state: "Activo",
       image: imgUrl,
       qualification: qualification,
+      description: description
     });
     return res.status(201).json(mangrullo);
   } catch (error: any) {

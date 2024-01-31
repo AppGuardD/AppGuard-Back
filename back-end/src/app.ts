@@ -3,8 +3,8 @@ import morgan from "morgan";
 import cors from "cors";
 import connectionDB from "./database/database";
 import * as dotenv from "dotenv";
-import routes from "./routes/routes";
 dotenv.config();
+import routes from "./routes/routes";
 
 const app = express();
 
@@ -17,6 +17,7 @@ app.use(cors());
 app.use(express.urlencoded({ extended: false }));
 app.use(express.json());
 app.use(routes);
+
 //connection
 connectionDB().then(() => console.log("Conexion Ready"));
 

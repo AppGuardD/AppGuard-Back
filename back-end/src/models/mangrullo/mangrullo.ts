@@ -36,6 +36,12 @@ export class Mangrullo extends Model {
   dangerousness!: number; //peligrosidad
 
   @Column({
+    type: DataType.TEXT,
+    allowNull: false
+  })
+  description!: string;
+
+  @Column({
     type: DataType.ENUM("Activo", "No Activo"),
     allowNull: false,
     defaultValue: "Activo",

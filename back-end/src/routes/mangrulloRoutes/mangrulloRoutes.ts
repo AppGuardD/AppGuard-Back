@@ -18,6 +18,6 @@ mangrulloRoutes.get("/search", getMangrullos);
 mangrulloRoutes.get("/search/:id", getIdMangrullo);
 mangrulloRoutes.post("/create", postMangrullos);
 mangrulloRoutes.put("/update/:id", putMangrullo);
-mangrulloRoutes.put("/deactivate/:id", disableMangrullo);
+mangrulloRoutes.put("/disable/:id", disableMangrullo);
 
 export default mangrulloRoutes;

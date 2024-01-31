@@ -6,7 +6,7 @@ import { createImage } from "../../../cloudinary/getStarted";
 export const putMangrullo: RequestHandler = async (req, res) => {
   try {
     const { id } = req.params;
-    const { zone, dangerousness, image, qualification } = req.body;
+    const { zone, dangerousness, image, qualification, descripcion } = req.body;
 
     const imgUrl = await createImage(image);
 
@@ -17,6 +17,7 @@ export const putMangrullo: RequestHandler = async (req, res) => {
         dangerousness: dangerousness,
         image: imgUrl,
         qualification: qualification,
+        descripcion: descripcion
       },
       {
         where: {
