@@ -5,11 +5,7 @@ import { User } from "../../../models/user/user";
 export const getUsers: RequestHandler = async (_req, res) => {
   try {
     //user esta definido como un array de objetos de mangrullos.
-    const users: User[] = await User.findAll({
-      where: {
-        state: "Activo",
-      },
-    });
+    const users: User[] = await User.findAll();
     return res.status(201).json(users);
   } catch (error: any) {
     return res
