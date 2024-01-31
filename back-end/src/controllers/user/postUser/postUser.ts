@@ -5,11 +5,11 @@ import { hashPassword } from "../../../helper/encrypt/encrypt";
 //Ruta para crear User.
 export const postUser: RequestHandler = async (req, res) => {
   try {
-    const { userName, email, password, typeIdentification, numberIdentification } = req.body;
+    const { userName, email, password, typeIdentification, numberIdentification, rol } = req.body;
 
 
     // Verificar que los campos no estén vacíos.
-    if (!userName || !email || !password || !typeIdentification || !numberIdentification) {
+    if (!userName || !email || !password || !typeIdentification || !numberIdentification || !rol) {
       return res
         .status(400)
         .json({ message: "Todos los campos son obligatorios" });
@@ -35,7 +35,7 @@ export const postUser: RequestHandler = async (req, res) => {
       password: passwordHash,
       typeIdentification: typeIdentification,
       numberIdentification: numberIdentification,
-      rol: "Cliente",
+      rol: rol,
       state: "Activo",
     });
     return res.status(201).json(user);

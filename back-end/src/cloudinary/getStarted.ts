@@ -23,7 +23,7 @@ export const createImage = async (img: string): Promise<any> => {
     }
     const { secure_url }: UploadApiResponse = await cloudinary.uploader.upload(img);
     return secure_url;
-    
+
   } catch (error: any) {
     return {
       error: error.message
