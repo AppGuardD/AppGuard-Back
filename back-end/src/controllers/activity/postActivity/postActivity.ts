@@ -11,10 +11,8 @@ export const postActivity = async (req: Request, res: Response) => {
     // req.body.mangrullos = [{},{}]
     if (
       !Data.activityName ||
-      !Data.price ||
       !Data.description ||
       !Data.qualification ||
-      !Data.state ||
       !Data.type ||
       !Data.image
     ) {
@@ -64,13 +62,11 @@ export const postActivity = async (req: Request, res: Response) => {
             mangrulloId: mangrullo.id,
           });
         } else {
-          return res
-            .status(400)
-            .send({
-              success: false,
-              message:
-                "no se puede crear la actividad sin la asociacion al magrullo enviado",
-            });
+          return res.status(400).send({
+            success: false,
+            message:
+              "no se puede crear la actividad sin la asociacion al magrullo enviado",
+          });
         }
       }
     }
