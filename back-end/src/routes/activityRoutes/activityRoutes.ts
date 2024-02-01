@@ -19,7 +19,7 @@ ActivityRouter.put("/desactive/:id", adminMiddleware, disableActivity); */
 ActivityRouter.get("/search", getActivities);
 ActivityRouter.get("/search/:id", getIdActivity);
 ActivityRouter.post("/create", upload.single("image"), postActivity);
-ActivityRouter.put("/update/:id", putActivity);
+ActivityRouter.put("/update/:id", upload.single("image"), putActivity);
 ActivityRouter.put("/desactive/:id", disableActivity);
 
 export default ActivityRouter;
