@@ -7,20 +7,20 @@ import { verificatonJWT } from "../../../helper/jwt/jwt";
 
 export const postActivity = async (req: Request, res: Response) => {
   try {
-    let Data: Activity = req.body; // magrullo 1, mangrullo 2 {} {} [{},{}]
-    // req.body.mangrullos = [{},{}]
-    if (
-      !Data.activityName ||
-      !Data.description ||
-      !Data.qualification ||
-      !Data.type ||
-      !Data.image
-    ) {
+    let Data: Activity = req.body;
+
+    if (!Data.activityName || !Data.description || !Data.qualification || !Data.type) {
       return res
         .status(400)
         .send({ success: false, message: "algunos de los campos no  puede estar vacio" });
     }
-    //---------------------------------------------------------------------------
+
+    if (!req.file?.path && !Data.image) {
+      return res.status(400).send({
+        success: false,
+        message: "Falta la imagen por favor suba una o use una url",
+      });
+    }
     let searchData: Activity[] = await Activity.findAll({
       where: { activityName: Data.activityName },
     });
@@ -28,7 +28,8 @@ export const postActivity = async (req: Request, res: Response) => {
     if (searchData.length > 0) {
       return res.status(201).send({ success: false, message: "este objeto ya existe" });
     }
-    const image: any = await createImage(Data.image);
+
+    const image: any = await createImage(req.file?.path ? req.file.path : Data.image);
     if (image?.error) {
       return res.status(400).send({
         succes: false,
@@ -36,7 +37,6 @@ export const postActivity = async (req: Request, res: Response) => {
         error: image.error,
       });
     }
-    console.log(image);
     await Activity.create({
       ...Data,
       active: true,

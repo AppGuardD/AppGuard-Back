@@ -5,6 +5,7 @@ import { putMangrullo } from "../../controllers/mangrullo/putMangrullo/putMangru
 import { postMangrullos } from "../../controllers/mangrullo/postMangrullo/postMangrullo";
 import { disableMangrullo } from "../../controllers/mangrullo/disableMangrullo/disableMangrullo";
 import { adminMiddleware } from "../../middlewares/adminMiddlewares/adminMiddleware";
+import { upload } from "../../helper/multer/multerConfig";
 
 const mangrulloRoutes = Router();
 //-----------con webtokens-------------
@@ -16,7 +17,7 @@ mangrulloRoutes.put("/deactivate/:id", adminMiddleware, disableMangrullo); */
 //----------Desarollo------------------
 mangrulloRoutes.get("/search", getMangrullos);
 mangrulloRoutes.get("/search/:id", getIdMangrullo);
-mangrulloRoutes.post("/create", postMangrullos);
+mangrulloRoutes.post("/create", upload.single("image"), postMangrullos);
 mangrulloRoutes.put("/update/:id", putMangrullo);
 mangrulloRoutes.put("/disable/:id", disableMangrullo);
 

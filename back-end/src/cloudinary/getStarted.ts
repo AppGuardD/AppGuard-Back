@@ -1,5 +1,7 @@
 import { UploadApiResponse, v2 as cloudinary } from "cloudinary";
 import * as dotenv from "dotenv";
+import { deleteImage } from "../helper/deleteImg/deleteImage";
+import path from "path";
 dotenv.config();
 
 const { CLOUDINARY_CLOUD_NAME, CLOUDINARY_API_KEY, CLOUDINARY_API_SECRET } = process.env;
@@ -22,6 +24,7 @@ export const createImage = async (img: string): Promise<any> => {
       throw new Error("el formato de la imagen no es valido");
     }
     const { secure_url }: UploadApiResponse = await cloudinary.uploader.upload(img);
+    deleteImage(path.join(__dirname, "../../uploads"));
     return secure_url;
   } catch (error: any) {
     return {
