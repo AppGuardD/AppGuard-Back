@@ -24,7 +24,7 @@ export const createImage = async (img: string): Promise<any> => {
       throw new Error("el formato de la imagen no es valido");
     }
     const { secure_url }: UploadApiResponse = await cloudinary.uploader.upload(img);
-    deleteImage(path.join(__dirname, "../../uploads"));
+    deleteImage(path.join(__dirname, "../uploads"));
     return secure_url;
   } catch (error: any) {
     return {
