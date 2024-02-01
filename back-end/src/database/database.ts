@@ -15,28 +15,26 @@ import { FavoriteMangrullo } from "../models/favorite/FavoriteMangrullo";
 
 const { DB_HOST, DB_USER, DB_PASSWORD, DB_DATABASE, EXTERNAL_DB_URL }: any = process.env;
 
-export const connection = new Sequelize(
-  /* EXTERNAL_DB_URL, */ {
-    dialect: "postgres",
+export const connection = new Sequelize(EXTERNAL_DB_URL, {
+  /*   dialect: "postgres",
     password: DB_PASSWORD,
     host: DB_HOST,
     database: DB_DATABASE,
     username: DB_USER,
-    logging: false,
-    models: [
-      Activity,
-      Advice,
-      Favorite,
-      Mangrullo,
-      ReviewActivity,
-      ReviewMangrullo,
-      ActivityMangrullo,
-      FavoriteMangrullo,
-      User,
-      Ticket,
-    ],
-  }
-);
+    logging: false, */
+  models: [
+    Activity,
+    Advice,
+    Favorite,
+    Mangrullo,
+    ReviewActivity,
+    ReviewMangrullo,
+    ActivityMangrullo,
+    FavoriteMangrullo,
+    User,
+    Ticket,
+  ],
+});
 
 async function connectionDB() {
   try {
