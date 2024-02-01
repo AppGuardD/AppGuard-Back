@@ -15,13 +15,13 @@ import { FavoriteMangrullo } from "../models/favorite/FavoriteMangrullo";
 
 const { DB_HOST, DB_USER, DB_PASSWORD, DB_DATABASE, EXTERNAL_DB_URL }: any = process.env;
 
-export const connection = new Sequelize({
-  dialect: "postgres",
+export const connection = new Sequelize(EXTERNAL_DB_URL, {
+  /*   dialect: "postgres",
   password: DB_PASSWORD,
   host: DB_HOST,
   database: DB_DATABASE,
   username: DB_USER,
-  logging: false,
+  logging: false, */
   models: [
     Activity,
     Advice,
