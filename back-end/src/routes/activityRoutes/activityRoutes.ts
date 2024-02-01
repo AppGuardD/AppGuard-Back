@@ -20,6 +20,7 @@ ActivityRouter.get("/search", getActivities);
 ActivityRouter.get("/search/:id", getIdActivity);
 ActivityRouter.post("/create", upload.single("image"), postActivity);
 ActivityRouter.put("/update/:id", upload.single("image"), putActivity);
-ActivityRouter.put("/desactive/:id", disableActivity);
+ActivityRouter.put("/disable/:id", disableActivity);
 
 export default ActivityRouter;
+//<input type=file name = image>
