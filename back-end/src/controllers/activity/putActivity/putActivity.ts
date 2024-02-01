@@ -17,6 +17,9 @@ export const putActivity = async (req: Request, res: Response) => {
     if (Data?.image) {
       let newImg = await createImage(Data.image);
       await Activity.update({ ...Data, image: newImg }, { where: { id } });
+    } else if (req.file?.path) {
+      let newImg = await createImage(req.file.path);
+      await Activity.update({ ...Data, image: newImg }, { where: { id } });
     } else {
       await Activity.update({ ...Data }, { where: { id } });
     }

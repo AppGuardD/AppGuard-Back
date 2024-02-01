@@ -3,6 +3,7 @@ import morgan from "morgan";
 import cors from "cors";
 import connectionDB from "./database/database";
 import * as dotenv from "dotenv";
+import * as multer from "multer";
 dotenv.config();
 import routes from "./routes/routes";
 
