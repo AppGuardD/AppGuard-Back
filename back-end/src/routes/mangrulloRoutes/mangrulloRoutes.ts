@@ -18,7 +18,7 @@ mangrulloRoutes.put("/deactivate/:id", adminMiddleware, disableMangrullo); */
 mangrulloRoutes.get("/search", getMangrullos);
 mangrulloRoutes.get("/search/:id", getIdMangrullo);
 mangrulloRoutes.post("/create", upload.single("image"), postMangrullos);
-mangrulloRoutes.put("/update/:id", putMangrullo);
+mangrulloRoutes.put("/update/:id", upload.single("image"), putMangrullo);
 mangrulloRoutes.put("/disable/:id", disableMangrullo);
 
 export default mangrulloRoutes;
