@@ -14,7 +14,7 @@ export const loginUser: RequestHandler = async (req, res) => {
     });
 
     if (!logUser) {
-      return res.status(400).json({ error: "Usuario con ese email no encontrado" });
+      return res.status(302).json({ error: "Usuario con ese email no encontrado" });
     }
 
     const checkPassword = await comparePassword(password, logUser.password);
