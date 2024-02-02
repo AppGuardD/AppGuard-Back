@@ -3,7 +3,7 @@ import { Mangrullo } from "../../../models/mangrullo/mangrullo";
 
 export const getMangrullos: RequestHandler = async (req, res) => {
   try {
-    const { page = 1, pageSize = 6, qualification } = req.query;
+    const { page = 1, pageSize = 8, qualification } = req.query;
 
     const totalCount: number = await Mangrullo.count();
 
@@ -24,7 +24,7 @@ export const getMangrullos: RequestHandler = async (req, res) => {
         totalPages: totalPages,
         currentPage: parseInt(page.toString()),
       },
-      mangrullos
+      mangrullos,
     });
   } catch (error: any) {
     return res.status(500).json({
