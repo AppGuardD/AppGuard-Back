@@ -2,7 +2,7 @@ import * as nodemail from "nodemailer";
 import * as dotenv from "dotenv";
 dotenv.config();
 
-const htmlContent = `
+const htmlContent: string = `
 <!DOCTYPE html>
 <html lang="es">
   <head>
@@ -47,7 +47,7 @@ const htmlContent = `
 const trasnporter = nodemail.createTransport({
   service: "gmail",
   auth: {
-    user: "nlondono609@gmail.com",
+    user: process.env.GOOGLE_EMAIL_USER,
     pass: process.env.GOOGLE_APPLICATION_PASSWORD,
   },
 });
