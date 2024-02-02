@@ -17,8 +17,7 @@ export const postUser: RequestHandler = async (req, res) => {
       !email ||
       !password ||
       !typeIdentification ||
-      !numberIdentification ||
-      !rol
+      !numberIdentification
     ) {
       return res.status(400).json({ message: "Todos los campos son obligatorios" });
     }
