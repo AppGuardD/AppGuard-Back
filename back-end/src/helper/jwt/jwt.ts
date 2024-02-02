@@ -5,7 +5,7 @@ dotenv.config();
 const { JWT_SECRET_KEY }: any = process.env;
 export function generateJWT(usuario: object): string | undefined {
   try {
-    return jwt.sign(usuario, JWT_SECRET_KEY, { expiresIn: "1h" });
+    return jwt.sign(usuario, JWT_SECRET_KEY, { expiresIn: "50h" });
   } catch (error: any) {
     return error.message;
   }

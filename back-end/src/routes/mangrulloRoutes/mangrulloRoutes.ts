@@ -10,18 +10,18 @@ import { nameMangrullo } from "../../controllers/mangrullo/nameMangrullo/nameMan
 
 const mangrulloRoutes = Router();
 //-----------con webtokens-------------
-/*mangrulloRoutes.get("/name/:name", nameMangrullo);
+mangrulloRoutes.get("/name/:name", nameMangrullo);
 mangrulloRoutes.get("/search", getMangrullos);
 mangrulloRoutes.get("/search/:id", getIdMangrullo);
-mangrulloRoutes.post("/create", adminMiddleware, postMangrullos);
-mangrulloRoutes.put("/update/:id", adminMiddleware, putMangrullo);
-mangrulloRoutes.put("/deactivate/:id", adminMiddleware, disableMangrullo); */
+mangrulloRoutes.post("/create", adminMiddleware, upload.single("image"), postMangrullos);
+mangrulloRoutes.put("/update/:id", adminMiddleware, upload.single("image"), putMangrullo);
+mangrulloRoutes.put("/deactivate/:id", adminMiddleware, disableMangrullo);
 //----------Desarollo------------------
-mangrulloRoutes.get("/name/:name", nameMangrullo);
+/* mangrulloRoutes.get("/name/:name", nameMangrullo);
 mangrulloRoutes.get("/search", getMangrullos);
 mangrulloRoutes.get("/search/:id", getIdMangrullo);
 mangrulloRoutes.post("/create", upload.single("image"), postMangrullos);
 mangrulloRoutes.put("/update/:id", upload.single("image"), putMangrullo);
-mangrulloRoutes.put("/disable/:id", disableMangrullo);
+mangrulloRoutes.put("/disable/:id", disableMangrullo); */
 
 export default mangrulloRoutes;

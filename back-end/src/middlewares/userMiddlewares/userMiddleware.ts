@@ -17,10 +17,11 @@ export const userMiddleware = (req: Request, res: Response, next: NextFunction) 
 
     if (tokenAccess.rol === "Cliente" || tokenAccess.rol === "Admin") {
       next();
+    } else {
+      return res
+        .status(400)
+        .send({ success: false, message: "no tienes persmiso de admin" });
     }
-    return res
-      .status(400)
-      .send({ success: false, message: "no tienes persmiso de admin" });
   } catch (error: any) {
     return res.status(500).send({ success: false, message: error.message });
   }
