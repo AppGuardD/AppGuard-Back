@@ -39,6 +39,7 @@ export const connection = new Sequelize(EXTERNAL_DB_URL, {
   ],
 });
 
+
 async function connectionDB() {
   try {
     await connection.sync({ force: false });
