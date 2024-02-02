@@ -10,16 +10,16 @@ import { upload } from "../../helper/multer/multerConfig";
 
 const advicesRoutes = Router();
 //-----------con webtokens-------------
-/* advicesRoutes.get("/search", searchAdvice);
-advicesRoutes.get("/search/:id", searchIdAdvice);
-advicesRoutes.post("/create", adminMiddleware, createAdvice);
-advicesRoutes.delete("/delet/:id", adminMiddleware, deleteAdvice);
-advicesRoutes.put("/update/:id", adminMiddleware, updateAdvice); */
-//----------Desarollo------------------
 advicesRoutes.get("/search", searchAdvice);
 advicesRoutes.get("/search/:id", searchIdAdvice);
+advicesRoutes.post("/create", adminMiddleware, upload.single("img"), createAdvice);
+advicesRoutes.delete("/delet/:id", adminMiddleware, deleteAdvice);
+advicesRoutes.put("/update/:id", adminMiddleware, upload.single("img"), updateAdvice);
+//----------Desarollo------------------
+/* advicesRoutes.get("/search", searchAdvice);
+advicesRoutes.get("/search/:id", searchIdAdvice);
 advicesRoutes.post("/create", upload.single("img"), createAdvice);
-advicesRoutes.delete("/delet/:id", upload.single("img"), deleteAdvice);
-advicesRoutes.put("/update/:id", updateAdvice);
+advicesRoutes.delete("/delet/:id",deleteAdvice);
+advicesRoutes.put("/update/:id", upload.single("img"),updateAdvice); */
 
 export default advicesRoutes;

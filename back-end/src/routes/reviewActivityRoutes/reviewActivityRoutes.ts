@@ -8,16 +8,16 @@ import { userMiddleware } from "../../middlewares/userMiddlewares/userMiddleware
 
 const reviewActivityRoutes = Router();
 //-----------con webtokens-------------
-/* reviewActivityRoutes.get("/search", getReviewActivitys);
+reviewActivityRoutes.get("/search", getReviewActivitys);
 reviewActivityRoutes.get("/search/:id", getIdReviewActivity);
 reviewActivityRoutes.post("/create", userMiddleware, postReviewActivity);
 reviewActivityRoutes.put("/update/:id", userMiddleware, putReviewActivity);
-reviewActivityRoutes.delete("/search/:id", userMiddleware, disableReviewActivity); */
+reviewActivityRoutes.delete("/search/:id", userMiddleware, disableReviewActivity);
 //----------Desarollo------------------
-reviewActivityRoutes.get("/search", getReviewActivitys);
+/* reviewActivityRoutes.get("/search", getReviewActivitys);
 reviewActivityRoutes.get("/search/:id", getIdReviewActivity);
 reviewActivityRoutes.post("/create", postReviewActivity);
 reviewActivityRoutes.put("/update/:id", putReviewActivity);
-reviewActivityRoutes.delete("/search/:id", disableReviewActivity);
+reviewActivityRoutes.delete("/search/:id", disableReviewActivity); */
 
 export default reviewActivityRoutes;
