@@ -59,6 +59,18 @@ export class User extends Model {
   })
   state!: string
 
+  @Column({
+    type: DataType.STRING,
+    allowNull: true,
+  })
+  googleId!: string
+
+  @Column({
+    type: DataType.STRING,
+    allowNull: true,
+  })
+  displayName!: string
+
   //Relacionado.
   //relacion un user que puede tener muchos ticket.
   @HasMany(() => Ticket)
