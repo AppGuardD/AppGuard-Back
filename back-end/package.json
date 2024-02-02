@@ -24,6 +24,7 @@
     "jsonwebtoken": "^9.0.2",
     "morgan": "^1.10.0",
     "multer": "^1.4.5-lts.1",
+    "nodemailer": "^6.9.9",
     "pg": "^8.11.3",
     "pg-promise": "^11.5.4",
     "reflect-metadata": "^0.2.1",
@@ -36,7 +37,8 @@
     "@types/fs-extra": "^11.0.4",
     "@types/jsonwebtoken": "^9.0.5",
     "@types/morgan": "^1.9.9",
-    "@types/node": "^20.11.14",
+    "@types/node": "^20.11.16",
+    "@types/nodemailer": "^6.4.14",
     "tsc-watch": "^6.0.4",
     "typescript": "^5.3.3"
   }
