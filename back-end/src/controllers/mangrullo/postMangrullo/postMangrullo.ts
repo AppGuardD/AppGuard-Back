@@ -5,7 +5,7 @@ import { createImage } from "../../../cloudinary/getStarted";
 //Ruta para crear Mangrullos.
 export const postMangrullos: RequestHandler = async (req, res) => {
   try {
-    console.log(req.body);
+    //console.log(req.body);
     const { zone, dangerousness, image, qualification, description } = req.body;
     // Verificar que los campos no estén vacíos.
     if (!zone || !dangerousness || !qualification || !description) {

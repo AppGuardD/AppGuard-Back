@@ -10,6 +10,7 @@ import { ActivityMangrullo } from "./ActivityMangrullo";
 import { ReviewActivity } from "../reviewActivity/reviewActivity";
 import { Ticket } from "../ticket/ticket";
 import { Mangrullo } from "../mangrullo/mangrullo";
+import { TicketActivity } from "../ticket/TicketActivity";
 
 @Table({
   timestamps: false,
@@ -87,8 +88,9 @@ export class Activity extends Model {
   @HasMany(() => ReviewActivity)
   reviewActivity!: ReviewActivity[];
 
-  //Relacionado.
-  //relacion un activity que puede tener muchos ticket.
-  @HasMany(() => Ticket)
+  //Relacionado
+  //relacion activity con ticket mucho a mucho
+  @BelongsToMany(() => Ticket, () => TicketActivity)
   ticket!: Ticket[];
+
 }
