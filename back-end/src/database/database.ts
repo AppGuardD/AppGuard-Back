@@ -15,7 +15,8 @@ import { Favorite } from "../models/favorite/favorite";
 import { FavoriteMangrullo } from "../models/favorite/FavoriteMangrullo";
 import { TicketActivity } from "../models/ticket/TicketActivity";
 
-const { DB_HOST, DB_USER, DB_PASSWORD, DB_DATABASE, EXTERNAL_DB_URL }: any = process.env;
+const { DB_HOST, DB_USER, DB_PASSWORD, DB_DATABASE, EXTERNAL_DB_URL }: any =
+  process.env;
 
 export const connection = new Sequelize(
   /* EXTERNAL_DB_URL,*/ {
@@ -40,7 +41,7 @@ export const connection = new Sequelize(
       Ticket,
       TicketActivity
     ],
-  }
+  },
 );
 
 async function connectionDB() {

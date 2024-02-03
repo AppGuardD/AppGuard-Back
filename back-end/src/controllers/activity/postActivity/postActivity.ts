@@ -7,6 +7,7 @@ export const postActivity = async (req: Request, res: Response) => {
   try {
     const { activityName, description, qualification, type, state, price, mangrullos } = req.body;
 
+
     // Validación de mangrullos no puede estar vacío
     if (!mangrullos || mangrullos.length === 0) {
       return res.status(400).send({
@@ -21,6 +22,7 @@ export const postActivity = async (req: Request, res: Response) => {
         success: false,
         message: "Todos los campos son requeridos",
       });
+
     }
 
     // Validación de existencia de imagen
@@ -37,6 +39,7 @@ export const postActivity = async (req: Request, res: Response) => {
         activityName: activityName
       },
     });
+
 
     if (existingActivity) {
       return res.status(201).send({
@@ -56,6 +59,7 @@ export const postActivity = async (req: Request, res: Response) => {
       });
     }
 
+
     let arrayMangrullos: Mangrullo[] = [];
     for (const mangrulloId of mangrullos) {
       const mangrullo = await Mangrullo.findOne({
@@ -70,6 +74,7 @@ export const postActivity = async (req: Request, res: Response) => {
         arrayMangrullos.push(mangrullo);
       }
     }
+
 
     // Crear actividad
     const createdActivity = await Activity.create({

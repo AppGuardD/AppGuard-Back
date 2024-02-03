@@ -1,49 +1,64 @@
+import { Op } from "sequelize";
 import { Activity } from "../../../models/activity/activity";
 import { Request, Response } from "express";
 
 interface Filter {
-  item: string;
-  page: string;
-  type: string;
+  items?: string;
+  page?: string;
+  type?: string;
+  query?: string;
+  state?: string;
 }
 
-export const getActivities = async (req: Request<{}, {}, {}, Filter>, res: Response) => {
+export const getActivities = async (
+  req: Request<{}, {}, {}, Filter>,
+  res: Response,
+) => {
   try {
-    const filter: Filter = req.query;
-    console.log(typeof filter.item);
+    const { items, page, type, query, state }: Filter = req.query;
 
-    const operation = {
-      limit: parseInt(filter.item),
-      offset: (parseInt(filter.page) - 1) * parseInt(filter.item),
-    };
+    let whereCondition: any = {};
 
-    let { count, rows }: any = filter.type
-      ? await Activity.findAndCountAll({
-          ...operation,
-          where: { type: filter.type },
-        })
-      : filter.page && filter.item
-      ? await Activity.findAndCountAll({ ...operation })
-      : await Activity.findAndCountAll();
-
-    if (rows.length < 0) {
-      return res.status(404).send({ message: "el elemento no se ha encontrado" });
+    if (query) {
+      whereCondition.activityName = {
+        [Op.iLike]: "%" + query + "%",
+      };
     }
 
-    let responsePage: object = {
+    const queryOptions: any = {
+      where: whereCondition,
+    };
+
+    if (state) {
+      queryOptions.where.state = state;
+    }
+
+    if (type) {
+      queryOptions.where.type = type;
+    }
+
+    const totalCount: any = await Activity.count(queryOptions);
+    const offset: number = (parseInt(page || "1") - 1) * parseInt(items || "8");
+    const limit: number = parseInt(items || "8");
+
+    queryOptions.limit = limit;
+    queryOptions.offset = offset;
+
+    const dbItems: Activity[] = await Activity.findAll(queryOptions);
+
+    const totalPages: number = Math.ceil(totalCount / limit);
+
+    const response: object = {
       success: true,
-      Pagination: {
-        TotalPages: Math.ceil(count / parseInt(filter.item)),
-        TotalItems: operation.limit,
-        currentPage: parseInt(filter.page),
+      pagination: {
+        totalPages: totalPages,
+        totalItems: totalCount,
+        currentPage: parseInt(page || "1"),
       },
-      requestData: rows,
+      requestData: dbItems,
     };
-    let responseAllPage: object = {
-      success: true,
-      requestData: rows,
-    };
-    res.send(filter.item && filter.page ? responsePage : responseAllPage);
+
+    res.send(response);
   } catch (error: any) {
     res.status(500).send({ success: false, message: error.message });
   }
