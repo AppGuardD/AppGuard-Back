@@ -9,10 +9,18 @@ export const postActivity = async (req: Request, res: Response) => {
   try {
     let Data: Activity = req.body;
 
-    if (!Data.activityName || !Data.description || !Data.qualification || !Data.type) {
+    if (
+      !Data.activityName ||
+      !Data.description ||
+      !Data.qualification ||
+      !Data.type
+    ) {
       return res
         .status(400)
-        .send({ success: false, message: "algunos de los campos no  puede estar vacio" });
+        .send({
+          success: false,
+          message: "algunos de los campos no  puede estar vacio",
+        });
     }
 
     if (!req.file?.path && !Data.image) {
@@ -26,14 +34,19 @@ export const postActivity = async (req: Request, res: Response) => {
     });
 
     if (searchData.length > 0) {
-      return res.status(201).send({ success: false, message: "este objeto ya existe" });
+      return res
+        .status(201)
+        .send({ success: false, message: "este objeto ya existe" });
     }
 
-    const image: any = await createImage(req.file?.path ? req.file.path : Data.image);
+    const image: any = await createImage(
+      req.file?.path ? req.file.path : Data.image,
+    );
     if (image?.error) {
       return res.status(400).send({
         succes: false,
-        message: "la imagen no se puede crear, revisa la extencion de la imagen",
+        message:
+          "la imagen no se puede crear, revisa la extencion de la imagen",
         error: image.error,
       });
     }
@@ -52,6 +65,7 @@ export const postActivity = async (req: Request, res: Response) => {
         .status(201)
         .send({ success: false, message: "este objeto no se pudo crear" });
     }
+
     if (req.body?.Mangrullo) {
       for (let index = 0; index < req.body.Mangrullo.length; index++) {
         let mangrullo: Mangrullo | null = await Mangrullo.findOne({
@@ -64,11 +78,12 @@ export const postActivity = async (req: Request, res: Response) => {
           });
         } else {
           throw new Error(
-            "no se puede crear la actividad por que el magrullo asociado no existe"
+            "no se puede crear la actividad por que el magrullo asociado no existe",
           );
         }
       }
     }
+
     let requestData = await Activity.findOne({
       where: { activityName: Data.activityName },
     });
