@@ -27,12 +27,13 @@ ActivityRouter.put(
 ActivityRouter.put("/desactive/:id", adminMiddleware, disableActivity);
 //--------------Desarollo----------------
 
-/*
-ActivityRouter.get("/search", getActivities);
-ActivityRouter.get("/search/:id", getIdActivity);
-ActivityRouter.post("/create", upload.single("image"), postActivity);
-ActivityRouter.put("/update/:id", upload.single("image"), putActivity);
-ActivityRouter.put("/disable/:id", disableActivity); */
+// ActivityRouter.get("/name/:name", nameActivity);
+// ActivityRouter.get("/search", getActivities);
+// ActivityRouter.get("/search/:id", getIdActivity);
+// ActivityRouter.post("/create", upload.single("image"), postActivity);
+// ActivityRouter.put("/update/:id", upload.single("image"), putActivity);
+// ActivityRouter.put("/disable/:id", disableActivity);
+
 
 export default ActivityRouter;
 //<input type=file name = image>

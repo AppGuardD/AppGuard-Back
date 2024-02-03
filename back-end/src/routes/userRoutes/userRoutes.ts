@@ -15,10 +15,10 @@ userRoutes.post("/create", postUser);
 userRoutes.put("/update/:id", adminMiddleware, putUser);
 userRoutes.put("/disable/:id", adminMiddleware, disableUser);
 //----------Desarollo------------------
-/* userRoutes.get("/search", getUsers);
-userRoutes.get("/search/:id", getIdUser);
-userRoutes.post("/create", postUser);
-userRoutes.put("/update/:id", putUser);
-userRoutes.put("/disable/:id", disableUser); */
+// userRoutes.get("/search", getUsers);
+// userRoutes.get("/search/:id", getIdUser);
+// userRoutes.post("/create", postUser);
+// userRoutes.put("/update/:id", putUser);
+// userRoutes.put("/disable/:id", disableUser);
 
 export default userRoutes;

@@ -3,7 +3,6 @@ import { Table, Model, Column, DataType, BelongsToMany, HasMany } from "sequeliz
 import { Activity } from "../activity/activity";
 import { ActivityMangrullo } from "../activity/ActivityMangrullo";
 import { ReviewMangrullo } from "../reviewMangrullo/reviewMangrullo";
-import { Advice } from "../advice/advice";
 import { Favorite } from "../favorite/favorite";
 import { FavoriteMangrullo } from "../favorite/FavoriteMangrullo";
 

@@ -1,10 +1,11 @@
-import { Table, Column, Model, DataType, ForeignKey, BelongsTo } from "sequelize-typescript";
+import { Table, Column, Model, DataType, ForeignKey, BelongsTo, BelongsToMany } from "sequelize-typescript";
 import { Activity } from "../activity/activity";
 import { User } from "../user/user";
+import { TicketActivity } from "./TicketActivity";
 
 @Table({
     timestamps: false,
-    tableName: "tickes",
+    tableName: "tickets",
 })
 
 export class Ticket extends Model {
@@ -27,16 +28,9 @@ export class Ticket extends Model {
     })
     state!: string;
 
-    //Relacionado.
-    //Relacion ticket y Activity
-    @ForeignKey(() => Activity)
-    @Column({
-        type: DataType.INTEGER,
-        allowNull: false
-    })
-    activityId!: number
-    //un ticket pertenece a un solo activity.
-    @BelongsTo(() => Activity)
+    //Relacionado
+    //relacion ticket con activity mucho a mucho
+    @BelongsToMany(() => Activity, () => TicketActivity)
     activity!: Activity[];
 
 

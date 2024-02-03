@@ -14,7 +14,7 @@ export class ActivityMangrullo extends Model {
   @ForeignKey(() => Activity)
   activityId!: number;
 
-  // Clave foránea para la relación con el modelo Planeta
+  // Clave foránea para la relación con el modelo mangrullo
   @ForeignKey(() => Mangrullo)
   mangrulloId!: number;
 }

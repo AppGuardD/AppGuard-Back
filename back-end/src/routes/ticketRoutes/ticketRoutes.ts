@@ -12,12 +12,12 @@ ticketRoutes.get("/search", adminMiddleware, getTickets);
 ticketRoutes.get("/search/:id", adminMiddleware, getIdTicket);
 ticketRoutes.post("/create", adminMiddleware, postTicket);
 ticketRoutes.put("/update/:id", adminMiddleware, putTicket);
-ticketRoutes.put("/deactivate/:id", adminMiddleware, disableTicket);
+ticketRoutes.put("/disable/:id", adminMiddleware, disableTicket);
 // -------Desarollo -------------
-/* ticketRoutes.get("/search", getTickets);
-ticketRoutes.get("/search/:id", getIdTicket);
-ticketRoutes.post("/create", postTicket);
-ticketRoutes.put("/update/:id", putTicket);
-ticketRoutes.put("/deactivate/:id", disableTicket); */
+// ticketRoutes.get("/search", getTickets);
+// ticketRoutes.get("/search/:id", getIdTicket);
+// ticketRoutes.post("/create", postTicket);
+// ticketRoutes.put("/update/:id", putTicket);
+// ticketRoutes.put("/deactivate/:id", disableTicket);
 
 export default ticketRoutes;
