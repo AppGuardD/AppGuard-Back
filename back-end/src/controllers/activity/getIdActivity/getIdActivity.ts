@@ -5,7 +5,6 @@ import { Mangrullo } from "../../../models/mangrullo/mangrullo";
 export const getIdActivity = async (req: Request, res: Response) => {
   try {
     let param: string = req.params.id;
-    console.log(param);
     if (param?.length < 0) {
       throw new Error("se requiere el identificador de busqueda");
     }
