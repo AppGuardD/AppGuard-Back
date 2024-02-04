@@ -10,7 +10,7 @@ interface Filter {
   state?: string;
 }
 
-export const getActivities = async (
+export const adminActivity = async (
   req: Request<{}, {}, {}, Filter>,
   res: Response,
 ) => {
@@ -28,8 +28,6 @@ export const getActivities = async (
     const queryOptions: any = {
       where: whereCondition,
     };
-
-    queryOptions.where.active = true;
 
     if (state) {
       queryOptions.where.state = state;

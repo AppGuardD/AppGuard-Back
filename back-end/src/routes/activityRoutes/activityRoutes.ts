@@ -6,12 +6,15 @@ import { putActivity } from "../../controllers/activity/putActivity/putActivity"
 import { disableActivity } from "../../controllers/activity/disableActivity/disableActivity";
 import { adminMiddleware } from "../../middlewares/adminMiddlewares/adminMiddleware";
 import { upload } from "../../helper/multer/multerConfig";
+import { adminActivity } from "../../controllers/activity/adminActivity/adminActivity";
 
 const ActivityRouter = Router();
 
 //---------- con webtokens ------------------
+ActivityRouter.get("/admin", adminActivity);
 ActivityRouter.get("/search", getActivities);
 ActivityRouter.get("/search/:id", getIdActivity);
+ActivityRouter.put("/disable/:id", adminMiddleware, disableActivity);
 ActivityRouter.post(
   "/create",
   adminMiddleware,
@@ -24,16 +27,16 @@ ActivityRouter.put(
   upload.single("image"),
   putActivity,
 );
-ActivityRouter.put("/desactive/:id", adminMiddleware, disableActivity);
 //--------------Desarollo----------------
 
-// ActivityRouter.get("/name/:name", nameActivity);
-// ActivityRouter.get("/search", getActivities);
-// ActivityRouter.get("/search/:id", getIdActivity);
-// ActivityRouter.post("/create", upload.single("image"), postActivity);
-// ActivityRouter.put("/update/:id", upload.single("image"), putActivity);
-// ActivityRouter.put("/disable/:id", disableActivity);
-
+/*
+ActivityRouter.get("/admin", adminActivity);
+ActivityRouter.get("/search", getActivities);
+ActivityRouter.get("/search/:id", getIdActivity);
+ActivityRouter.put("/disable/:id", disableActivity); 
+ActivityRouter.post("/create", upload.single("image"), postActivity);
+ActivityRouter.put("/update/:id", upload.single("image"), putActivity);
+*/
 
 export default ActivityRouter;
 //<input type=file name = image>
