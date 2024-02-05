@@ -23,7 +23,7 @@ export const connection = new Sequelize(EXTERNAL_DB_URL, {
   //username: DB_USER,
   //password: DB_PASSWORD,
   //database: DB_DATABASE,
-  //dialectOptions: { ssl: { require: true } },
+  dialectOptions: { ssl: { require: true } },
   logging: false, //console.log,
   models: [
     Activity,
