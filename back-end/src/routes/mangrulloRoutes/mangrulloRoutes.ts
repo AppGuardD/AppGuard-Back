@@ -9,18 +9,18 @@ import { upload } from "../../helper/multer/multerConfig";
 
 const mangrulloRoutes = Router();
 //-----------con webtokens-------------
-mangrulloRoutes.get("/search", getMangrullos);
+/* mangrulloRoutes.get("/search", getMangrullos);
 mangrulloRoutes.get("/search/:id", getIdMangrullo);
 mangrulloRoutes.post("/create", adminMiddleware, upload.single("image"), postMangrullos);
 mangrulloRoutes.put("/update/:id", adminMiddleware, upload.single("image"), putMangrullo);
-mangrulloRoutes.put("/deactivate/:id", adminMiddleware, disableMangrullo);
+mangrulloRoutes.put("/deactivate/:id", adminMiddleware, disableMangrullo); */
 //----------Desarollo------------------
 
-// mangrulloRoutes.get("/name/:name", nameMangrullo);
-// mangrulloRoutes.get("/search", getMangrullos);
-// mangrulloRoutes.get("/search/:id", getIdMangrullo);
-// mangrulloRoutes.post("/create", upload.single("image"), postMangrullos);
-// mangrulloRoutes.put("/update/:id", upload.single("image"), putMangrullo);
-// mangrulloRoutes.put("/disable/:id", disableMangrullo);
+//mangrulloRoutes.get("/name/:name", nameMangrullo);
+mangrulloRoutes.get("/search", getMangrullos);
+mangrulloRoutes.get("/search/:id", getIdMangrullo);
+mangrulloRoutes.post("/create", upload.single("image"), postMangrullos);
+mangrulloRoutes.put("/update/:id", upload.single("image"), putMangrullo);
+mangrulloRoutes.put("/disable/:id", disableMangrullo);
 
 export default mangrulloRoutes;
