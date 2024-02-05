@@ -20,7 +20,14 @@ export const loginUser: RequestHandler = async (req, res) => {
     const checkPassword = await comparePassword(password, logUser.password);
 
     if (checkPassword) {
-      const token = generateJWT({ rol: logUser.rol });
+
+      const token = generateJWT({
+        email: logUser.email,
+        userName: logUser.userName,
+
+        rol: logUser.rol
+      });
+
       return res
         .status(201)
         .json({ message: "Usuario logueado correctamenta", logUser, token });
