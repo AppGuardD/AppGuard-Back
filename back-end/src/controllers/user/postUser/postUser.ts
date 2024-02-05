@@ -44,7 +44,7 @@ export const postUser: RequestHandler = async (req, res) => {
       state: "Activo",
     });
     // aqui estamos usando la funcion sendMail para enviar un corre de bienvenida
-    /*   const mailconfirm: SentMessageInfo = await sendMail(
+    const mailconfirm: SentMessageInfo = await sendMail(
       "Bienvenido a AppGuard",
       email,
       "te quermos da rla bienvenida a AppGuard"
@@ -56,7 +56,7 @@ export const postUser: RequestHandler = async (req, res) => {
         message: "se ha creado el usuario correctamente",
         warning: "no se ha podido enviar el correo",
       });
-    } */
+    }
     return res.status(201).json(user);
   } catch (error: any) {
     return res.status(500).json({

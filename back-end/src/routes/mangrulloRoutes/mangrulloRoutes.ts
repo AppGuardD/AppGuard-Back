@@ -11,12 +11,7 @@ const mangrulloRoutes = Router();
 //-----------con webtokens-------------
 mangrulloRoutes.get("/search", getMangrullos);
 mangrulloRoutes.get("/search/:id", getIdMangrullo);
-mangrulloRoutes.post(
-  "/create",
-  /* adminMiddleware, */
-  upload.single("image"),
-  postMangrullos
-);
+mangrulloRoutes.post("/create", adminMiddleware, upload.single("image"), postMangrullos);
 mangrulloRoutes.put("/update/:id", adminMiddleware, upload.single("image"), putMangrullo);
 mangrulloRoutes.put("/deactivate/:id", adminMiddleware, disableMangrullo);
 //----------Desarollo------------------

@@ -15,12 +15,7 @@ ActivityRouter.get("/admin", adminActivity);
 ActivityRouter.get("/search", getActivities);
 ActivityRouter.get("/search/:id", getIdActivity);
 ActivityRouter.put("/disable/:id", adminMiddleware, disableActivity);
-ActivityRouter.post(
-  "/create",
-  /*  adminMiddleware, */
-  upload.single("image"),
-  postActivity
-);
+ActivityRouter.post("/create", adminMiddleware, upload.single("image"), postActivity);
 ActivityRouter.put("/update/:id", adminMiddleware, upload.single("image"), putActivity);
 //--------------Desarollo----------------
 
