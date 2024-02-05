@@ -13,16 +13,11 @@ mangrulloRoutes.get("/search", getMangrullos);
 mangrulloRoutes.get("/search/:id", getIdMangrullo);
 mangrulloRoutes.post(
   "/create",
-  adminMiddleware,
+  /* adminMiddleware, */
   upload.single("image"),
-  postMangrullos,
+  postMangrullos
 );
-mangrulloRoutes.put(
-  "/update/:id",
-  adminMiddleware,
-  upload.single("image"),
-  putMangrullo,
-);
+mangrulloRoutes.put("/update/:id", adminMiddleware, upload.single("image"), putMangrullo);
 mangrulloRoutes.put("/deactivate/:id", adminMiddleware, disableMangrullo);
 //----------Desarollo------------------
 
@@ -32,6 +27,5 @@ mangrulloRoutes.put("/deactivate/:id", adminMiddleware, disableMangrullo);
 // mangrulloRoutes.post("/create", upload.single("image"), postMangrullos);
 // mangrulloRoutes.put("/update/:id", upload.single("image"), putMangrullo);
 // mangrulloRoutes.put("/disable/:id", disableMangrullo);
-
 
 export default mangrulloRoutes;
