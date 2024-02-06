@@ -17,29 +17,31 @@ import { TicketActivity } from "../models/ticket/TicketActivity";
 
 const { DB_HOST, DB_USER, DB_PASSWORD, DB_DATABASE, EXTERNAL_DB_URL }: any = process.env;
 
-export const connection = new Sequelize(EXTERNAL_DB_URL, {
-  //dialect: "postgres",
-  //host: DB_HOST,
-  //username: DB_USER,
-  //password: DB_PASSWORD,
-  //database: DB_DATABASE,
-  /*dialectOptions: { ssl: { require: true } }, */
-  logging: false, //console.log,
-  models: [
-    Activity,
-    Advice,
-    Favorite,
-    Mangrullo,
-    ReviewActivity,
-    ReviewMangrullo,
-    ActivityMangrullo,
-    FavoriteMangrullo,
-    User,
-    Session,
-    Ticket,
-    TicketActivity,
-  ],
-});
+export const connection = new Sequelize(
+  //EXTERNAL_DB_URL,
+  {
+    dialect: "postgres",
+    host: DB_HOST,
+    username: DB_USER,
+    password: DB_PASSWORD,
+    database: DB_DATABASE,
+    logging: false, //console.log,
+    /*dialectOptions: { ssl: { require: true } }, */
+    models: [
+      Activity,
+      Advice,
+      Favorite,
+      Mangrullo,
+      ReviewActivity,
+      ReviewMangrullo,
+      ActivityMangrullo,
+      FavoriteMangrullo,
+      User,
+      Session,
+      Ticket,
+      TicketActivity,
+    ],
+  });
 
 async function connectionDB() {
   try {

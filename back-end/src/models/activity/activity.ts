@@ -31,7 +31,7 @@ export class Activity extends Model {
   description!: string;
 
   @Column({
-    type: DataType.TEXT,
+    type: DataType.TEXT,//activityName, image, idActivity, precio, cantidad comentado, idUser //
     allowNull: false,
   })
   image!: string;
