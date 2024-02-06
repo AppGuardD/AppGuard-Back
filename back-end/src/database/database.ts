@@ -14,6 +14,10 @@ import { Ticket } from "../models/ticket/ticket";
 import { Favorite } from "../models/favorite/favorite";
 import { FavoriteMangrullo } from "../models/favorite/FavoriteMangrullo";
 import { TicketActivity } from "../models/ticket/TicketActivity";
+import { Donation } from "../models/donation/donation";
+import { Car } from "../models/car/car";
+import { PaymentBill } from "../models/paymentBill/paymentBill";
+import { CarActivity } from "../models/car/CarActivities";
 
 const { DB_HOST, DB_USER, DB_PASSWORD, DB_DATABASE, EXTERNAL_DB_URL }: any = process.env;
 
@@ -40,6 +44,10 @@ export const connection = new Sequelize(
       Session,
       Ticket,
       TicketActivity,
+      Donation,
+      Car,
+      PaymentBill,
+      CarActivity
     ],
   });
 

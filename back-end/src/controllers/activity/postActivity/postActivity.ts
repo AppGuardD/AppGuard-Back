@@ -5,7 +5,8 @@ import { createImage } from "../../../cloudinary/getStarted";
 
 export const postActivity = async (req: Request, res: Response) => {
   try {
-    const { activityName, description, qualification, type, state, price, mangrullos } = req.body;
+    const { activityName, description, qualification, type, state, price, mangrullos }
+      = req.body;
 
 
     // Validación de mangrullos no puede estar vacío
