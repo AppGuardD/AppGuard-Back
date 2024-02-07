@@ -15,9 +15,10 @@ import paymentBillRoutes from "./paymentBillRoutes/paymentBillRoutes";
 
 
 //google
+
 import passport from 'passport';
 import { Strategy as GoogleStragy } from 'passport-google-oauth20';
-
+import mercadoPagoRouter from "./mercadoPagoRoutes/mercadoPagoRoute";
 
 const routes = Router();
 
@@ -34,19 +35,18 @@ routes.use("/auth", authRoutes);
 routes.use("/donation", donationRoutes);
 routes.use("/car", carRoutes);
 routes.use("/paymentBill", paymentBillRoutes);
-
-
-//ruta de google, maneja un middleware para 
-routes.use("/authgoogle", passport.authenticate("google", {
+routes.use("/paymentActivities", mercadoPagoRouter);
+//ruta de google, maneja un middleware para
+routes.use("/authgoogle",passport.authenticate("google", {
     scope: [
-        'email',
-        'profile',
-        'https://www.googleapis.com/auth/userinfo.email',
-        'https://www.googleapis.com/auth/userinfo.profile',
-    ]
-}), googleRoutes);
-
-
+      "email",
+      "profile",
+      "https://www.googleapis.com/auth/userinfo.email",
+      "https://www.googleapis.com/auth/userinfo.profile",
+    ],
+  }),
+  googleRoutes
+);
 
 
 
