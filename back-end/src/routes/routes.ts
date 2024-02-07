@@ -10,10 +10,9 @@ import ticketRoutes from "./ticketRoutes/ticketRoutes";
 import authRoutes from "./authRoutes/authRoutes";
 import googleRoutes from "./googleRoutes/googleRoutes";
 //google
-import passport from 'passport';
-import { Strategy as GoogleStragy } from 'passport-google-oauth20';
-
-
+import passport from "passport";
+import { Strategy as GoogleStragy } from "passport-google-oauth20";
+import mercadoPagoRouter from "./mercadoPagoRoutes/mercadoPagoRoute";
 
 const routes = Router();
 
@@ -27,19 +26,21 @@ routes.use("/reviewMangrullos", reviewMangrullosRoutes);
 routes.use("/ticket", ticketRoutes);
 routes.use("/reviewActivity", reviewActivityRoutes);
 routes.use("/auth", authRoutes);
-
-//ruta de google, maneja un middleware para 
-routes.use("/authgoogle", passport.authenticate("google", {
+routes.use("/paymentActivities", mercadoPagoRouter);
+//ruta de google, maneja un middleware para
+routes.use(
+  "/authgoogle",
+  passport.authenticate("google", {
     scope: [
-        'email',
-        'profile',
-        'https://www.googleapis.com/auth/userinfo.email',
-        'https://www.googleapis.com/auth/userinfo.profile',
-    ]
-}), googleRoutes);
+      "email",
+      "profile",
+      "https://www.googleapis.com/auth/userinfo.email",
+      "https://www.googleapis.com/auth/userinfo.profile",
+    ],
+  }),
+  googleRoutes
+);
 
 //desde aqui pa bajo.
-
-
 
 export default routes;
