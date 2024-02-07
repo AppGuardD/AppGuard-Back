@@ -1,7 +1,9 @@
-import { Table, Model, Column, DataType, HasMany } from "sequelize-typescript";
+import { Table, Model, Column, DataType, HasMany, HasOne } from "sequelize-typescript";
 import { Ticket } from "../ticket/ticket";
 import { ReviewActivity } from "../reviewActivity/reviewActivity";
 import { ReviewMangrullo } from "../reviewMangrullo/reviewMangrullo";
+import { Donation } from "../donation/donation";
+import { Car } from "../car/car";
 
 @Table({
   timestamps: false,
@@ -86,5 +88,17 @@ export class User extends Model {
   //relacion un user que puede tener muchos reviewMangrullo.
   @HasMany(() => ReviewMangrullo)
   reviewMangrullo!: ReviewMangrullo[];
+
+
+  //Relacionado.
+  //relacion un user que puede tener muchas donaciones.
+  @HasMany(() => Donation)
+  donation!: Donation[];
+
+
+  // Relacionado.
+  // Relación un usuario que puede tener un solo carro.
+  @HasOne(() => Car)
+  car!: Car;
 }
 

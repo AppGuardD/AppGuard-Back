@@ -9,9 +9,15 @@ import reviewMangrullosRoutes from "./reviewMangrullosRoutes/reviewMangrullosRou
 import ticketRoutes from "./ticketRoutes/ticketRoutes";
 import authRoutes from "./authRoutes/authRoutes";
 import googleRoutes from "./googleRoutes/googleRoutes";
+import donationRoutes from "./donationRoutes/donationRoutes";
+import carRoutes from "./carRoutes/carRoutes";
+import paymentBillRoutes from "./paymentBillRoutes/paymentBillRoutes";
+
+
 //google
-import passport from "passport";
-import { Strategy as GoogleStragy } from "passport-google-oauth20";
+
+import passport from 'passport';
+import { Strategy as GoogleStragy } from 'passport-google-oauth20';
 import mercadoPagoRouter from "./mercadoPagoRoutes/mercadoPagoRoute";
 
 const routes = Router();
@@ -26,11 +32,12 @@ routes.use("/reviewMangrullos", reviewMangrullosRoutes);
 routes.use("/ticket", ticketRoutes);
 routes.use("/reviewActivity", reviewActivityRoutes);
 routes.use("/auth", authRoutes);
+routes.use("/donation", donationRoutes);
+routes.use("/car", carRoutes);
+routes.use("/paymentBill", paymentBillRoutes);
 routes.use("/paymentActivities", mercadoPagoRouter);
 //ruta de google, maneja un middleware para
-routes.use(
-  "/authgoogle",
-  passport.authenticate("google", {
+routes.use("/authgoogle",passport.authenticate("google", {
     scope: [
       "email",
       "profile",
@@ -41,6 +48,6 @@ routes.use(
   googleRoutes
 );
 
-//desde aqui pa bajo.
+
 
 export default routes;
