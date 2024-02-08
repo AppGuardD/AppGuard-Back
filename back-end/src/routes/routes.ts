@@ -40,18 +40,20 @@ routes.use("/paymentBill", paymentBillRoutes);
 
 routes.use("/preload", preloadRoutes);
 
+
+
+
+//ruta de google, maneja un middleware para 
 routes.use("/paymentActivities", mercadoPagoRouter);
 //ruta de google, maneja un middleware para
-routes.use(
-  "/authgoogle",
-  passport.authenticate("google", {
-    scope: [
-      "email",
-      "profile",
-      "https://www.googleapis.com/auth/userinfo.email",
-      "https://www.googleapis.com/auth/userinfo.profile",
-    ],
-  }),
+routes.use("/authgoogle", passport.authenticate("google", {
+  scope: [
+    "email",
+    "profile",
+    "https://www.googleapis.com/auth/userinfo.email",
+    "https://www.googleapis.com/auth/userinfo.profile",
+  ],
+}),
   googleRoutes
 );
 
