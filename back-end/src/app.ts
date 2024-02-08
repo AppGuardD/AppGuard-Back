@@ -7,6 +7,7 @@ import * as multer from "multer";
 dotenv.config();
 import routes from "./routes/routes";
 
+
 //Libreria para trabajar con google.
 import passport from "passport";
 const session = require('express-session');
@@ -16,7 +17,6 @@ const app = express();
 
 //config
 app.set("PORT", process.env.PORT || 3001);
-
 
 // Configuración de sesión con google
 const sessionConfig = {
