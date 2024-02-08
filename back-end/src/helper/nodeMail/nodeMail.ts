@@ -2,7 +2,7 @@ import * as nodemail from "nodemailer";
 import * as dotenv from "dotenv";
 dotenv.config();
 
-const htmlContent: string = `
+export const WelcomehtmlContent: string = `
 <!DOCTYPE html>
 <html lang="es">
   <head>
@@ -64,9 +64,10 @@ export interface SentMessageInfo {
 }
 
 export const sendMail = async (
-  subject: string,
-  to: string,
-  text: string
+  subject: string, // el asunto del mensaje
+  to: string, //  para quien va el mensaje
+  text: string, // el texto que iria en el mensaje
+  html: string
 ): Promise<any> => {
   try {
     let options = {
@@ -74,7 +75,7 @@ export const sendMail = async (
       to,
       subject,
       text,
-      html: htmlContent,
+      html,
     };
     const mail = await trasnporter.sendMail(options);
     return mail;

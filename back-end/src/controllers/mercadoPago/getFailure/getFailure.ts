@@ -1,5 +1,5 @@
 import { Request, Response } from "express";
-import { paymentActivities } from "../../../services/mercadoPagoServices/mercadoPago";
+import { paymentActivities } from "../../../services/mercadoPagoServices/mercadopagoConfig/mercadoPago";
 
 export const getFailure = async (req: Request, res: Response) => {
   try {
