@@ -8,7 +8,7 @@ export const postMangrullos: RequestHandler = async (req, res) => {
     //console.log(req.body);
     const { zone, dangerousness, image, qualification, description } = req.body;
     // Verificar que los campos no estén vacíos.
-    if (!zone || !dangerousness || !qualification || !description) {
+    if (!zone || !dangerousness || !description) {
       return res
         .status(400)
         .json({ message: "Todos los campos son obligatorios" });

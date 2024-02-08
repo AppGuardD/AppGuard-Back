@@ -55,7 +55,7 @@ export class Mangrullo extends Model {
 
   @Column({
     type: DataType.INTEGER,
-    allowNull: false,
+    allowNull: true,
     validate: {
       min: {
         args: [1],
