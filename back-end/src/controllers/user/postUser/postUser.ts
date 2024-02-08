@@ -1,10 +1,9 @@
 import { RequestHandler } from "express";
 import { User } from "../../../models/user/user";
 import { hashPassword } from "../../../helper/encrypt/encrypt";
-import { sendMail } from "../../../helper/nodeMail/nodeMail";
+import { WelcomehtmlContent, sendMail } from "../../../helper/nodeMail/nodeMail";
 import Mail from "nodemailer/lib/mailer";
 import { SentMessageInfo } from "nodemailer";
-
 //Ruta para crear User.
 export const postUser: RequestHandler = async (req, res) => {
   try {
@@ -47,10 +46,11 @@ export const postUser: RequestHandler = async (req, res) => {
     const mailconfirm: SentMessageInfo = await sendMail(
       "Bienvenido a AppGuard",
       email,
-      "te quermos da rla bienvenida a AppGuard"
+      "te quermos da rla bienvenida a AppGuard",
+      WelcomehtmlContent
     );
 
-    if (mailconfirm?.accepted?.length < 0) {
+    if (mailconfirm?.accepted?.length <= 0) {
       return res.status(201).send({
         success: true,
         message: "se ha creado el usuario correctamente",

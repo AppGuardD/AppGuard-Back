@@ -47,9 +47,10 @@ export const connection = new Sequelize(
       Donation,
       Car,
       PaymentBill,
-      CarActivity
+      CarActivity,
     ],
-  });
+  }
+);
 
 async function connectionDB() {
   try {
