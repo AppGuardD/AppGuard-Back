@@ -16,20 +16,8 @@ export const getSucces = async (
   try {
     const info = req.query;
     const paymentInfo = await requirePayInfo(info?.payment_id);
-    const userId = paymentInfo.external_reference.split(",")[1];
-    const user = await User.findOne({ where: { id: userId } });
-    const htmlForEmail = facture(paymentInfo.additional_info.items);
-    const emailFacture: SentMessageInfo = await sendMail(
-      "Factura de compra en AppGuard",
-      `${user?.email}`,
-      "aqui te dejamos tu factura",
-      htmlForEmail
-    );
-    if (emailFacture?.accepted?.length <= 0) {
-      console.log("no se ha podido enviar el objeto");
-    }
 
-    res.send(user);
+    res.redirect(302, "https://www.youtube.com/");
   } catch (error: any) {
     res.status(400).send({ error: error.message });
   }
