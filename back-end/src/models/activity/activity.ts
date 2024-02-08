@@ -11,6 +11,8 @@ import { ReviewActivity } from "../reviewActivity/reviewActivity";
 import { Ticket } from "../ticket/ticket";
 import { Mangrullo } from "../mangrullo/mangrullo";
 import { TicketActivity } from "../ticket/TicketActivity";
+import { Car } from "../car/car";
+import { CarActivity } from "../car/CarActivities";
 
 @Table({
   timestamps: false,
@@ -20,7 +22,7 @@ export class Activity extends Model {
   @Column({
     type: DataType.STRING,
     allowNull: false,
-    unique: true,
+    //unique: true,
   })
   activityName!: string;
 
@@ -38,7 +40,7 @@ export class Activity extends Model {
 
   @Column({
     type: DataType.INTEGER,
-    allowNull: false,
+    allowNull: true,
     validate: {
       min: {
         args: [1],
@@ -69,6 +71,7 @@ export class Activity extends Model {
   @Column({
     type: DataType.BOOLEAN,
     allowNull: false,
+    defaultValue: true
   })
   active!: boolean;
 
@@ -92,5 +95,11 @@ export class Activity extends Model {
   //relacion activity con ticket mucho a mucho
   @BelongsToMany(() => Ticket, () => TicketActivity)
   ticket!: Ticket[];
+
+
+  //Relacionado
+  //relacion activity con car mucho a mucho
+  @BelongsToMany(() => Car, () => CarActivity)
+  car!: Car[];
 
 }

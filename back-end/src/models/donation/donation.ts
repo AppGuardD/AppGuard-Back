@@ -20,7 +20,7 @@ export class Donation extends Model {
     })
     value!: number;
 
-
+    //Relacionado.
     //Relacion paymentBill con user.
     @ForeignKey(() => User)
     @Column({

@@ -17,6 +17,7 @@ export const postTicket: RequestHandler = async (req, res) => {
     }
 
     let arrayActivities: Activity[] = [];
+
     for (const activityId of activities) {
 
       const activity = await Activity.findOne({
@@ -32,7 +33,8 @@ export const postTicket: RequestHandler = async (req, res) => {
       }
     }
 
-    if (!userId || !price) {
+
+    if (!userId) {
       return res
         .status(400)
         .json({ message: "Todos los campos son obligatorios" });
@@ -49,14 +51,14 @@ export const postTicket: RequestHandler = async (req, res) => {
     const ticket: Ticket = await Ticket.create({
       userId: userId,
       price: price,
-      date: new Date().toISOString().split('T')[0],
+      date: new Date().toISOString(),
       state: "No Pago",
     });
 
     // Asociar actividad con ticket.
     await ticket.$add('Activity', arrayActivities);
 
-    return res.status(201).json(ticket);
+    return res.status(201).json({ message: "Ticket creado exitosamente", ticket });
   } catch (error: any) {
     return res
       .status(500)

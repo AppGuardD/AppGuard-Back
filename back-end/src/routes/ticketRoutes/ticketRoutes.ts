@@ -8,16 +8,16 @@ import { adminMiddleware } from "../../middlewares/adminMiddlewares/adminMiddlew
 
 const ticketRoutes = Router();
 // -------con web tokens -------------
-ticketRoutes.get("/search", adminMiddleware, getTickets);
-ticketRoutes.get("/search/:id", adminMiddleware, getIdTicket);
-ticketRoutes.post("/create", adminMiddleware, postTicket);
-ticketRoutes.put("/update/:id", adminMiddleware, putTicket);
-ticketRoutes.put("/disable/:id", adminMiddleware, disableTicket);
+// ticketRoutes.get("/search", adminMiddleware, getTickets);
+// ticketRoutes.get("/search/:id", adminMiddleware, getIdTicket);
+// ticketRoutes.post("/create", adminMiddleware, postTicket);
+// ticketRoutes.put("/update/:id", adminMiddleware, putTicket);
+// ticketRoutes.put("/disable/:id", adminMiddleware, disableTicket);
 // -------Desarollo -------------
-// ticketRoutes.get("/search", getTickets);
-// ticketRoutes.get("/search/:id", getIdTicket);
-// ticketRoutes.post("/create", postTicket);
-// ticketRoutes.put("/update/:id", putTicket);
-// ticketRoutes.put("/deactivate/:id", disableTicket);
+ticketRoutes.get("/search", getTickets);
+ticketRoutes.get("/search/:id", getIdTicket);
+ticketRoutes.post("/create", postTicket);
+ticketRoutes.put("/update/:id", putTicket);
+ticketRoutes.put("/disable/:id", disableTicket);
 
 export default ticketRoutes;

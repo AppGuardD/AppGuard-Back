@@ -7,7 +7,7 @@ import { Ticket } from "../../../models/ticket/ticket";
 export const putTicket: RequestHandler = async (req, res) => {
   try {
     const { id } = req.params;
-    const { userId, activityId, price } = req.body;
+    const { userId, price, activityId } = req.body;
 
     if (!userId || !activityId || !price) {
       return res

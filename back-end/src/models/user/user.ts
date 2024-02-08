@@ -1,19 +1,26 @@
-import { Table, Model, Column, DataType, HasMany } from "sequelize-typescript";
+import { Table, Model, Column, DataType, HasMany, HasOne } from "sequelize-typescript";
 import { Ticket } from "../ticket/ticket";
 import { ReviewActivity } from "../reviewActivity/reviewActivity";
 import { ReviewMangrullo } from "../reviewMangrullo/reviewMangrullo";
+import { Donation } from "../donation/donation";
+import { Car } from "../car/car";
 
 @Table({
   timestamps: false,
-  tableName: "users"
+  tableName: "users",
 })
-
 export class User extends Model {
   @Column({
     type: DataType.STRING,
-    allowNull: false
+    allowNull: false,
   })
-  userName!: string
+  userName!: string;
+
+  @Column({
+    type: DataType.STRING,
+    allowNull: true,
+  })
+  payerId!: string;
 
   @Column({
     type: DataType.STRING,
@@ -21,55 +28,55 @@ export class User extends Model {
     unique: true,
     validate: {
       isEmail: {
-        msg: "El formato del correo electrónico no es válido"
-      }
-    }
+        msg: "El formato del correo electrónico no es válido",
+      },
+    },
   })
-  email!: string
-
-  @Column({
-    type: DataType.STRING,
-    allowNull: false
-  })
-  password!: string
-
-  @Column({
-    type: DataType.ENUM('DNI', 'PP'),
-    allowNull: false,
-  })
-  typeIdentification!: string
+  email!: string;
 
   @Column({
     type: DataType.STRING,
     allowNull: false,
   })
-  numberIdentification!: string
+  password!: string;
 
   @Column({
-    type: DataType.ENUM('Cliente', 'Admin'),
+    type: DataType.ENUM("DNI", "PP"),
     allowNull: false,
-    defaultValue: "Cliente"
   })
-  rol!: string
+  typeIdentification!: string;
 
   @Column({
-    type: DataType.ENUM('Activo', 'No Activo'),
+    type: DataType.STRING,
+    allowNull: false,
+  })
+  numberIdentification!: string;
+
+  @Column({
+    type: DataType.ENUM("Cliente", "Admin"),
+    allowNull: false,
+    defaultValue: "Cliente",
+  })
+  rol!: string;
+
+  @Column({
+    type: DataType.ENUM("Activo", "No Activo"),
     allowNull: false,
     defaultValue: "Activo",
   })
-  state!: string
+  state!: string;
 
   @Column({
     type: DataType.STRING,
     allowNull: true,
   })
-  googleId!: string
+  googleId!: string;
 
   @Column({
     type: DataType.STRING,
     allowNull: true,
   })
-  displayName!: string
+  displayName!: string;
 
   //Relacionado.
   //relacion un user que puede tener muchos ticket.
@@ -81,10 +88,18 @@ export class User extends Model {
   @HasMany(() => ReviewActivity)
   reviewActivity!: ReviewActivity[];
 
-
   //Relacionado.
   //relacion un user que puede tener muchos reviewMangrullo.
   @HasMany(() => ReviewMangrullo)
   reviewMangrullo!: ReviewMangrullo[];
-}
 
+  //Relacionado.
+  //relacion un user que puede tener muchas donaciones.
+  @HasMany(() => Donation)
+  donation!: Donation[];
+
+  // Relacionado.
+  // Relación un usuario que puede tener un solo carro.
+  @HasOne(() => Car)
+  car!: Car;
+}

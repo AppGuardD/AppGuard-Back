@@ -1,12 +1,12 @@
 import { RequestHandler } from "express";
-import { ReviewMangrullo } from "../../../models/reviewMangrullo/reviewMangrullo";
 import { Activity } from "../../../models/activity/activity";
 import { User } from "../../../models/user/user";
+import { ReviewActivity } from "../../../models/reviewActivity/reviewActivity";
 
 export const postReviewActivity: RequestHandler = async (req, res) => {
   try {
     const { qualification, comment, activityId, userId } = req.body
-    if (!qualification || !comment || activityId || userId) {
+    if (!qualification || !comment || !activityId || !userId) {
       return res.status(400).json({
         message: "No pueden ir datos vacios",
       });
@@ -19,7 +19,7 @@ export const postReviewActivity: RequestHandler = async (req, res) => {
       return res.status(400).json({ message: "La Actividad o el Usuario con ese id no existe en la base de datos" })
     }
 
-    const review: ReviewMangrullo | null = await ReviewMangrullo.create({
+    const review: ReviewActivity | null = await ReviewActivity.create({
       qualification: qualification,
       comment: comment,
       state: "Activo",

@@ -32,11 +32,6 @@ export class ReviewMangrullo extends Model {
   comment!: string;
 
   @Column({
-    type: DataType.INTEGER,
-  })
-  idUsuario!: number;
-
-  @Column({
     type: DataType.ENUM("Activo", "No Activo"),
     allowNull: false,
   })
@@ -53,7 +48,6 @@ export class ReviewMangrullo extends Model {
   //un reviewMangrullo pertenece a un solo mangrullo.
   @BelongsTo(() => Mangrullo)
   mangrullo!: Mangrullo[];
-
 
   //Relacionado.
   //Relacion reviewMangrullo y User
