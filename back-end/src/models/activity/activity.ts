@@ -22,7 +22,7 @@ export class Activity extends Model {
   @Column({
     type: DataType.STRING,
     allowNull: false,
-    unique: true,
+    //unique: true,
   })
   activityName!: string;
 
@@ -71,6 +71,7 @@ export class Activity extends Model {
   @Column({
     type: DataType.BOOLEAN,
     allowNull: false,
+    defaultValue: true
   })
   active!: boolean;
 

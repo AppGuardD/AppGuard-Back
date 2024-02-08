@@ -14,9 +14,11 @@ import carRoutes from "./carRoutes/carRoutes";
 import paymentBillRoutes from "./paymentBillRoutes/paymentBillRoutes";
 
 
+
 //google
 import passport from 'passport';
 import { Strategy as GoogleStragy } from 'passport-google-oauth20';
+import preloadRoutes from "./preloadRoutes/preloadRoutes";
 
 
 const routes = Router();
@@ -34,6 +36,8 @@ routes.use("/auth", authRoutes);
 routes.use("/donation", donationRoutes);
 routes.use("/car", carRoutes);
 routes.use("/paymentBill", paymentBillRoutes);
+routes.use("/preload", preloadRoutes);
+
 
 
 //ruta de google, maneja un middleware para 
