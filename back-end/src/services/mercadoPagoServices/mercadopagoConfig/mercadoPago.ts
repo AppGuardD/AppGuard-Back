@@ -79,5 +79,16 @@ export const merchantOders = async (payer_id: string) => {
     };
     const PayerMerchant_Orders = await merchantOder.search();
     return PayerMerchant_Orders;
-  } catch (error) {}
+  } catch (error) {
+    return error;
+  }
+};
+
+export const cancelPayment = async (payment_id: string) => {
+  try {
+    await payment.cancel({ id: payment_id });
+    return { success: true };
+  } catch (error: any) {
+    return { success: false, message: error.message };
+  }
 };

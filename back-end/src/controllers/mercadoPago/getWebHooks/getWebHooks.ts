@@ -1,5 +1,6 @@
 import { Request, Response } from "express";
 import {
+  cancelPayment,
   paymentActivities,
   requirePayInfo,
 } from "../../../services/mercadoPagoServices/mercadopagoConfig/mercadoPago";
@@ -44,7 +45,7 @@ export const getWebHooks = async (req: Request, res: Response) => {
       console.log(paymentSuccessInfo.additional_info.items);
       console.log(creationtickets);
       if (creationtickets.success) {
-        // aqui iria el manejo logico de cancelacion  si esto fuera true
+        cancelPayment(paymentInfo["data.id"]);
         return res.status(201).send(paymentSuccessInfo);
       }
       // Enviamos la respuesta indicando que la notificación fue procesada correctamente
