@@ -1,7 +1,6 @@
 import { RequestHandler } from "express";
 import { PaymentBill } from "../../../models/paymentBill/paymentBill";
 import { User } from "../../../models/user/user";
-import { Car } from "../../../models/car/car";
 import { clearScreenDown } from "readline";
 
 //Ruta para crear paymentBill.
@@ -21,12 +20,12 @@ export const postPaymentBill: RequestHandler = async (req, res) => {
                 .json({ message: "El usuario no existe en la base de datos" });
         }
 
-        const idCar: Car | null = await Car.findByPk(carId);
-        if (!idCar) {
-            return res
-                .status(302)
-                .json({ message: "El carrito no existe en la base de datos" });
-        }
+        // const idCar: Car | null = await Car.findByPk(carId);
+        // if (!idCar) {
+        //     return res
+        //         .status(302)
+        //         .json({ message: "El carrito no existe en la base de datos" });
+        // }
 
 
         //PaymentBill esta definido como un objeto de PaymentBill.
