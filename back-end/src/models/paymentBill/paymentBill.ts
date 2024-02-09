@@ -1,6 +1,6 @@
 import { Table, Column, Model, DataType, ForeignKey, BelongsTo } from "sequelize-typescript";
 import { User } from "../user/user";
-import { Car } from "../car/car";
+// import { Car } from "../car/car";
 
 
 @Table({
@@ -41,16 +41,16 @@ export class PaymentBill extends Model {
     user!: User[];
 
 
-    //Relacion paymentBill con car.
-    @ForeignKey(() => Car)
-    @Column({
-        type: DataType.INTEGER,
-        allowNull: false
-    })
-    carId!: number
-    //un paymentBill pertenece a un solo car.
-    @BelongsTo(() => Car)
-    car!: Car[];
+    // //Relacion paymentBill con car.
+    // @ForeignKey(() => Car)
+    // @Column({
+    //     type: DataType.INTEGER,
+    //     allowNull: false
+    // })
+    // carId!: number
+    // //un paymentBill pertenece a un solo car.
+    // @BelongsTo(() => Car)
+    // car!: Car[];
 }
 
 //date, totalPrice, state, userId, carId

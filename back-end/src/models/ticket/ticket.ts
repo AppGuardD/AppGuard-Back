@@ -11,7 +11,7 @@ import {
 import { Activity } from "../activity/activity";
 import { User } from "../user/user";
 import { TicketActivity } from "./TicketActivity";
-import { Car } from "../car/car";
+// import { Car } from "../car/car";
 
 @Table({
   timestamps: false,

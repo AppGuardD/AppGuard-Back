@@ -3,7 +3,7 @@ import { Ticket } from "../ticket/ticket";
 import { ReviewActivity } from "../reviewActivity/reviewActivity";
 import { ReviewMangrullo } from "../reviewMangrullo/reviewMangrullo";
 import { Donation } from "../donation/donation";
-import { Car } from "../car/car";
+import { Carrito } from "../carrito/carrito";
 
 @Table({
   timestamps: false,
@@ -100,6 +100,6 @@ export class User extends Model {
 
   // Relacionado.
   // Relación un usuario que puede tener un solo carro.
-  @HasOne(() => Car)
-  car!: Car;
+  @HasMany(() => Carrito)
+  carrito!: Carrito;
 }

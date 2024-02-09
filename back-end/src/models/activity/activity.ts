@@ -11,8 +11,7 @@ import { ReviewActivity } from "../reviewActivity/reviewActivity";
 import { Ticket } from "../ticket/ticket";
 import { Mangrullo } from "../mangrullo/mangrullo";
 import { TicketActivity } from "../ticket/TicketActivity";
-import { Car } from "../car/car";
-import { CarActivity } from "../car/CarActivities";
+import { detalle_carrito } from "../carrito/detalle_carrito";
 
 @Table({
   timestamps: false,
@@ -55,11 +54,11 @@ export class Activity extends Model {
   qualification!: Number;
 
   @Column({
-    type: DataType.INTEGER,
+    type: DataType.FLOAT, // O puedes usar DataType.FLOAT si necesitas decimales
     allowNull: false,
-    defaultValue: 0,
+    defaultValue:  0, // Opcional: establecer un valor predeterminado
   })
-  price!: Number;
+  price!: number; // Asegúrate de que esto sea de tipo 'number'
 
   @Column({
     type: DataType.ENUM("Pago", "Gratis"),
@@ -99,7 +98,7 @@ export class Activity extends Model {
 
   //Relacionado
   //relacion activity con car mucho a mucho
-  @BelongsToMany(() => Car, () => CarActivity)
-  car!: Car[];
+  @HasMany(() => detalle_carrito)
+  detalle_carrito!: detalle_carrito[];
 
 }
