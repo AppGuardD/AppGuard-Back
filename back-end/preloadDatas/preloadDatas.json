@@ -3,16 +3,15 @@
     {
         "userName": "Javier Lopez",
         "email": "javilop1311@gmail.com",
-        "password": "2323",
+        "password": "232321",
         "typeIdentification": "DNI",
         "numberIdentification": "34231256",
         "rol": "Admin"
     },
-
     {
         "userName": "Nestor Camilo ",
         "email": "nestor1212@gmail.com",
-        "password": "2323",
+        "password": "112323",
         "typeIdentification": "DNI",
         "numberIdentification": "34231256",
         "rol": "Admin"
@@ -20,7 +19,7 @@
     {
         "userName": "Andres Juan",
         "email": "juandres1311@gmail.com",
-        "password": "2323",
+        "password": "222323",
         "typeIdentification": "DNI",
         "numberIdentification": "34231256",
         "rol": "Admin"
@@ -29,7 +28,7 @@
     {
         "userName": "Marquinho Che",
         "email": "marquito1212@gmail.com",
-        "password": "2323",
+        "password": "332323",
         "typeIdentification": "DNI",
         "numberIdentification": "34231256",
         "rol": "Admin"
@@ -37,7 +36,7 @@
     {
         "userName": "Braian Che",
         "email": "braian1311@gmail.com",
-        "password": "2323",
+        "password": "442323",
         "typeIdentification": "DNI",
         "numberIdentification": "34231256",
         "rol": "Admin"
@@ -46,7 +45,7 @@
     {
         "userName": "Humbert Meromero",
         "email": "humbertmex1212@gmail.com",
-        "password": "2323",
+        "password": "552323",
         "typeIdentification": "DNI",
         "numberIdentification": "34231256",
         "rol": "Admin"
@@ -54,7 +53,7 @@
     {
         "userName": "Elias Tomy",
         "email": "tomyche1212@gmail.com",
-        "password": "2323",
+        "password": "662323",
         "typeIdentification": "DNI",
         "numberIdentification": "34231256",
         "rol": "Admin"
