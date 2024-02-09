@@ -14,8 +14,8 @@ import { sendMail } from "../../../helper/nodeMail/nodeMail";
 import { facture } from "../../../services/mercadoPagoServices/mercadoPagoFactureEmail/Facture";
 import { SentMessageInfo } from "nodemailer";
 import {
+  ResponseData,
   createTickets,
-  ticketResponse,
 } from "../../../services/mercadoPagoServices/createTicket/createTicket";
 
 export const getWebHooks = async (req: Request, res: Response) => {
@@ -38,16 +38,10 @@ export const getWebHooks = async (req: Request, res: Response) => {
         "aqui te dejamos tu factura",
         htmlForEmail
       );
-      const creationtickets: ticketResponse = await createTickets({
+      await createTickets({
         userId,
         activities: paymentSuccessInfo.additional_info.items,
       });
-      console.log(paymentSuccessInfo.additional_info.items);
-      console.log(creationtickets);
-      if (creationtickets.success) {
-        cancelPayment(paymentInfo["data.id"]);
-        return res.status(201).send(paymentSuccessInfo);
-      }
       // Enviamos la respuesta indicando que la notificación fue procesada correctamente
       return res.status(200).send(paymentSuccessInfo);
     }

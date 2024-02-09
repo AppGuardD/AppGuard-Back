@@ -2,7 +2,10 @@ import { Activity } from "../../../models/activity/activity";
 import { Ticket } from "../../../models/ticket/ticket";
 import { User } from "../../../models/user/user";
 
-export type ticketResponse = { success: boolean } | { success: boolean; message: any };
+export type ResponseData =
+  | { success: boolean }
+  | { success: boolean; message: any }
+  | undefined;
 export const createTickets = async (Items: any) => {
   try {
     const { userId, activities } = Items;
@@ -12,7 +15,7 @@ export const createTickets = async (Items: any) => {
       console.log("no hay items");
       return returnOperationFaild;
     }
-
+    const ticketsId = [];
     for (const activityId of activities) {
       for (let index = 0; index < activityId.quantity; index++) {
         const activity = await Activity.findOne({

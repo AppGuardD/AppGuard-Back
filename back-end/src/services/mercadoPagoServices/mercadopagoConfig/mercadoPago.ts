@@ -7,6 +7,7 @@ import {
 import { Items } from "mercadopago/dist/clients/commonTypes";
 import { MerchantOrderResponse } from "mercadopago/dist/clients/merchantOrder/commonTypes";
 import { MerchantOrderSearchResultsPage } from "mercadopago/dist/clients/merchantOrder/search/types";
+import { Ticket } from "../../../models/ticket/ticket";
 dotenv.config();
 
 /* estrutura de la interface Items que viene del modulo mercado pago:  "
@@ -72,12 +73,7 @@ export const requirePayInfo = async (payment_id: string): Promise<any> => {
 
 export const merchantOders = async (payer_id: string) => {
   try {
-    const merchnatOderSearchFilter = {
-      payer: {
-        id: payer_id,
-      },
-    };
-    const PayerMerchant_Orders = await merchantOder.search();
+    const PayerMerchant_Orders = await merchantOder.get({ merchantOrderId: payer_id });
     return PayerMerchant_Orders;
   } catch (error) {
     return error;
