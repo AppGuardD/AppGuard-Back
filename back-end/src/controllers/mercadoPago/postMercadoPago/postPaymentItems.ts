@@ -41,12 +41,10 @@ export const postPaymentItems = async (req: Request, res: Response) => {
     );
 
     if (!comprobationActivitiesExist?.success) {
-      return res
-        .status(400)
-        .send({
-          success: false,
-          message: "no se puede hacer pago si las actividades no existen",
-        });
+      return res.status(400).send({
+        success: false,
+        message: "no se puede hacer pago si las actividades no existen",
+      });
     }
     const PaymentResponse: PreferenceResponse | undefined = await paymentActivities(
       listOrderItemsToPay,
