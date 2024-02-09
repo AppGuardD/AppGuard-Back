@@ -46,12 +46,8 @@ export const connection = new Sequelize(
       TicketActivity,
       Donation,
       PaymentBill,
-<<<<<<< HEAD
       Carrito,
       detalle_carrito
-=======
-      CarActivity,
->>>>>>> b8a7b2a78b8defcb920bc529dd5395f1c3115867
     ],
   }
 );

@@ -47,28 +47,8 @@ export class Ticket extends Model {
   @BelongsTo(() => User)
   user!: User[];
 
-<<<<<<< HEAD
-
-    //Relacion ticket y User
-    @ForeignKey(() => User)
-    @Column({
-        type: DataType.INTEGER,
-        allowNull: false
-    })
-    userId!: number
-    //un ticket pertenece a un solo user.
-    @BelongsTo(() => User)
-    user!: User[];
-
-
-    // Relacionado.
-    // // Relación un ticket que puede tener un solo carro.
-    // @HasOne(() => Car)
-    // car!: Car;
-=======
   // Relacionado.
   // Relación un ticket que puede tener un solo carro.
   /*  @HasOne(() => Car)
   car!: Car; */
->>>>>>> b8a7b2a78b8defcb920bc529dd5395f1c3115867
 }
