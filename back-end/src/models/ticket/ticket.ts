@@ -2,7 +2,7 @@ import { Table, Column, Model, DataType, ForeignKey, BelongsTo, BelongsToMany, H
 import { Activity } from "../activity/activity";
 import { User } from "../user/user";
 import { TicketActivity } from "./TicketActivity";
-import { Car } from "../car/car";
+// import { Car } from "../car/car";
 
 @Table({
     timestamps: false,
@@ -48,7 +48,7 @@ export class Ticket extends Model {
 
 
     // Relacionado.
-    // Relación un ticket que puede tener un solo carro.
-    @HasOne(() => Car)
-    car!: Car;
+    // // Relación un ticket que puede tener un solo carro.
+    // @HasOne(() => Car)
+    // car!: Car;
 }

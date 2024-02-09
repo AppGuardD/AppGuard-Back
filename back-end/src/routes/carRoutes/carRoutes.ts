@@ -1,11 +1,16 @@
 import { Router } from "express";
-import { getCars } from "../../controllers/car/getCars/getCars";
-import { postCar } from "../../controllers/car/postCar/postCar";
-import { deleteCar } from "../../controllers/car/deleteCar/deleteCar";
-import { allDeleteCars } from "../../controllers/car/allDeleteCars/allDeleteCars";
+import { addItem } from "../../controllers/carrito/addItem/addItem";
+import { createCarrito } from "../../controllers/carrito/createCarrito/createCarrito";
+import { deleteCarrito } from "../../controllers/carrito/deleteCarrito/deleteCarrito";
+import { deleteItem } from "../../controllers/carrito/deleteItem/deleteItem";
+import { removeItem } from "../../controllers/carrito/removeItem/removeItem";
+import { getCarrito } from "../../controllers/carrito/getCarrito/getCarrito";
+import { updateCarrito } from "../../controllers/carrito/updateCarrito/updateCarrito";
+
 
 import { adminMiddleware } from "../../middlewares/adminMiddlewares/adminMiddleware";
 import { userMiddleware } from "../../middlewares/userMiddlewares/userMiddleware";
+
 
 const carRoutes = Router();
 //-----------con webtokens-------------
@@ -16,10 +21,13 @@ const carRoutes = Router();
 
 
 //----------Desarollo------------------
-carRoutes.get("/search", getCars);
-carRoutes.post("/create", postCar);
-carRoutes.delete("/delete/:id", deleteCar);
-carRoutes.delete("/allDelete", allDeleteCars);
+carRoutes.post("/addItem", addItem); //usuario
+carRoutes.post("/createCarrito", createCarrito); //usuario
+carRoutes.delete("/deleteCarrito/:carritoId", deleteCarrito);//admin
+carRoutes.delete("/deleteItem/", deleteItem);//usuario
+carRoutes.put("/removeItem/", removeItem);//usurio
+carRoutes.get("/getCarrito/:userId", getCarrito);//admin por página
+carRoutes.put("/updateCarrito/:carritoId", updateCarrito);//admin
 
 
 export default carRoutes;
