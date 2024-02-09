@@ -12,6 +12,10 @@ import { User } from "../../../models/user/user";
 import { sendMail } from "../../../helper/nodeMail/nodeMail";
 import { facture } from "../../../services/mercadoPagoServices/mercadoPagoFactureEmail/Facture";
 import { SentMessageInfo } from "nodemailer";
+import {
+  createTickets,
+  ticketResponse,
+} from "../../../services/mercadoPagoServices/createTicket/createTicket";
 
 export const getWebHooks = async (req: Request, res: Response) => {
   try {
@@ -33,7 +37,16 @@ export const getWebHooks = async (req: Request, res: Response) => {
         "aqui te dejamos tu factura",
         htmlForEmail
       );
-
+      const creationtickets: ticketResponse = await createTickets({
+        userId,
+        activities: paymentSuccessInfo.additional_info.items,
+      });
+      console.log(paymentSuccessInfo.additional_info.items);
+      console.log(creationtickets);
+      if (creationtickets.success) {
+        // aqui iria el manejo logico de cancelacion  si esto fuera true
+        return res.status(201).send(paymentSuccessInfo);
+      }
       // Enviamos la respuesta indicando que la notificación fue procesada correctamente
       return res.status(200).send(paymentSuccessInfo);
     }
