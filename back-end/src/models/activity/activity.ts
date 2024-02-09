@@ -21,7 +21,7 @@ export class Activity extends Model {
   @Column({
     type: DataType.STRING,
     allowNull: false,
-    unique: true,
+    //unique: true,
   })
   activityName!: string;
 
@@ -39,7 +39,7 @@ export class Activity extends Model {
 
   @Column({
     type: DataType.INTEGER,
-    allowNull: false,
+    allowNull: true,
     validate: {
       min: {
         args: [1],
@@ -70,6 +70,7 @@ export class Activity extends Model {
   @Column({
     type: DataType.BOOLEAN,
     allowNull: false,
+    defaultValue: true
   })
   active!: boolean;
 

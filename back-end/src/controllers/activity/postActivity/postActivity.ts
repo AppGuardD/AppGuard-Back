@@ -18,7 +18,7 @@ export const postActivity = async (req: Request, res: Response) => {
     }
 
     // Validaciones de campos obligatorios
-    if (!activityName || !description || !qualification || !type || !state) {
+    if (!activityName || !description || !type || !state) {
       return res.status(400).send({
         success: false,
         message: "Todos los campos son requeridos",
