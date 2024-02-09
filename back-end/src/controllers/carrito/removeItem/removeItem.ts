@@ -34,20 +34,18 @@ export const removeItem = async (req: Request, res: Response) => {
         }
 
         existingItem.cantidad = existingItem.cantidad -   1;
+        existingItem.subtotal = existingItem.cantidad * activity.price;
+        
+        carrito.total -= activity.price;
+        await carrito.save();
 
         if (existingItem.cantidad ===   0) {
             await existingItem.destroy();
-            
-
         } else {
-            
             await existingItem.save();
         }
 
         
-        existingItem.subtotal = existingItem.cantidad * activity.price;
-        carrito.total -= activity.price;
-        await carrito.save();
 
         res.status(200).json({ message: 'Ítem removido del carrito' });
     } catch (error) {
