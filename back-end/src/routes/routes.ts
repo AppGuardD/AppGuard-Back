@@ -12,15 +12,13 @@ import googleRoutes from "./googleRoutes/googleRoutes";
 import donationRoutes from "./donationRoutes/donationRoutes";
 import carRoutes from "./carRoutes/carRoutes";
 import paymentBillRoutes from "./paymentBillRoutes/paymentBillRoutes";
-
 //google
-
 import passport from "passport";
 import { Strategy as GoogleStragy } from "passport-google-oauth20";
 
 import preloadRoutes from "./preloadRoutes/preloadRoutes";
-
 import mercadoPagoRouter from "./mercadoPagoRoutes/mercadoPagoRoute";
+
 
 const routes = Router();
 
@@ -37,8 +35,8 @@ routes.use("/auth", authRoutes);
 routes.use("/donation", donationRoutes);
 routes.use("/car", carRoutes);
 routes.use("/paymentBill", paymentBillRoutes);
-
 routes.use("/preload", preloadRoutes);
+
 
 
 

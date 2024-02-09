@@ -5,7 +5,7 @@ import { createImage } from "../../../cloudinary/getStarted";
 
 export const postActivity = async (req: Request, res: Response) => {
   try {
-    const { activityName, description, qualification, type, state, price, mangrullos }
+    const { activityName, description, type, state, price, mangrullos }
       = req.body;
 
 
@@ -81,7 +81,6 @@ export const postActivity = async (req: Request, res: Response) => {
     const createdActivity = await Activity.create({
       activityName,
       description,
-      qualification,
       type,
       active: true,
       state,

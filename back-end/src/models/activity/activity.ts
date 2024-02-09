@@ -39,20 +39,10 @@ export class Activity extends Model {
   image!: string;
 
   @Column({
-    type: DataType.INTEGER,
+    type: DataType.FLOAT,
     allowNull: true,
-    validate: {
-      min: {
-        args: [1],
-        msg: "El valor no puede ser menor que 1",
-      },
-      max: {
-        args: [5],
-        msg: "El valor no puede ser mayor que 5",
-      },
-    },
   })
-  qualification!: Number;
+  qualification!: number;
 
   @Column({
     type: DataType.INTEGER,
