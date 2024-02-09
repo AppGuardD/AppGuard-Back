@@ -26,7 +26,7 @@ export interface IntemsWithOutId {
 }
 
 //se importan las credenciales de mercado pago
-const { MERCADO_ACCESS_TOKEN }: any = process.env;
+const { MERCADO_ACCESS_TOKEN, NOTIFICATION_URL }: any = process.env;
 
 const MercadoObjectConfig: MercadoPagoConfig = {
   accessToken: MERCADO_ACCESS_TOKEN,
@@ -51,8 +51,7 @@ export const paymentActivities = async (
         failure: "http://localhost:3001/paymentActivities/failure",
         pending: "http://localhost:3001/paymentActivities/pending",
       },
-      notification_url:
-        "https://2374-2800-e6-4000-6a4f-e93e-e7f5-e2c7-1201.ngrok-free.app/paymentActivities/webhooks",
+      notification_url: `${NOTIFICATION_URL}/paymentActivities/webhooks`,
       external_reference: `AppGuard,${UserId}`,
     };
     const PaymentResponse: PreferenceResponse = await preference.create({ body });
