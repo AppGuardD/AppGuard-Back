@@ -18,6 +18,13 @@ export const removeItem = async (req: Request, res: Response) => {
                 id: carritoId,
             }
         })
+
+        const activity = await Activity.findOne({where: 
+            {id: ActivityId}});
+        if (!activity) {
+            return res.status(404).json({ error: true,message: 'Actividad no encontrada' });
+        }
+
         if (!carrito) {
             return res.status(404).json({ error: true,message: 'Carrito no encontrada' });
         }
@@ -30,17 +37,17 @@ export const removeItem = async (req: Request, res: Response) => {
 
         if (existingItem.cantidad ===   0) {
             await existingItem.destroy();
+            
+
         } else {
-            const activity = await Activity.findOne({where: 
-                {id: ActivityId}});
-            if (!activity) {
-                return res.status(404).json({ error: true,message: 'Actividad no encontrada' });
-            }
-            existingItem.subtotal = existingItem.cantidad * activity.price;
-            carrito.total -= activity.price;
-            await carrito.save();
+            
             await existingItem.save();
         }
+
+        
+        existingItem.subtotal = existingItem.cantidad * activity.price;
+        carrito.total -= activity.price;
+        await carrito.save();
 
         res.status(200).json({ message: 'Ítem removido del carrito' });
     } catch (error) {
