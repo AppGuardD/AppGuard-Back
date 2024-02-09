@@ -47,7 +47,7 @@ export const connection = new Sequelize(
       Donation,
       PaymentBill,
       Carrito,
-      detalle_carrito
+      detalle_carrito,
     ],
   }
 );

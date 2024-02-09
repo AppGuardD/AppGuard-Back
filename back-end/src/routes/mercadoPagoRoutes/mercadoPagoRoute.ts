@@ -4,6 +4,7 @@ import { getWebHooks } from "../../controllers/mercadoPago/getWebHooks/getWebHoo
 import { getSucces } from "../../controllers/mercadoPago/getSuccess/getSuccess";
 import { getFailure } from "../../controllers/mercadoPago/getFailure/getFailure";
 import { getPending } from "../../controllers/mercadoPago/getPending/getPending";
+import { getIdOrder } from "../../controllers/mercadoPago/getIdOrder/getIdOrder";
 
 const mercadoPagoRouter = Router();
 
@@ -11,6 +12,7 @@ const mercadoPagoRouter = Router();
 mercadoPagoRouter.get("/success", getSucces);
 mercadoPagoRouter.get("/failure", getFailure);
 mercadoPagoRouter.get("/pending", getPending);
+mercadoPagoRouter.get("/Order/:id", getIdOrder);
 
 mercadoPagoRouter.post("/payment", postPaymentItems);
 mercadoPagoRouter.post("/webhooks", getWebHooks);

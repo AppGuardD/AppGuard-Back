@@ -47,7 +47,8 @@ export const postPaymentBill: RequestHandler = async (req, res) => {
   }
 };
 
-/*     const idUser: User | null = await User.findByPk(userId);
+
+/*    const idUser: User | null = await User.findByPk(userId);
     if (!idUser) {
       return res
         .status(302)
