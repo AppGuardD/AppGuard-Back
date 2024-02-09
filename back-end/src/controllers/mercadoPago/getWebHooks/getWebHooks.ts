@@ -17,6 +17,7 @@ import {
   ResponseData,
   createTickets,
 } from "../../../services/mercadoPagoServices/createTicket/createTicket";
+import { generateOrders } from "../../../services/mercadoPagoServices/generateOrder/generateOders";
 
 export const getWebHooks = async (req: Request, res: Response) => {
   try {
@@ -25,6 +26,7 @@ export const getWebHooks = async (req: Request, res: Response) => {
     if (paymentInfo["data.id"] && paymentInfo.type === "payment") {
       // Buscamos el payer_id para vincularlo a la cuenta
       const paymentSuccessInfo = await requirePayInfo(paymentInfo["data.id"]);
+      console.log(paymentSuccessInfo);
       const userId = paymentSuccessInfo.external_reference.split(",")[1];
       await User.update(
         { payerId: paymentSuccessInfo.payer.id },
@@ -42,6 +44,11 @@ export const getWebHooks = async (req: Request, res: Response) => {
         userId,
         activities: paymentSuccessInfo.additional_info.items,
       });
+
+      const newOrders = await generateOrders(paymentSuccessInfo, userId);
+      if (!newOrders.success) {
+        console.log(newOrders);
+      }
       // Enviamos la respuesta indicando que la notificación fue procesada correctamente
       return res.status(200).send(paymentSuccessInfo);
     }

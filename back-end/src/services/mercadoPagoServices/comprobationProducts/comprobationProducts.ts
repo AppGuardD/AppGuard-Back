@@ -11,6 +11,7 @@ export const comprobationProducts = async (items: Items[]) => {
         return { success: false };
       }
     }
+    return { success: true };
   } catch (error: any) {
     return { success: false, message: error.message };
   }

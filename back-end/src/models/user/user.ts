@@ -4,6 +4,7 @@ import { ReviewActivity } from "../reviewActivity/reviewActivity";
 import { ReviewMangrullo } from "../reviewMangrullo/reviewMangrullo";
 import { Donation } from "../donation/donation";
 import { Carrito } from "../carrito/carrito";
+import { Order } from "../Oders/Order";
 
 @Table({
   timestamps: false,
@@ -82,6 +83,11 @@ export class User extends Model {
   //relacion un user que puede tener muchos ticket.
   @HasMany(() => Ticket)
   ticket!: Ticket[];
+
+  //Relacionado.
+  //relacion un user que puede tener muchas ordenes.
+  @HasMany(() => Order)
+  Order!: Order[];
 
   //Relacionado.
   //relacion un user que puede tener muchos reviewActivity.

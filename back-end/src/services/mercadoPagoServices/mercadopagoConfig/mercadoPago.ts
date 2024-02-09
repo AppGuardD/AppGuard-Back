@@ -71,9 +71,21 @@ export const requirePayInfo = async (payment_id: string): Promise<any> => {
   }
 };
 
-export const merchantOders = async (payer_id: string) => {
+export const merchantIdOders = async (payer_id: string) => {
   try {
     const PayerMerchant_Orders = await merchantOder.get({ merchantOrderId: payer_id });
+    return PayerMerchant_Orders;
+  } catch (error) {
+    return error;
+  }
+};
+
+export const merchantOders = async (payer_id: string, offset: number) => {
+  try {
+    console.log(payer_id);
+    const PayerMerchant_Orders = await merchantOder.search({
+      options: { payer_id, offset },
+    });
     return PayerMerchant_Orders;
   } catch (error) {
     return error;

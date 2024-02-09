@@ -36,10 +36,9 @@ export const postPaymentItems = async (req: Request, res: Response) => {
       return newItemToPay;
     });
 
-    const comprobationActivitiesExist: ResponseData = await comprobationProducts(
+    const comprobationActivitiesExist: any = await comprobationProducts(
       listOrderItemsToPay
     );
-
     if (!comprobationActivitiesExist?.success) {
       return res.status(400).send({
         success: false,
