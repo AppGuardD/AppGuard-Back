@@ -18,19 +18,19 @@ import { Donation } from "../models/donation/donation";
 import { Carrito } from "../models/carrito/carrito";
 import { PaymentBill } from "../models/paymentBill/paymentBill";
 import { detalle_carrito } from "../models/carrito/detalle_carrito";
+import { Order } from "../models/Oders/Order";
 
 const { DB_HOST, DB_USER, DB_PASSWORD, DB_DATABASE, EXTERNAL_DB_URL }: any = process.env;
 
 export const connection = new Sequelize(
-  //EXTERNAL_DB_URL,
-  {
+  /* EXTERNAL_DB_URL, */ {
     dialect: "postgres",
     host: DB_HOST,
     username: DB_USER,
     password: DB_PASSWORD,
     database: DB_DATABASE,
     logging: false, //console.log,
-    /*dialectOptions: { ssl: { require: true } }, */
+    /*   dialectOptions: { ssl: { require: true } }, */
     models: [
       Activity,
       Advice,
@@ -48,6 +48,7 @@ export const connection = new Sequelize(
       PaymentBill,
       Carrito,
       detalle_carrito,
+      Order,
     ],
   }
 );
