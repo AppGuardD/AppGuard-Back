@@ -2,6 +2,8 @@ import { Request, Response } from "express";
 import { paymentActivities } from "../../../services/mercadoPagoServices/mercadopagoConfig/mercadoPago";
 import { PreferenceResponse } from "mercadopago/dist/clients/preference/commonTypes";
 import { Items } from "mercadopago/dist/clients/commonTypes";
+import { ResponseData } from "../../../services/mercadoPagoServices/createTicket/createTicket";
+import { comprobationProducts } from "../../../services/mercadoPagoServices/comprobationProducts/comprobationProducts";
 //items sin el id
 
 export const postPaymentItems = async (req: Request, res: Response) => {
@@ -34,6 +36,15 @@ export const postPaymentItems = async (req: Request, res: Response) => {
       return newItemToPay;
     });
 
+    const comprobationActivitiesExist: any = await comprobationProducts(
+      listOrderItemsToPay
+    );
+    if (!comprobationActivitiesExist?.success) {
+      return res.status(400).send({
+        success: false,
+        message: "no se puede hacer pago si las actividades no existen",
+      });
+    }
     const PaymentResponse: PreferenceResponse | undefined = await paymentActivities(
       listOrderItemsToPay,
       userId

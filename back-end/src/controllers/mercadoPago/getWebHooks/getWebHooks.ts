@@ -14,9 +14,10 @@ import { sendMail } from "../../../helper/nodeMail/nodeMail";
 import { facture } from "../../../services/mercadoPagoServices/mercadoPagoFactureEmail/Facture";
 import { SentMessageInfo } from "nodemailer";
 import {
+  ResponseData,
   createTickets,
-  ticketResponse,
 } from "../../../services/mercadoPagoServices/createTicket/createTicket";
+import { generateOrders } from "../../../services/mercadoPagoServices/generateOrder/generateOders";
 
 export const getWebHooks = async (req: Request, res: Response) => {
   try {
@@ -25,6 +26,7 @@ export const getWebHooks = async (req: Request, res: Response) => {
     if (paymentInfo["data.id"] && paymentInfo.type === "payment") {
       // Buscamos el payer_id para vincularlo a la cuenta
       const paymentSuccessInfo = await requirePayInfo(paymentInfo["data.id"]);
+      console.log(paymentSuccessInfo);
       const userId = paymentSuccessInfo.external_reference.split(",")[1];
       await User.update(
         { payerId: paymentSuccessInfo.payer.id },
@@ -38,15 +40,14 @@ export const getWebHooks = async (req: Request, res: Response) => {
         "aqui te dejamos tu factura",
         htmlForEmail
       );
-      const creationtickets: ticketResponse = await createTickets({
+      await createTickets({
         userId,
         activities: paymentSuccessInfo.additional_info.items,
       });
-      console.log(paymentSuccessInfo.additional_info.items);
-      console.log(creationtickets);
-      if (creationtickets.success) {
-        cancelPayment(paymentInfo["data.id"]);
-        return res.status(201).send(paymentSuccessInfo);
+
+      const newOrders = await generateOrders(paymentSuccessInfo, userId);
+      if (!newOrders.success) {
+        console.log(newOrders);
       }
       // Enviamos la respuesta indicando que la notificación fue procesada correctamente
       return res.status(200).send(paymentSuccessInfo);

@@ -5,6 +5,7 @@ import { User } from "../../models/user/user";
 import { Mangrullo } from "../../models/mangrullo/mangrullo";
 import { Activity } from "../../models/activity/activity";
 import { Advice } from "../../models/advice/advice";
+import { hashPassword } from "../../helper/encrypt/encrypt";
 //import { connection } from "../../database/database";
 
 export const preload: RequestHandler = async (_req, res) => {
@@ -12,9 +13,16 @@ export const preload: RequestHandler = async (_req, res) => {
 
         const preloadData = await readJsonFile(path.join(__dirname, "../../../preloadDatas/preloadDatas.json"));
         const datosdb = await User.findAll();
-        console.log(datosdb);
+        //console.log(datosdb);
         if (datosdb.length === 0) {
-            await User.bulkCreate(preloadData.users);
+            //await User.bulkCreate(preloadData.users);
+
+            for (const user of preloadData.users) {
+                const passwordHash = await hashPassword(user.password);
+                user.password = passwordHash
+                await User.create(user);
+            }
+
             await Advice.bulkCreate(preloadData.advice);
 
             await Mangrullo.bulkCreate(preloadData.mangrullos);
