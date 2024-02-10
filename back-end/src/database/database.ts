@@ -58,7 +58,7 @@ export const connection = new Sequelize(EXTERNAL_DB_URL, {
 
 async function connectionDB() {
   try {
-    await connection.sync({ force: false });
+    await connection.sync({ force: true });
     console.log("Base de dato sincronizada con Exito");
   } catch (error) {
     console.error("Error al sincronizar la base de datos", error);
