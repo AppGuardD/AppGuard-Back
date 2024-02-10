@@ -2,7 +2,7 @@ import { Op } from "sequelize";
 import { Activity } from "../../../models/activity/activity";
 import { Request, Response } from "express";
 
-interface Filter {
+export interface Filter {
   items?: string;
   page?: string;
   type?: string;
@@ -10,10 +10,7 @@ interface Filter {
   state?: string;
 }
 
-export const getActivities = async (
-  req: Request<{}, {}, {}, Filter>,
-  res: Response,
-) => {
+export const getActivities = async (req: Request<{}, {}, {}, Filter>, res: Response) => {
   try {
     const { items, page, type, query, state }: Filter = req.query;
 

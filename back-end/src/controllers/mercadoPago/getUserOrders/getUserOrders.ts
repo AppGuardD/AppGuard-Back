@@ -11,18 +11,30 @@ interface OrderFilter {
   status?: string;
   page?: string;
   items?: string;
+  userId?: string;
 }
 
 interface consultResponse {
   count: number; // count el numero de registros
   rows: Order[]; // rows representan todos los registros
 }
-export const getOrder = async (req: Request<{}, {}, {}, OrderFilter>, res: Response) => {
+export const getUserOrder = async (
+  req: Request<{}, {}, {}, OrderFilter>,
+  res: Response
+) => {
   try {
-    const { date, total, merchantId, status, items, page }: OrderFilter = req.query;
-
+    const { date, total, merchantId, status, items, page, userId }: OrderFilter =
+      req.query;
+    if (!userId) {
+      return res
+        .status(400)
+        .send({
+          success: false,
+          message: "no se puede traer las ordenes  sin el userId",
+        });
+    }
     const queryOptions: any = {
-      where: {},
+      where: { userId },
     };
 
     if (date) {
