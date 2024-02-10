@@ -24,7 +24,6 @@
         "numberIdentification": "34231256",
         "rol": "Admin"
     },
-
     {
         "userName": "Marquinho Che",
         "email": "marquito1212@gmail.com",
@@ -41,7 +40,6 @@
         "numberIdentification": "34231256",
         "rol": "Admin"
     },
-
     {
         "userName": "Humbert Meromero",
         "email": "humbertmex1212@gmail.com",
@@ -63,7 +61,7 @@
 "mangrullos":[
     {
         "zone": "Piedras Blancas",
-        "dangerousness": 1,
+        "dangerousness": 2,
         "image": "https://www.turismoentrerios.com/piedrasblancas/img/playas.jpg",
         "qualification": null,
         "description": "Este Mangrullo es una torre rústica que sirve de atalaya en las proximidades de fortines, estancias y poblaciones de la pampa y otras regiones llanas. Su altura solía alcanzar entre 10 y 15 metros, y son construido con materiales finos y de alta duración, coronándose como una plataforma en la parte superior de las playas o ríos."
@@ -84,14 +82,14 @@
     },
     {
         "zone": "Bariloche",
-        "dangerousness": 1,
+        "dangerousness": 2,
         "image": "https://elcordillerano1.cdn.net.ar/252/elcordillerano/images/69/79/697964_ce708d6555d0961f0901bcf4fbb2966e6a80e309f1922a25cb00ebcbabc017ae/md.webp",
         "qualification": null,
         "description": "El mangrullo ubicado en la zona de Bariloche exhibe un entorno pintoresco y tranquilo. Con una peligrosidad mínima (nivel 1), proporciona un ambiente seguro para aquellos que buscan disfrutar de la belleza natural sin preocupaciones significativas. La estructura, representada en la imagen proporcionada, destaca por su diseño y ubicación estratégica, permitiendo a los visitantes apreciar vistas panorámicas de la región."
     },
     {
         "zone": "Posadas",
-        "dangerousness": 1,
+        "dangerousness": 3,
         "image": "https://comunicacion.misiones.gob.ar/wp-content/uploads/2023/02/WhatsApp-Image-2023-02-22-at-18.43.40-1.jpeg",
         "qualification": null,
         "description": "El mangrullo ubicado en la encantadora zona de Posadas presenta un entorno seguro con una calificación de peligrosidad de 1, indicando que es un lugar propicio para la exploración sin mayores preocupaciones. La imagen proporcionada revela un mangrullo con una estructura distintiva, rodeado por un entorno natural que sugiere una experiencia tranquila y agradable."
@@ -126,14 +124,14 @@
     },
     {
         "zone": "Pinamar, Buenos Aires",
-        "dangerousness": 4,
+        "dangerousness": 2,
         "image": "https://cdn0.matrimonio.com.co/article/8204/3_2/960/jpg/24028-playas-bonitas-de-colombia-para-luna-de-miel.webp",
         "qualification": null,
         "description": "Pinamar es un exclusivo destino de playa en la costa atlántica de Argentina, conocido por sus amplias playas de arena blanca y sus elegantes casas de veraneo. Los visitantes pueden practicar deportes acuáticos, jugar al golf en campos de clase mundial y relajarse en clubes de playa exclusivos."
     },
     {
         "zone": "Villa Gesell, Buenos Aires",
-        "dangerousness": 5,
+        "dangerousness": 2,
         "image": "https://www.colombia.co/wp-content/uploads/2021/11/Barcos-en-las-cristalinas-aguas-de-Islas-del-Rosario-Colombia-768x397.jpg",
         "qualification": null,
         "description": "Villa Gesell es una pintoresca localidad costera en la costa atlántica de Argentina, famosa por sus playas de arena fina y su ambiente familiar. Los turistas pueden disfrutar de actividades como el surf, el kiteboarding y los paseos en bicicleta por la extensa costa."
@@ -147,7 +145,7 @@
     },
     {
         "zone": "Necochea",
-        "dangerousness": 5,
+        "dangerousness": 3,
         "image": "https://www.viajesboletin.com/wp-content/uploads/2018/09/images_2018_Septiembre_mejoresplayas.jpg",
         "qualification": null,
         "description": "Necochea es una ciudad costera en la provincia de Buenos Aires, Argentina, reconocida por sus playas extensas y sus espectaculares acantilados. Los turistas pueden practicar surf, pesca deportiva y avistamiento de aves en este hermoso destino costero."
@@ -187,6 +185,7 @@
         "qualification": null,
         "description": "San Clemente del Tuyú es una ciudad costera en la provincia de Buenos Aires, Argentina, famosa por sus playas extensas y su ambiente relajado. Los visitantes pueden disfrutar del surf, la pesca y las caminatas por la playa, además de visitar el cercano parque temático Mundo Marino."
       }
+
 ],
 
 "activity":[

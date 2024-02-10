@@ -6,6 +6,7 @@ import { Mangrullo } from "../../models/mangrullo/mangrullo";
 import { Activity } from "../../models/activity/activity";
 import { Advice } from "../../models/advice/advice";
 import { hashPassword } from "../../helper/encrypt/encrypt";
+import { createImage } from "../../cloudinary/getStarted";
 //import { connection } from "../../database/database";
 
 export const preload: RequestHandler = async (_req, res) => {
@@ -23,13 +24,28 @@ export const preload: RequestHandler = async (_req, res) => {
                 await User.create(user);
             }
 
-            await Advice.bulkCreate(preloadData.advice);
 
-            await Mangrullo.bulkCreate(preloadData.mangrullos);
+            //await Mangrullo.bulkCreate(preloadData.mangrullos);
+            for (const mangrullo of preloadData.mangrullos) {
+                const img: string = await createImage(mangrullo.image ? mangrullo.image : mangrullo.req.file?.path);
+                mangrullo.image = img;
+                await Mangrullo.create(mangrullo);
+            }
 
+
+            //await Activity.bulkCreate(preloadData.activity);
             for (const activity of preloadData.activity) {
+                const imgUrl = await createImage(activity.image ? activity.image : activity.req.file?.path);
+                activity.image = imgUrl;
                 const newActivity = await Activity.create(activity);
                 newActivity.$add('Mangrullo', activity.mangrullos);
+            }
+
+            //await Advice.bulkCreate(preloadData.advice);
+            for (const advi of preloadData.advice) {
+                const adviConsImg: string = await createImage(advi.image ? advi.image : advi.req.file?.path);
+                advi.image = adviConsImg;
+                await Advice.create(advi);
             }
 
 
