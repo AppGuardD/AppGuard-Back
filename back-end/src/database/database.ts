@@ -30,7 +30,7 @@ export const connection = new Sequelize(
     password: DB_PASSWORD,
     database: DB_DATABASE,
     logging: false, //console.log,
-    /*   dialectOptions: { ssl: { require: true } }, */
+    /*dialectOptions: { ssl: { require: true } }, */
     models: [
       Activity,
       Advice,
