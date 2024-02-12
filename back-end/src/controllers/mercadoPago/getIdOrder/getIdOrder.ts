@@ -20,7 +20,7 @@ export const getIdOrder = async (req: Request, res: Response) => {
     const OrderId: any = await merchantIdOders(merchantId);
     const userId = OrderId.external_reference.split(",")[1];
     const OrderPerFound = await Order.findOne({
-      where: { userId: 1, merchantId: "15653976445" },
+      where: { userId: userId, merchantId },
     });
 
     const detailedOrder = {
