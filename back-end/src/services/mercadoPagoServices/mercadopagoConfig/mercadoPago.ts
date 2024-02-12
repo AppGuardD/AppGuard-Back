@@ -27,7 +27,8 @@ export interface IntemsWithOutId {
 }
 
 //se importan las credenciales de mercado pago
-const { MERCADO_ACCESS_TOKEN, NOTIFICATION_URL }: any = process.env;
+const { MERCADO_ACCESS_TOKEN, NOTIFICATION_URL, RESPONSE_URL_MERCADOPAGO }: any =
+  process.env;
 
 const MercadoObjectConfig: MercadoPagoConfig = {
   accessToken: MERCADO_ACCESS_TOKEN,
@@ -48,9 +49,9 @@ export const paymentActivities = async (
     const body: PreferenceRequest = {
       items,
       back_urls: {
-        success: "http://localhost:3001/paymentActivities/success",
-        failure: "http://localhost:3001/paymentActivities/failure",
-        pending: "http://localhost:3001/paymentActivities/pending",
+        success: `${RESPONSE_URL_MERCADOPAGO}/paymentActivities/success`,
+        failure: `${RESPONSE_URL_MERCADOPAGO}/paymentActivities/failure`,
+        pending: `${RESPONSE_URL_MERCADOPAGO}/paymentActivities/pending`,
       },
       notification_url: `${NOTIFICATION_URL}/paymentActivities/webhooks`,
       external_reference: `AppGuard,${UserId}`,
