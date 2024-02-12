@@ -5,11 +5,10 @@ import { adminMiddleware } from "../../middlewares/adminMiddlewares/adminMiddlew
 
 const danationRoutes = Router();
 //-----------con webtokens-------------
-// danationRoutes.get("search", adminMiddleware, getDonations);
-// danationRoutes.post("create", adminMiddleware, postDonation);
+danationRoutes.get("search", adminMiddleware, getDonations);
+danationRoutes.post("create", adminMiddleware, postDonation);
 //----------Desarollo------------------
-danationRoutes.get("/search", getDonations);
-danationRoutes.post("/create", postDonation);
-
+/* danationRoutes.get("/search", getDonations);
+danationRoutes.post("/create", postDonation); */
 
 export default danationRoutes;

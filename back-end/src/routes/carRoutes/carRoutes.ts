@@ -7,27 +7,28 @@ import { removeItem } from "../../controllers/carrito/removeItem/removeItem";
 import { getCarrito } from "../../controllers/carrito/getCarrito/getCarrito";
 import { updateCarrito } from "../../controllers/carrito/updateCarrito/updateCarrito";
 
-
 import { adminMiddleware } from "../../middlewares/adminMiddlewares/adminMiddleware";
 import { userMiddleware } from "../../middlewares/userMiddlewares/userMiddleware";
 
-
 const carRoutes = Router();
 //-----------con webtokens-------------
-// carRoutes.get("search", adminMiddleware, getCars);
-// carRoutes.post("create", userMiddleware, postCar);
-// carRoutes.delete("delete/:id", userMiddleware, deleteCar);
-// carRoutes.delete("allDelete", userMiddleware, allDeleteCars);
 
+carRoutes.post("/addItem", userMiddleware, addItem); //usuario
+carRoutes.post("/createCarrito", userMiddleware, createCarrito); //usuario
+carRoutes.delete("/deleteCarrito/:carritoId", adminMiddleware, deleteCarrito); //admin
+carRoutes.delete("/deleteItem/", userMiddleware, deleteItem); //usuario
+carRoutes.put("/removeItem/", userMiddleware, removeItem); //usurio
+carRoutes.get("/getCarrito/:userId", adminMiddleware, getCarrito); //admin por página
+carRoutes.put("/updateCarrito/:carritoId", adminMiddleware, updateCarrito); //admin
 
 //----------Desarollo------------------
-carRoutes.post("/addItem", addItem); //usuario
+/* carRoutes.post("/addItem", addItem); //usuario
 carRoutes.post("/createCarrito", createCarrito); //usuario
 carRoutes.delete("/deleteCarrito/:carritoId", deleteCarrito);//admin
 carRoutes.delete("/deleteItem/", deleteItem);//usuario
 carRoutes.put("/removeItem/", removeItem);//usurio
 carRoutes.get("/getCarrito/:userId", getCarrito);//admin por página
 carRoutes.put("/updateCarrito/:carritoId", updateCarrito);//admin
-
+ */
 
 export default carRoutes;

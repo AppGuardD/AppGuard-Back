@@ -1,10 +1,10 @@
 import { RequestHandler } from "express";
-import { ReviewActivity } from "../../../models/reviewActivity/reviewActivity";
+import { ReviewMangrullo } from "../../../models/reviewMangrullo/reviewMangrullo";
 
 export const getReviewMangrullos: RequestHandler = async (req, res) => {
   try {
-    // Consultar todos los ReviewActivity. 
-    const reviewActivity: ReviewActivity[] = await ReviewActivity.findAll();
+    // Consultar todos los ReviewActivity.
+    const reviewActivity: ReviewMangrullo[] = await ReviewMangrullo.findAll();
     return res.status(201).json(reviewActivity);
   } catch (error: any) {
     return res.status(500).json({

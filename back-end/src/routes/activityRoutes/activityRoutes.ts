@@ -11,20 +11,20 @@ import { adminActivity } from "../../controllers/activity/adminActivity/adminAct
 const ActivityRouter = Router();
 
 //---------- con webtokens ------------------
-/* ActivityRouter.get("/admin", adminActivity);
+ActivityRouter.get("/admin", adminMiddleware, adminActivity);
 ActivityRouter.get("/search", getActivities);
 ActivityRouter.get("/search/:id", getIdActivity);
 ActivityRouter.put("/disable/:id", adminMiddleware, disableActivity);
 ActivityRouter.post("/create", adminMiddleware, upload.single("image"), postActivity);
-ActivityRouter.put("/update/:id", adminMiddleware, upload.single("image"), putActivity); */
+ActivityRouter.put("/update/:id", adminMiddleware, upload.single("image"), putActivity);
 //--------------Desarollo----------------
 
-ActivityRouter.get("/admin", adminActivity);
+/* ActivityRouter.get("/admin", adminActivity);
 ActivityRouter.get("/search", getActivities);
 ActivityRouter.get("/search/:id", getIdActivity);
 ActivityRouter.put("/disable/:id", disableActivity);
 ActivityRouter.post("/create", upload.single("image"), postActivity);
-ActivityRouter.put("/update/:id", upload.single("image"), putActivity);
+ActivityRouter.put("/update/:id", upload.single("image"), putActivity); */
 
 export default ActivityRouter;
 //<input type=file name = image>
