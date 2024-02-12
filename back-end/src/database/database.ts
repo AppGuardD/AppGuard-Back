@@ -22,15 +22,13 @@ import { Order } from "../models/Oders/Order";
 
 const { DB_HOST, DB_USER, DB_PASSWORD, DB_DATABASE, EXTERNAL_DB_URL }: any = process.env;
 
-
-export const connection = new Sequelize(EXTERNAL_DB_URL, {
-  /* dialect: "postgres",
+export const connection = new Sequelize(
+  /* EXTERNAL_DB_URL, */ {
+    dialect: "postgres",
     host: DB_HOST,
     username: DB_USER,
     password: DB_PASSWORD,
     database: DB_DATABASE,
-    */
-
     logging: false, //console.log,
     /*   dialectOptions: { ssl: { require: true } }, */
     models: [
@@ -55,10 +53,9 @@ export const connection = new Sequelize(EXTERNAL_DB_URL, {
   }
 );
 
-
 async function connectionDB() {
   try {
-    await connection.sync({ force: true });
+    await connection.sync({ force: false });
     console.log("Base de dato sincronizada con Exito");
   } catch (error) {
     console.error("Error al sincronizar la base de datos", error);
