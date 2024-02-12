@@ -9,9 +9,9 @@ import { userMiddleware } from "../../middlewares/userMiddlewares/userMiddleware
 
 const userRoutes = Router();
 //-----------con webtokens-------------
+userRoutes.post("/create", postUser);
 userRoutes.get("/search", adminMiddleware, getUsers);
 userRoutes.get("/search/:id", userMiddleware, getIdUser);
-userRoutes.post("/create", postUser);
 userRoutes.put("/update/:id", userMiddleware, putUser);
 userRoutes.put("/disable/:id", adminMiddleware, disableUser);
 //----------Desarollo------------------
