@@ -31,7 +31,7 @@ export const postPaymentItems = async (req: Request, res: Response) => {
         title: ItemToPay.title,
         unit_price: ItemToPay.unit_price,
         description: ItemToPay.description,
-        currency_id: ItemToPay.currency_id,
+        currency_id: "ARS",
       };
       return newItemToPay;
     });
@@ -49,7 +49,7 @@ export const postPaymentItems = async (req: Request, res: Response) => {
       listOrderItemsToPay,
       userId
     );
-    res.status(201).send(PaymentResponse);
+    res.status(201).send(PaymentResponse?.init_point);
   } catch (error: any) {
     res.status(400).send({ error: error.message });
   }
