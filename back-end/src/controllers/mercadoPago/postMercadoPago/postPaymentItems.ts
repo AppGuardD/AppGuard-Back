@@ -13,9 +13,10 @@ export const postPaymentItems = async (req: Request, res: Response) => {
 
     if (arrayItemsPay.length < 1) {
       console.log("entro");
-      return res
-        .status(400)
-        .send({ success: false, message: "no hay ninguna actividad a comprar" });
+      return res.status(400).send({
+        success: false,
+        message: "no hay ninguna actividad a comprar",
+      });
     } else if (!userId) {
       return res.status(400).send({
         success: false,
@@ -36,9 +37,8 @@ export const postPaymentItems = async (req: Request, res: Response) => {
       return newItemToPay;
     });
     //aqui comprobamos que las actividades existan con una funcion muy simple
-    const comprobationActivitiesExist: any = await comprobationProducts(
-      listOrderItemsToPay
-    );
+    const comprobationActivitiesExist: any =
+      await comprobationProducts(listOrderItemsToPay);
     if (!comprobationActivitiesExist?.success) {
       return res.status(400).send({
         success: false,
@@ -46,10 +46,8 @@ export const postPaymentItems = async (req: Request, res: Response) => {
       });
     }
 
-    const PaymentResponse: PreferenceResponse | undefined = await paymentActivities(
-      listOrderItemsToPay,
-      userId
-    );
+    const PaymentResponse: PreferenceResponse | undefined =
+      await paymentActivities(listOrderItemsToPay, userId);
     // verificamos que el paymentResponse  entregue una orden y no un undefined
     if (PaymentResponse === undefined) {
       return res.send({
@@ -57,7 +55,7 @@ export const postPaymentItems = async (req: Request, res: Response) => {
         message: "asegurate de  que la estructura de los datos esten correctos",
       });
     }
-    res.status(302).redirect(`${PaymentResponse?.init_point}`);
+    res.status(200).send(`${PaymentResponse?.init_point}`);
   } catch (error: any) {
     res.status(400).send({ error: error.message });
   }
