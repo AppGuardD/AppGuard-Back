@@ -20,19 +20,29 @@ import { PaymentBill } from "../models/paymentBill/paymentBill";
 import { detalle_carrito } from "../models/carrito/detalle_carrito";
 import { Order } from "../models/Oders/Order";
 
-const { DB_HOST, DB_USER, DB_PASSWORD, DB_DATABASE, EXTERNAL_DB_URL }: any = process.env;
+const { DB_HOST, DB_USER, DB_PASSWORD, DB_DATABASE, EXTERNAL_DB_URL }: any =
+  process.env;
 
+<<<<<<< HEAD
 
 export const connection = new Sequelize(
   //EXTERNAL_DB_URL, 
   {
+=======
+export const connection = new Sequelize(
+  /* EXTERNAL_DB_URL, */ {
+>>>>>>> 74c9d96d1c6762335a033a91e69e6d80abdd0fab
     dialect: "postgres",
     host: DB_HOST,
     username: DB_USER,
     password: DB_PASSWORD,
     database: DB_DATABASE,
     logging: false, //console.log,
+<<<<<<< HEAD
     //dialectOptions: { ssl: { require: true } },
+=======
+    /*dialectOptions: { ssl: { require: true } }, */
+>>>>>>> 74c9d96d1c6762335a033a91e69e6d80abdd0fab
     models: [
       Activity,
       Advice,
@@ -52,13 +62,12 @@ export const connection = new Sequelize(
       detalle_carrito,
       Order,
     ],
-  }
+  },
 );
-
 
 async function connectionDB() {
   try {
-    await connection.sync({ force: true });
+    await connection.sync({ force: false });
     console.log("Base de dato sincronizada con Exito");
   } catch (error) {
     console.error("Error al sincronizar la base de datos", error);
