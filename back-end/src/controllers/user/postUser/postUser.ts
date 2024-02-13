@@ -46,7 +46,7 @@ export const postUser: RequestHandler = async (req, res) => {
     const mailconfirm: SentMessageInfo = await sendMail(
       "Bienvenido a AppGuard",
       email,
-      "te quermos da rla bienvenida a AppGuard",
+      "te quermos dar la bienvenida a AppGuard",
       WelcomehtmlContent
     );
 

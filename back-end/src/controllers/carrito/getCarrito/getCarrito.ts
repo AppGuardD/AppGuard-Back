@@ -30,10 +30,11 @@ export const getCarrito = async (req: Request, res: Response) => {
       return res.status(200).json(NewCarrito);
     }
 
-    // Puedes incluir lógica adicional aquí si necesitas calcular totales, etc.
-
     return res.status(200).json(carrito);
   } catch (error) {
-    return res.status(500).json({ message: "Error al obtener el carrito", error });
+    console.error(error);
+    return res
+      .status(500)
+      .json({ message: "Error al obtener el carrito", error });
   }
 };

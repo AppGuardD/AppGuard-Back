@@ -9,9 +9,9 @@ import { userMiddleware } from "../../middlewares/userMiddlewares/userMiddleware
 
 const userRoutes = Router();
 //-----------con webtokens-------------
+userRoutes.post("/create", postUser);
 userRoutes.get("/search", adminMiddleware, getUsers);
 userRoutes.get("/search/:id", userMiddleware, getIdUser);
-userRoutes.post("/create", postUser);
 userRoutes.put("/update/:id", userMiddleware, putUser);
 userRoutes.put("/disable/:id", adminMiddleware, disableUser);
 //----------Desarollo------------------
@@ -20,6 +20,10 @@ userRoutes.get("/search/:id", getIdUser);
 userRoutes.post("/create", postUser);
 userRoutes.put("/update/:id", putUser);
 userRoutes.put("/disable/:id", disableUser);
-
  */
+
+<<<<<<< HEAD
+=======
+ */
+>>>>>>> 74c9d96d1c6762335a033a91e69e6d80abdd0fab
 export default userRoutes;

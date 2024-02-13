@@ -83,7 +83,13 @@ passport.deserializeUser(async (id: number, done) => {
     }
 });
 
+// export const authGoogle: RequestHandler = async (req, res) => {
+//     const objecto = req.user;
+//     return res.status(201).json({ "Objecto": objecto });
+// }
+
+
 export const authGoogle: RequestHandler = async (req, res) => {
-    const objecto = req.user;
-    return res.status(201).json({ "Objecto": objecto });
+    const { user, token } = req.user as any;
+    return res.status(201).json({ user: user, token: token });
 }

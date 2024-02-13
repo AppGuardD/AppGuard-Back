@@ -1,12 +1,18 @@
-import { Table, Column, Model, DataType, ForeignKey, BelongsTo, BelongsToMany, HasOne } from "sequelize-typescript";
+import {
+  Table,
+  Column,
+  Model,
+  DataType,
+  ForeignKey,
+  BelongsTo,
+} from "sequelize-typescript";
 import { Activity } from "../activity/activity";
-import { Carrito } from './carrito'
+import { Carrito } from "./carrito";
 
 @Table({
   timestamps: false,
   tableName: "detalle_carrito",
 })
-
 export class detalle_carrito extends Model {
   @Column({
     type: DataType.INTEGER,
@@ -20,24 +26,24 @@ export class detalle_carrito extends Model {
   })
   subtotal!: number;
 
-  //Relacionado.
-  //Relacion car con user.
   @ForeignKey(() => Activity)
   @Column({
-      type: DataType.INTEGER,
-      allowNull: false
+    type: DataType.INTEGER,
+    allowNull: false,
   })
-  ActivityId!: number
+  ActivityId!: number;
+
   @BelongsTo(() => Activity)
   Activity!: Activity[];
 
   @ForeignKey(() => Carrito)
   @Column({
-      type: DataType.INTEGER,
-      allowNull: false
+    type: DataType.INTEGER,
+    allowNull: false,
   })
-  carritoId!: number
+  carritoId!: number;
+
   @BelongsTo(() => Carrito)
   carrito!: Carrito[];
-  
 }
+

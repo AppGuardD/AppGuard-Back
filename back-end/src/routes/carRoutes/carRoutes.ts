@@ -13,12 +13,12 @@ import { userMiddleware } from "../../middlewares/userMiddlewares/userMiddleware
 const carRoutes = Router();
 //-----------con webtokens-------------
 
+carRoutes.get("/getCarrito/:userId", userMiddleware, getCarrito); //user
 carRoutes.post("/addItem", userMiddleware, addItem); //usuario
 carRoutes.post("/createCarrito", userMiddleware, createCarrito); //usuario
-carRoutes.delete("/deleteCarrito/:carritoId", adminMiddleware, deleteCarrito); //admin
 carRoutes.delete("/deleteItem/", userMiddleware, deleteItem); //usuario
 carRoutes.put("/removeItem/", userMiddleware, removeItem); //usurio
-carRoutes.get("/getCarrito/:userId", adminMiddleware, getCarrito); //admin por página
+carRoutes.delete("/deleteCarrito/:carritoId", adminMiddleware, deleteCarrito); //admin
 carRoutes.put("/updateCarrito/:carritoId", adminMiddleware, updateCarrito); //admin
 
 //----------Desarollo------------------
