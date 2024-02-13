@@ -22,8 +22,4 @@ userRoutes.put("/update/:id", putUser);
 userRoutes.put("/disable/:id", disableUser);
  */
 
-<<<<<<< HEAD
-=======
- */
->>>>>>> 74c9d96d1c6762335a033a91e69e6d80abdd0fab
 export default userRoutes;
