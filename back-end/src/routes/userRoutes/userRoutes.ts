@@ -20,5 +20,6 @@ userRoutes.get("/search/:id", getIdUser);
 userRoutes.post("/create", postUser);
 userRoutes.put("/update/:id", putUser);
 userRoutes.put("/disable/:id", disableUser);
+ */
 
-export default userRoutes; */
+export default userRoutes;
