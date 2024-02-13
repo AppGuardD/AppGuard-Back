@@ -21,11 +21,11 @@ export const addItem = async (req: Request, res: Response) => {
       ],
     });
 
-    // Si no existe un carrito para el usuario, crear uno nuevo
-
     const activity = await Activity.findByPk(ActivityId);
     if (!activity) {
-      return res.status(404).json({ error: true, message: "Actividad no encontrada" });
+      return res
+        .status(404)
+        .json({ error: true, message: "Actividad no encontrada" });
     }
 
     if (!carrito) {
@@ -39,8 +39,8 @@ export const addItem = async (req: Request, res: Response) => {
     const itemExists = await detalle_carrito.findOne({
       where: { ActivityId: ActivityId, carritoId: carrito.id },
     });
+
     if (itemExists) {
-      // Actualizar cantidad si ya existe en el carrito
       await itemExists.update({
         cantidad: (itemExists.cantidad += cantidad),
         subtotal: itemExists.cantidad * activity.price,
@@ -50,7 +50,6 @@ export const addItem = async (req: Request, res: Response) => {
         total: carrito.total + activity.price,
       });
     } else {
-      // Crear nuevo item en el carrito
       const newItem = await detalle_carrito.create({
         cantidad: cantidad,
         subtotal: cantidad * activity.price,
