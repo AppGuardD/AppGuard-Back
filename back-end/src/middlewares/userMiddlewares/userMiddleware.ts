@@ -1,18 +1,12 @@
 import { Request, Response, NextFunction } from "express";
 import { verificatonJWT } from "../../helper/jwt/jwt";
 
-export const userMiddleware = (
-  req: Request,
-  res: Response,
-  next: NextFunction,
-) => {
+export const userMiddleware = (req: Request, res: Response, next: NextFunction) => {
   try {
     const token = req.headers.tk;
 
     if (!token) {
-      return res
-        .status(400)
-        .send({ success: false, message: "se necesita el token" });
+      return res.status(400).send({ success: false, message: "se necesita el token" });
     }
 
     const tokenAccess: { rol: string } | null = verificatonJWT(token);

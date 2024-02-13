@@ -15,6 +15,7 @@ const pgSession = require('connect-pg-simple')(session);
 
 const app = express();
 
+
 //config
 app.set("PORT", process.env.PORT || 3001);
 
@@ -41,6 +42,7 @@ app.use(passport.session());
 app.use(morgan("dev"));
 app.use(cors());
 
+
 app.use((_req, res, next) => {
     res.header('Access-Control-Allow-Origin', '*');
     res.header('Access-Control-Allow-Credentials', 'true');
@@ -51,6 +53,8 @@ app.use((_req, res, next) => {
     res.header('Access-Control-Allow-Methods', 'GET, POST, OPTIONS, PUT, DELETE');
     next();
 });
+
+
 
 
 app.use(express.urlencoded({ extended: false }));
