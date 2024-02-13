@@ -14,7 +14,7 @@ const session = require('express-session');
 const pgSession = require('connect-pg-simple')(session);
 
 const app = express();
-//const allowedOrigin = 'https://appguard-b9iztoz11-appguardds-projects.vercel.app/';
+
 
 //config
 app.set("PORT", process.env.PORT || 3001);
@@ -43,15 +43,19 @@ app.use(morgan("dev"));
 app.use(cors());
 
 
-// app.use(cors({
-//     origin: allowedOrigin
-// }));
+app.use((_req, res, next) => {
+    res.header('Access-Control-Allow-Origin', '*');
+    res.header('Access-Control-Allow-Credentials', 'true');
+    res.header(
+        'Access-Control-Allow-Headers',
+        'Origin, X-Requested-With, Content-Type, Accept'
+    );
+    res.header('Access-Control-Allow-Methods', 'GET, POST, OPTIONS, PUT, DELETE');
+    next();
+});
 
-// app.use(function (_req, res, next) {
-//     res.header("Access-Control-Allow-Origin", "https://appguard-p4w68ghl4-appguardds-projects.vercel.app/");
-//     res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
-//     next();
-// });
+
+
 
 app.use(express.urlencoded({ extended: false }));
 app.use(express.json());
