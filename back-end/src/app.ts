@@ -41,15 +41,17 @@ app.use(passport.session());
 //middleswares
 app.use(morgan("dev"));
 app.use(cors());
+
+
 // app.use(cors({
 //     origin: allowedOrigin
 // }));
 
-app.use(function (_req, res, next) {
-    res.header("Access-Control-Allow-Origin", "https://appguard-p4w68ghl4-appguardds-projects.vercel.app/");
-    res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
-    next();
-});
+// app.use(function (_req, res, next) {
+//     res.header("Access-Control-Allow-Origin", "https://appguard-p4w68ghl4-appguardds-projects.vercel.app/");
+//     res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
+//     next();
+// });
 
 app.use(express.urlencoded({ extended: false }));
 app.use(express.json());
