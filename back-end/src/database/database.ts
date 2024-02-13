@@ -23,47 +23,36 @@ import { Order } from "../models/Oders/Order";
 const { DB_HOST, DB_USER, DB_PASSWORD, DB_DATABASE, EXTERNAL_DB_URL }: any =
   process.env;
 
-<<<<<<< HEAD
 
-export const connection = new Sequelize(
-  //EXTERNAL_DB_URL, 
-  {
-=======
-export const connection = new Sequelize(
-  /* EXTERNAL_DB_URL, */ {
->>>>>>> 74c9d96d1c6762335a033a91e69e6d80abdd0fab
-    dialect: "postgres",
+
+export const connection = new Sequelize(EXTERNAL_DB_URL, {
+  /*     dialect: "postgres",
     host: DB_HOST,
     username: DB_USER,
     password: DB_PASSWORD,
-    database: DB_DATABASE,
-    logging: false, //console.log,
-<<<<<<< HEAD
-    //dialectOptions: { ssl: { require: true } },
-=======
-    /*dialectOptions: { ssl: { require: true } }, */
->>>>>>> 74c9d96d1c6762335a033a91e69e6d80abdd0fab
-    models: [
-      Activity,
-      Advice,
-      Favorite,
-      Mangrullo,
-      ReviewActivity,
-      ReviewMangrullo,
-      ActivityMangrullo,
-      FavoriteMangrullo,
-      User,
-      Session,
-      Ticket,
-      TicketActivity,
-      Donation,
-      PaymentBill,
-      Carrito,
-      detalle_carrito,
-      Order,
-    ],
-  },
-);
+    database: DB_DATABASE, */
+  logging: false, //console.log,
+  /*   dialectOptions: { ssl: { require: true } }, */
+  models: [
+    Activity,
+    Advice,
+    Favorite,
+    Mangrullo,
+    ReviewActivity,
+    ReviewMangrullo,
+    ActivityMangrullo,
+    FavoriteMangrullo,
+    User,
+    Session,
+    Ticket,
+    TicketActivity,
+    Donation,
+    PaymentBill,
+    Carrito,
+    detalle_carrito,
+    Order,
+  ],
+});
 
 async function connectionDB() {
   try {
