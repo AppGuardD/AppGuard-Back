@@ -14,7 +14,6 @@ const session = require('express-session');
 const pgSession = require('connect-pg-simple')(session);
 
 const app = express();
-//const allowedOrigin = 'https://appguard-b9iztoz11-appguardds-projects.vercel.app/';
 
 //config
 app.set("PORT", process.env.PORT || 3001);
@@ -41,9 +40,7 @@ app.use(passport.session());
 //middleswares
 app.use(morgan("dev"));
 app.use(cors());
-// app.use(cors({
-//     origin: allowedOrigin
-// }));
+
 app.use(express.urlencoded({ extended: false }));
 app.use(express.json());
 app.use(routes);
