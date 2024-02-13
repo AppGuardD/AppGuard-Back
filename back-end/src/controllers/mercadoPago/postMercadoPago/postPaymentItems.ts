@@ -35,7 +35,7 @@ export const postPaymentItems = async (req: Request, res: Response) => {
       };
       return newItemToPay;
     });
-
+    //aqui comprobamos que las actividades existan con una funcion muy simple
     const comprobationActivitiesExist: any = await comprobationProducts(
       listOrderItemsToPay
     );
@@ -45,11 +45,19 @@ export const postPaymentItems = async (req: Request, res: Response) => {
         message: "no se puede hacer pago si las actividades no existen",
       });
     }
+
     const PaymentResponse: PreferenceResponse | undefined = await paymentActivities(
       listOrderItemsToPay,
       userId
     );
-    res.status(201).send(PaymentResponse?.init_point);
+    // verificamos que el paymentResponse  entregue una orden y no un undefined
+    if (PaymentResponse === undefined) {
+      return res.send({
+        success: false,
+        message: "asegurate de  que la estructura de los datos esten correctos",
+      });
+    }
+    res.status(302).redirect(`${PaymentResponse?.init_point}`);
   } catch (error: any) {
     res.status(400).send({ error: error.message });
   }
