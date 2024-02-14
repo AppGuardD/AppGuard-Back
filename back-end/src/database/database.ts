@@ -28,32 +28,33 @@ export const connection = new Sequelize(EXTERNAL_DB_URL, {
     username: DB_USER,
     password: DB_PASSWORD,
     database: DB_DATABASE,
-    logging: false, */
-  /*   dialectOptions: { ssl: { require: true } }, */
-  models: [
-    Activity,
-    Advice,
-    Favorite,
-    Mangrullo,
-    ReviewActivity,
-    ReviewMangrullo,
-    ActivityMangrullo,
-    FavoriteMangrullo,
-    User,
-    Session,
-    Ticket,
-    TicketActivity,
-    Donation,
-    PaymentBill,
-    Carrito,
-    detalle_carrito,
-    Order,
-  ],
-});
+    logging: false,*/
+    /*   dialectOptions: { ssl: { require: true } }, */
+    models: [
+      Activity,
+      Advice,
+      Favorite,
+      Mangrullo,
+      ReviewActivity,
+      ReviewMangrullo,
+      ActivityMangrullo,
+      FavoriteMangrullo,
+      User,
+      Session,
+      Ticket,
+      TicketActivity,
+      Donation,
+      PaymentBill,
+      Carrito,
+      detalle_carrito,
+      Order,
+    ],
+  }
+);
 
 async function connectionDB() {
   try {
-    await connection.sync({ force: true });
+    await connection.sync({ force: false });
     console.log("Base de dato sincronizada con Exito");
   } catch (error) {
     console.error("Error al sincronizar la base de datos", error);

@@ -37,14 +37,21 @@ export const adminActivity = async (
       queryOptions.where.type = type;
     }
 
-    const totalCount: any = await Activity.count(queryOptions);
+    const data: Activity[] = await Activity.findAll(queryOptions);
+    const sort = (activities: Activity[]) => {
+      const sorter = activities.sort((a, b) => a?.id - b?.id);
+      return sorter;
+    };
+
+    const allActivities = sort(data);
+    const totalCount: any = allActivities.length;
     const offset: number = (parseInt(page || "1") - 1) * parseInt(items || "8");
     const limit: number = parseInt(items || "8");
 
     queryOptions.limit = limit;
     queryOptions.offset = offset;
 
-    const dbItems: Activity[] = await Activity.findAll(queryOptions);
+    const dbItems: Activity[] = allActivities.slice(offset, offset + limit);
 
     const totalPages: number = Math.ceil(totalCount / limit);
 

@@ -1,11 +1,7 @@
 import { Request, Response } from "express";
-
-import { facture } from "../../../services/mercadoPagoServices/mercadoPagoFactureEmail/Facture";
-import { sendMail } from "../../../helper/nodeMail/nodeMail";
-import { User } from "../../../models/user/user";
-import { SentMessageInfo } from "nodemailer";
 import { requirePayInfo } from "../../../services/mercadoPagoServices/mercadopagoConfig/mercadoPago";
-
+import * as dotenv from "dotenv";
+dotenv.config();
 export const getSucces = async (
   req: Request<{}, {}, {}, { payment_id: string }>,
   res: Response
@@ -14,7 +10,7 @@ export const getSucces = async (
     const info = req.query;
     const paymentInfo = await requirePayInfo(info?.payment_id);
 
-    res.redirect(302, "https://www.youtube.com/?state=true");
+    res.redirect(302, `${process.env.RETURN_URL}?state=success`);
   } catch (error: any) {
     res.status(400).send({ error: error.message });
   }
