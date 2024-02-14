@@ -20,8 +20,7 @@ import { PaymentBill } from "../models/paymentBill/paymentBill";
 import { detalle_carrito } from "../models/carrito/detalle_carrito";
 import { Order } from "../models/Oders/Order";
 
-const { DB_HOST, DB_USER, DB_PASSWORD, DB_DATABASE, EXTERNAL_DB_URL }: any =
-  process.env;
+const { DB_HOST, DB_USER, DB_PASSWORD, DB_DATABASE, EXTERNAL_DB_URL }: any = process.env;
 
 export const connection = new Sequelize(
   //EXTERNAL_DB_URL,
@@ -52,7 +51,7 @@ export const connection = new Sequelize(
       detalle_carrito,
       Order,
     ],
-  },
+  }
 );
 
 async function connectionDB() {

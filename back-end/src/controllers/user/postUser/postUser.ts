@@ -49,7 +49,6 @@ export const postUser: RequestHandler = async (req, res) => {
       "te quermos dar la bienvenida a AppGuard",
       WelcomehtmlContent
     );
-
     if (mailconfirm?.accepted?.length <= 0) {
       return res.status(201).send({
         success: true,
