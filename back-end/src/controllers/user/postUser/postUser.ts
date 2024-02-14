@@ -11,13 +11,7 @@ export const postUser: RequestHandler = async (req, res) => {
       req.body;
 
     // Verificar que los campos no estén vacíos.
-    if (
-      !userName ||
-      !email ||
-      !password ||
-      !typeIdentification ||
-      !numberIdentification
-    ) {
+    if (!userName || !email || !password || !typeIdentification) {
       return res.status(400).json({ message: "Todos los campos son obligatorios" });
     }
 
