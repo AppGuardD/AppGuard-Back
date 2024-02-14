@@ -31,45 +31,14 @@ const sessionConfig = {
     cookie: { maxAge: 1 * 60 * 60 * 1000 } // 1 día de duración
 };
 
-// Configuracion para realizar sesion para loguearse con google.
 app.use(session(sessionConfig));
 
-// Inicialización de Passport para loguearse con google.
 app.use(passport.initialize());
 app.use(passport.session());
 
 //middleswares
 app.use(morgan("dev"));
-const whiteList = [
-    'https://appguard-back.onrender.com',
-    'https://appguard.vercel.app',
-    'http://localhost:5173',
-    'http://localhost:3001',
-    'https://appguard-back.onrender.com/api/authgoogle/google',
-    'https://appguard-b9iztoz11-appguardds-projects.vercel.app',
-    'http://localhost:5173',
-    'https://appguard.vercel.app/authgoogle/google',
-    'http://localhost:3001/api/authgoogle/google'
-]
-app.use(cors({ origin: whiteList }));
-
-
-
-
-
-// app.use((_req, res, next) => {
-//     res.header('Access-Control-Allow-Origin: *');
-//     res.header('Access-Control-Allow-Credentials: true');
-//     res.header(
-//         'Access-Control-Allow-Headers: Origin, X-Requested-With, Content-Type, Accept'
-//     );
-//     res.header('Access-Control-Allow-Methods: GET, POST, OPTIONS, PUT, DELETE');
-//     next();
-// });
-
-
-
-
+app.use(cors());
 app.use(express.urlencoded({ extended: false }));
 app.use(express.json());
 app.use(routes);
