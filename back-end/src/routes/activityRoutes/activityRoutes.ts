@@ -7,16 +7,28 @@ import { disableActivity } from "../../controllers/activity/disableActivity/disa
 import { adminMiddleware } from "../../middlewares/adminMiddlewares/adminMiddleware";
 import { upload } from "../../helper/multer/multerConfig";
 import { adminActivity } from "../../controllers/activity/adminActivity/adminActivity";
+import { getAllActividades } from "../../controllers/activity/bulkActivity/getAllActivities";
 
 const ActivityRouter = Router();
 
 //---------- con webtokens ------------------
 ActivityRouter.get("/admin", adminMiddleware, adminActivity);
 ActivityRouter.get("/search", getActivities);
+ActivityRouter.get("/searchAll", getAllActividades);
 ActivityRouter.get("/search/:id", getIdActivity);
 ActivityRouter.put("/disable/:id", adminMiddleware, disableActivity);
-ActivityRouter.post("/create", adminMiddleware, upload.single("image"), postActivity);
-ActivityRouter.put("/update/:id", adminMiddleware, upload.single("image"), putActivity);
+ActivityRouter.post(
+  "/create",
+  adminMiddleware,
+  upload.single("image"),
+  postActivity,
+);
+ActivityRouter.put(
+  "/update/:id",
+  adminMiddleware,
+  upload.single("image"),
+  putActivity,
+);
 //--------------Desarollo----------------
 
 /* ActivityRouter.get("/admin", adminActivity);

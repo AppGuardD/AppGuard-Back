@@ -1,474 +1,435 @@
 {
-    "users": [
+  "users": [
     {
-        "userName": "Javier Lopez",
-        "email": "javilop1311@gmail.com",
-        "password": "232321",
-        "typeIdentification": "DNI",
-        "numberIdentification": "34231256",
-        "rol": "Admin"
+      "userName": "Javier Lopez",
+      "email": "javilop1311@gmail.com",
+      "password": "232321",
+      "typeIdentification": "DNI",
+      "numberIdentification": "34231256",
+      "rol": "Admin"
     },
     {
-        "userName": "Nestor Camilo ",
-        "email": "nestor1212@gmail.com",
-        "password": "112323",
-        "typeIdentification": "DNI",
-        "numberIdentification": "34231256",
-        "rol": "Admin"
+      "userName": "Nestor Camilo ",
+      "email": "nestor1212@gmail.com",
+      "password": "112323",
+      "typeIdentification": "DNI",
+      "numberIdentification": "34231256",
+      "rol": "Admin"
     },
     {
-        "userName": "Andres Juan",
-        "email": "juandres1311@gmail.com",
-        "password": "222323",
-        "typeIdentification": "DNI",
-        "numberIdentification": "34231256",
-        "rol": "Admin"
+      "userName": "Andres Juan",
+      "email": "juandres1311@gmail.com",
+      "password": "222323",
+      "typeIdentification": "DNI",
+      "numberIdentification": "34231256",
+      "rol": "Admin"
     },
     {
-        "userName": "Marquinho Che",
-        "email": "marquito1212@gmail.com",
-        "password": "332323",
-        "typeIdentification": "DNI",
-        "numberIdentification": "34231256",
-        "rol": "Admin"
+      "userName": "Marquinho Che",
+      "email": "marquito1212@gmail.com",
+      "password": "332323",
+      "typeIdentification": "DNI",
+      "numberIdentification": "34231256",
+      "rol": "Admin"
     },
     {
-        "userName": "Braian Che",
-        "email": "braian1311@gmail.com",
-        "password": "442323",
-        "typeIdentification": "DNI",
-        "numberIdentification": "34231256",
-        "rol": "Admin"
+      "userName": "Braian Che",
+      "email": "braian1311@gmail.com",
+      "password": "442323",
+      "typeIdentification": "DNI",
+      "numberIdentification": "34231256",
+      "rol": "Admin"
     },
     {
-        "userName": "Humbert Meromero",
-        "email": "humbertmex1212@gmail.com",
-        "password": "552323",
-        "typeIdentification": "DNI",
-        "numberIdentification": "34231256",
-        "rol": "Admin"
+      "userName": "Humbert Meromero",
+      "email": "humbertmex1212@gmail.com",
+      "password": "552323",
+      "typeIdentification": "DNI",
+      "numberIdentification": "34231256",
+      "rol": "Admin"
     },
     {
-        "userName": "Elias Tomy",
-        "email": "tomyche1212@gmail.com",
-        "password": "662323",
-        "typeIdentification": "DNI",
-        "numberIdentification": "34231256",
-        "rol": "Admin"
+      "userName": "Elias Tomy",
+      "email": "tomyche1212@gmail.com",
+      "password": "662323",
+      "typeIdentification": "DNI",
+      "numberIdentification": "34231256",
+      "rol": "Admin"
     }
-],
+  ],
 
-"mangrullos":[
+  "mangrullos": [
     {
-        "zone": "Piedras Blancas",
-        "dangerousness": 2,
-        "image": "https://www.turismoentrerios.com/piedrasblancas/img/playas.jpg",
-        "qualification": null,
-        "description": "Este Mangrullo es una torre rústica que sirve de atalaya en las proximidades de fortines, estancias y poblaciones de la pampa y otras regiones llanas. Su altura solía alcanzar entre 10 y 15 metros, y son construido con materiales finos y de alta duración, coronándose como una plataforma en la parte superior de las playas o ríos."
+      "zone": "Piedras Blancas",
+      "dangerousness": 2,
+      "image": "https://res.cloudinary.com/dh9rajm0q/image/upload/v1707862376/lozcrbadaidc0vscrmtr.jpg",
+      "description": "Este Mangrullo es una torre rústica que sirve de atalaya en las proximidades de fortines, estancias y poblaciones de la pampa y otras regiones llanas. Su altura solía alcanzar entre 10 y 15 metros, y son construido con materiales finos y de alta duración, coronándose como una plataforma en la parte superior de las playas o ríos."
     },
     {
-        "zone": "La Costa",
-        "dangerousness": 1,
-        "image": "https://www.todoprovincial.com/wp-content/uploads/2019/11/la-costa.jpg",
-        "qualification": null,
-        "description": "El mangrullo ubicado en la zona de La Costa se encuentra en un entorno seguro, con una peligrosidad mínima de 1, lo que lo convierte en un destino ideal para aquellos que buscan disfrutar de un ambiente tranquilo y apacible. La imagen proporcionada revela un paisaje costero impresionante, sugiriendo que el mangrullo se encuentra en una ubicación privilegiada, posiblemente cerca de la playa."
+      "zone": "La Costa",
+      "dangerousness": 1,
+      "image": "https://res.cloudinary.com/dh9rajm0q/image/upload/v1707862376/b5nxlcamfiadqp5rsgjj.jpg",
+      "description": "El mangrullo ubicado en la zona de La Costa se encuentra en un entorno seguro, con una peligrosidad mínima de 1, lo que lo convierte en un destino ideal para aquellos que buscan disfrutar de un ambiente tranquilo y apacible. La imagen proporcionada revela un paisaje costero impresionante, sugiriendo que el mangrullo se encuentra en una ubicación privilegiada, posiblemente cerca de la playa."
     },
     {
-        "zone": "Mar del Plata",
-        "dangerousness": 1,
-        "image": "https://as1.ftcdn.net/v2/jpg/01/18/77/76/1000_F_118777668_2QU6iaPbmly2RmiZbJi99DrnsNyyTroM.jpg",
-        "qualification": null,
-        "description": "Mar del Plata, una icónica ciudad costera, se destaca por su baja peligrosidad (1) y su atractivo entorno marítimo. Ubicada en la costa, ofrece a sus residentes y visitantes una experiencia de vida tranquila y segura."
+      "zone": "Mar del Plata",
+      "dangerousness": 1,
+      "image": "https://res.cloudinary.com/dh9rajm0q/image/upload/v1707862377/b9kypculu2yimmfwezud.jpg",
+      "description": "Mar del Plata, una icónica ciudad costera, se destaca por su baja peligrosidad (1) y su atractivo entorno marítimo. Ubicada en la costa, ofrece a sus residentes y visitantes una experiencia de vida tranquila y segura."
     },
     {
-        "zone": "Bariloche",
-        "dangerousness": 2,
-        "image": "https://elcordillerano1.cdn.net.ar/252/elcordillerano/images/69/79/697964_ce708d6555d0961f0901bcf4fbb2966e6a80e309f1922a25cb00ebcbabc017ae/md.webp",
-        "qualification": null,
-        "description": "El mangrullo ubicado en la zona de Bariloche exhibe un entorno pintoresco y tranquilo. Con una peligrosidad mínima (nivel 1), proporciona un ambiente seguro para aquellos que buscan disfrutar de la belleza natural sin preocupaciones significativas. La estructura, representada en la imagen proporcionada, destaca por su diseño y ubicación estratégica, permitiendo a los visitantes apreciar vistas panorámicas de la región."
+      "zone": "Bariloche",
+      "dangerousness": 2,
+      "image": "https://res.cloudinary.com/dh9rajm0q/image/upload/v1707862378/angslscj9pphug8adivj.webp",
+      "description": "El mangrullo ubicado en la zona de Bariloche exhibe un entorno pintoresco y tranquilo. Con una peligrosidad mínima (nivel 1), proporciona un ambiente seguro para aquellos que buscan disfrutar de la belleza natural sin preocupaciones significativas. La estructura, representada en la imagen proporcionada, destaca por su diseño y ubicación estratégica, permitiendo a los visitantes apreciar vistas panorámicas de la región."
     },
     {
-        "zone": "Posadas",
-        "dangerousness": 3,
-        "image": "https://comunicacion.misiones.gob.ar/wp-content/uploads/2023/02/WhatsApp-Image-2023-02-22-at-18.43.40-1.jpeg",
-        "qualification": null,
-        "description": "El mangrullo ubicado en la encantadora zona de Posadas presenta un entorno seguro con una calificación de peligrosidad de 1, indicando que es un lugar propicio para la exploración sin mayores preocupaciones. La imagen proporcionada revela un mangrullo con una estructura distintiva, rodeado por un entorno natural que sugiere una experiencia tranquila y agradable."
+      "zone": "Posadas",
+      "dangerousness": 3,
+      "image": "https://res.cloudinary.com/dh9rajm0q/image/upload/v1707862380/dhpl6pnmlmoxoncetthq.jpg",
+      "description": "El mangrullo ubicado en la encantadora zona de Posadas presenta un entorno seguro con una calificación de peligrosidad de 1, indicando que es un lugar propicio para la exploración sin mayores preocupaciones. La imagen proporcionada revela un mangrullo con una estructura distintiva, rodeado por un entorno natural que sugiere una experiencia tranquila y agradable."
     },
     {
-        "zone": "Piedras NegrasBlancas de Costa",
-        "dangerousness": 1,
-        "image": "https://www.turismoentrerios.com/piedrasblancas/img/playas.jpg",
-        "qualification": null,
-        "description": "Piedras Blancas es una encantadora zona caracterizada por su tranquilidad y seguridad, con un bajo índice de peligrosidad (1). Situada en un entorno pintoresco, esta área ofrece a residentes y visitantes una experiencia de vida apacible y serena."
+      "zone": "Piedras NegrasBlancas de Costa",
+      "dangerousness": 1,
+      "image": "https://res.cloudinary.com/dh9rajm0q/image/upload/v1707862382/zczusoj8arqbdfjjmkmc.jpg",
+      "description": "Piedras Blancas es una encantadora zona caracterizada por su tranquilidad y seguridad, con un bajo índice de peligrosidad (1). Situada en un entorno pintoresco, esta área ofrece a residentes y visitantes una experiencia de vida apacible y serena."
     },
     {
-        "zone": "Pinamar",
-        "dangerousness": 1,
-        "image": "https://media-cdn.tripadvisor.com/media/photo-s/0b/c8/e4/67/casilla-de-guardavidas.jpg",
-        "qualification": null,
-        "description": "El mangrullo en la zona de Pinamar se destaca por su entorno seguro, con una peligrosidad mínima de 1, proporcionando a los visitantes un lugar tranquilo para disfrutar de sus alrededores. La imagen proporcionada muestra una casilla de guardavidas, que aunque no es un mangrullo en el sentido tradicional, sugiere una ubicación costera con presencia de servicios de seguridad."
+      "zone": "Pinamar",
+      "dangerousness": 1,
+      "image": "https://res.cloudinary.com/dh9rajm0q/image/upload/v1707862402/xuzncwlvjugerzvwjnqj.jpg",
+      "description": "El mangrullo en la zona de Pinamar se destaca por su entorno seguro, con una peligrosidad mínima de 1, proporcionando a los visitantes un lugar tranquilo para disfrutar de sus alrededores. La imagen proporcionada muestra una casilla de guardavidas, que aunque no es un mangrullo en el sentido tradicional, sugiere una ubicación costera con presencia de servicios de seguridad."
     },
     {
-        "zone": "Villa Gesell",
-        "dangerousness": 1,
-        "image": "https://comunicacion.misiones.gob.ar/wp-content/uploads/2023/02/WhatsApp-Image-2023-02-22-at-18.43.40-1.jpeg",
-        "qualification": null,
-        "description": "El mangrullo en la zona de Villa Gesell presenta un entorno seguro, con una peligrosidad mínima de 1, lo que sugiere un lugar propicio para la relajación y la exploración sin preocupaciones significativas. La imagen proporcionada muestra un mangrullo con una estructura que destaca en el entorno natural de Villa Gesell."
+      "zone": "Villa Gesell",
+      "dangerousness": 1,
+      "image": "https://res.cloudinary.com/dh9rajm0q/image/upload/v1707862404/swrprxbcv9kun1pfwh5k.jpg",
+      "description": "El mangrullo en la zona de Villa Gesell presenta un entorno seguro, con una peligrosidad mínima de 1, lo que sugiere un lugar propicio para la relajación y la exploración sin preocupaciones significativas. La imagen proporcionada muestra un mangrullo con una estructura que destaca en el entorno natural de Villa Gesell."
     },
     {
-        "zone": "Mar del Plata",
-        "dangerousness": 3,
-        "image": "https://www.infobae.com/new-resizer/y0lmIyaun24X-lICJpZzwHAZySI=/768x432/filters:format(webp):quality(85)/cloudfront-us-east-1.images.arcpublishing.com/infobae/EJ4Y4ODTOFDOVJXKP4RLBRBUUI.jpg",
-        "qualification": null,
-        "description": "Mar del Plata es una icónica ciudad costera en la provincia de Buenos Aires, Argentina, famosa por sus extensas playas de arena dorada y su animada vida nocturna. Los turistas pueden disfrutar del sol y el mar, explorar el puerto pesquero y degustar mariscos frescos en los restaurantes frente al mar."
+      "zone": "Mar del Plata",
+      "dangerousness": 3,
+      "image": "https://res.cloudinary.com/dh9rajm0q/image/upload/v1707862405/wknflh4sk8pgdbum6l8d.jpg",
+      "description": "Mar del Plata es una icónica ciudad costera en la provincia de Buenos Aires, Argentina, famosa por sus extensas playas de arena dorada y su animada vida nocturna. Los turistas pueden disfrutar del sol y el mar, explorar el puerto pesquero y degustar mariscos frescos en los restaurantes frente al mar."
     },
     {
-        "zone": "Pinamar, Buenos Aires",
-        "dangerousness": 2,
-        "image": "https://cdn0.matrimonio.com.co/article/8204/3_2/960/jpg/24028-playas-bonitas-de-colombia-para-luna-de-miel.webp",
-        "qualification": null,
-        "description": "Pinamar es un exclusivo destino de playa en la costa atlántica de Argentina, conocido por sus amplias playas de arena blanca y sus elegantes casas de veraneo. Los visitantes pueden practicar deportes acuáticos, jugar al golf en campos de clase mundial y relajarse en clubes de playa exclusivos."
+      "zone": "Pinamar, Buenos Aires",
+      "dangerousness": 2,
+      "image": "https://res.cloudinary.com/dh9rajm0q/image/upload/v1707862405/d2rdcost9jqcswulqrjg.webp",
+      "description": "Pinamar es un exclusivo destino de playa en la costa atlántica de Argentina, conocido por sus amplias playas de arena blanca y sus elegantes casas de veraneo. Los visitantes pueden practicar deportes acuáticos, jugar al golf en campos de clase mundial y relajarse en clubes de playa exclusivos."
     },
     {
-        "zone": "Villa Gesell, Buenos Aires",
-        "dangerousness": 2,
-        "image": "https://www.colombia.co/wp-content/uploads/2021/11/Barcos-en-las-cristalinas-aguas-de-Islas-del-Rosario-Colombia-768x397.jpg",
-        "qualification": null,
-        "description": "Villa Gesell es una pintoresca localidad costera en la costa atlántica de Argentina, famosa por sus playas de arena fina y su ambiente familiar. Los turistas pueden disfrutar de actividades como el surf, el kiteboarding y los paseos en bicicleta por la extensa costa."
+      "zone": "Villa Gesell, Buenos Aires",
+      "dangerousness": 2,
+      "image": "https://res.cloudinary.com/dh9rajm0q/image/upload/v1707862406/cowgjdzbpjyamy6558tb.jpg",
+      "description": "Villa Gesell es una pintoresca localidad costera en la costa atlántica de Argentina, famosa por sus playas de arena fina y su ambiente familiar. Los turistas pueden disfrutar de actividades como el surf, el kiteboarding y los paseos en bicicleta por la extensa costa."
     },
     {
-        "zone": "Miramar",
-        "dangerousness": 2,
-        "image": "https://lanotapositiva.com/wp-content/uploads/2020/01/polynesia-3021072_1920home.jpg",
-        "qualification": null,
-        "description": "Miramar es una encantadora ciudad costera en la provincia de Buenos Aires, Argentina, conocida por sus playas tranquilas y su entorno natural. Los visitantes pueden relajarse en la playa, explorar la reserva natural local y disfrutar de la gastronomía regional en los restaurantes junto al mar."
+      "zone": "Miramar",
+      "dangerousness": 2,
+      "image": "https://res.cloudinary.com/dh9rajm0q/image/upload/v1707862407/clhvtascpkldqgaxo8hx.jpg",
+      "description": "Miramar es una encantadora ciudad costera en la provincia de Buenos Aires, Argentina, conocida por sus playas tranquilas y su entorno natural. Los visitantes pueden relajarse en la playa, explorar la reserva natural local y disfrutar de la gastronomía regional en los restaurantes junto al mar."
     },
     {
-        "zone": "Necochea",
-        "dangerousness": 3,
-        "image": "https://www.viajesboletin.com/wp-content/uploads/2018/09/images_2018_Septiembre_mejoresplayas.jpg",
-        "qualification": null,
-        "description": "Necochea es una ciudad costera en la provincia de Buenos Aires, Argentina, reconocida por sus playas extensas y sus espectaculares acantilados. Los turistas pueden practicar surf, pesca deportiva y avistamiento de aves en este hermoso destino costero."
+      "zone": "Necochea",
+      "dangerousness": 3,
+      "image": "https://res.cloudinary.com/dh9rajm0q/image/upload/v1707862408/opitfprb3pddyg7d81pf.jpg",
+      "description": "Necochea es una ciudad costera en la provincia de Buenos Aires, Argentina, reconocida por sus playas extensas y sus espectaculares acantilados. Los turistas pueden practicar surf, pesca deportiva y avistamiento de aves en este hermoso destino costero."
     },
     {
-        "zone": "Las Grutas, Río Negro",
-        "dangerousness": 3,
-        "image": "https://blogskystorage.s3.amazonaws.com/2022/05/playas-mas-cercanas-desde-buenos-aires-1200x800.jpeg",
-        "qualification": null,
-        "description": "Las Grutas es un destino de playa en la provincia de Río Negro, Argentina, conocido por sus aguas cristalinas y sus formaciones rocosas únicas. Los visitantes pueden disfrutar del snorkel, buceo y kayak, además de relajarse en las playas de arena suave."
-      },
-      {
-        "zone": "Mar de las Pampas, Buenos Aires",
-        "dangerousness": 1,
-        "image": "https://www.costacruceros.com/content/dam/costa/costa-magazine/articles-magazine/beaches/playas-buenos-aires-las-mejores-seis/playa-buenos-aires_d.jpg.image.648.487.high.jpg",
-        "qualification": null,
-        "description": "Mar de las Pampas es una tranquila localidad costera en la provincia de Buenos Aires, Argentina, famosa por sus bosques de pinos y sus playas vírgenes. Los turistas pueden practicar senderismo, montar a caballo y disfrutar de la tranquilidad de este hermoso entorno natural."
-      },
-      {
-        "zone": "Monte Hermoso, Buenos Aires",
-        "dangerousness": 3,
-        "image": "https://tipsparatuviaje.com/wp-content/uploads/2019/07/playa-blanca.jpg",
-        "qualification": null,
-        "description": "Monte Hermoso es una ciudad costera en la provincia de Buenos Aires, Argentina, conocida por sus amplias playas y su ambiente familiar. Los visitantes pueden disfrutar del sol y el mar, practicar deportes acuáticos y explorar la reserva natural local."
-      },
-      {
-        "zone": "Claromeco",
-        "dangerousness": 1,
-        "image": "https://i0.wp.com/enviajes.cl/wp-content/uploads/2014/12/Mejores-playas-de-Argentina-Pinamar1.jpg",
-        "qualification": null,
-        "description": "Claromecó es un destino de playa en la provincia de Buenos Aires, Argentina, conocido por sus dunas de arena y sus playas vírgenes. Los turistas pueden disfrutar del windsurf, kiteboarding y pesca en este entorno natural único."
-      },
-      {
-        "zone": "San Clemente del Tuyú, Buenos Aires",
-        "dangerousness": 3,
-        "image": "https://www.costacruceros.es/content/dam/costa/costa-magazine/articles-magazine/beaches/playas-buenos-aires/playita-de-olivos_d.jpg.image.648.487.high.jpg",
-        "qualification": null,
-        "description": "San Clemente del Tuyú es una ciudad costera en la provincia de Buenos Aires, Argentina, famosa por sus playas extensas y su ambiente relajado. Los visitantes pueden disfrutar del surf, la pesca y las caminatas por la playa, además de visitar el cercano parque temático Mundo Marino."
-      }
+      "zone": "Las Grutas, Río Negro",
+      "dangerousness": 3,
+      "image": "https://res.cloudinary.com/dh9rajm0q/image/upload/v1707862409/qzhqvyuy3hwaretwh6zt.jpg",
+      "description": "Las Grutas es un destino de playa en la provincia de Río Negro, Argentina, conocido por sus aguas cristalinas y sus formaciones rocosas únicas. Los visitantes pueden disfrutar del snorkel, buceo y kayak, además de relajarse en las playas de arena suave."
+    },
 
-],
+    {
+      "zone": "Mar de las Pampas, Buenos Aires",
+      "dangerousness": 1,
+      "image": "https://res.cloudinary.com/dh9rajm0q/image/upload/v1707862410/jni7rq266zompy7ucyxd.jpg",
+      "description": "Mar de las Pampas es una tranquila localidad costera en la provincia de Buenos Aires, Argentina, famosa por sus bosques de pinos y sus playas vírgenes. Los turistas pueden practicar senderismo, montar a caballo y disfrutar de la tranquilidad de este hermoso entorno natural."
+    },
 
-"activity":[
     {
-        "activityName": "Surf en las Olas",
-        "description": "Experimenta la emoción del surf en las impresionantes olas del océano. Ideal para aquellos que buscan aventura y desean mejorar sus habilidades de surf.",
-        "image": "https://surfinglatino.com/wp-content/uploads/2010/08/reef-clasic-1-1024x685.jpg",
-        "qualification": null,
-        "price": 5000,
-        "state": "Pago",
-        "type": "Deportivo",
-        "mangrullos": [1, 2, 3, 4]
+      "zone": "Monte Hermoso, Buenos Aires",
+      "dangerousness": 3,
+      "image": "https://res.cloudinary.com/dh9rajm0q/image/upload/v1707862411/swrzzta7vvbr6cgiwosi.jpg",
+      "description": "Monte Hermoso es una ciudad costera en la provincia de Buenos Aires, Argentina, conocida por sus amplias playas y su ambiente familiar. Los visitantes pueden disfrutar del sol y el mar, practicar deportes acuáticos y explorar la reserva natural local."
     },
     {
-        "activityName": "Futbol Playa",
-        "description": "Disfruta de un emocionante partido de futbol playa con amigos y familiares. Una actividad divertida y saludable bajo el sol.",
-        "image": "https://www.mardelplata.gob.ar/sites/default/files/xWhatsApp,P20Image,P202023-12-28,P20at,P2010.00.52.jpeg.pagespeed.ic.Uztq6j3KMG.webp",
-        "qualification": null,
-        "price": 0,
-        "state": "Gratis",
-        "type": "Deportivo",
-        "mangrullos": [5, 6, 7, 8]
+      "zone": "Claromeco",
+      "dangerousness": 1,
+      "image": "https://res.cloudinary.com/dh9rajm0q/image/upload/v1707862412/mavwewaajuf8d5t6pq6i.jpg",
+      "description": "Claromecó es un destino de playa en la provincia de Buenos Aires, Argentina, conocido por sus dunas de arena y sus playas vírgenes. Los turistas pueden disfrutar del windsurf, kiteboarding y pesca en este entorno natural único."
     },
     {
-        "activityName": "Bodyboard",
-        "description": "Atrévete a deslizarte sobre las olas con tu tabla de bodyboard. Una experiencia emocionante y llena de adrenalina.",
-        "image": "https://boxscorenews.com/5-26-2011-10-39-35-PM-9681145.jpg",
-        "qualification": null,
-        "price": 5500,
-        "state": "Pago",
-        "type": "Deportivo",
-        "mangrullos": [1, 3, 5, 7]
-    },
-    {
-        "activityName": "Carrera en la Playa",
-        "description": "Participa en una carrera en la arena. Desafía tu resistencia mientras disfrutas del paisaje costero.",
-        "image": "https://fotos.perfil.com/2014/01/18/trim/987/555/entrenados-corredores-de-la-maraton-del-desierto-que-se-realizo-la-semana-pasada-en-pinamar-la-proxima-es-en-villa-gesell-el-9-de-febrero-0853-g1.jpg",
-        "qualification": 4,
-        "price": 2500,
-        "state": "Pago",
-        "type": "Deportivo",
-        "mangrullos": [2, 4, 6, 8]
-    },
-    {
-        "activityName": "Vela Recreativa",
-        "description": "Experimenta la emoción de navegar con un velerito recreativo. Ideal para principiantes que quieren disfrutar del mar.",
-        "image": "https://escueladevelavalmayor.com/wp-content/uploads/2019/08/raquero_nin%CC%83os.jpg",
-        "qualification": null,
-        "price": 4000,
-        "state": "Pago",
-        "type": "Deportivo",
-        "mangrullos": [1, 2, 3, 4]
-    },
-    {
-        "activityName": "Fútbolito Playero",
-        "description": "Organiza un partido de fútbol en la playa con amigos. ¡Arena, sol y goles para una experiencia inolvidable!",
-        "image": "https://www.eldiarioweb.com/wp-content/uploads/2022/02/futbol-playa-.jpg",
-        "qualification": null,
-        "price": 0,
-        "state": "Gratis",
-        "type": "Deportivo",
-        "mangrullos": [2, 4, 6, 8]
-    },
-    {
-        "activityName": "Vóley Playa",
-        "description": "Disfruta de una emocionante partidO de vóley playa con amigos y familiares. Una actividad divertida y saludable bajo el sol.",
-        "image": "https://www.mardelplata.gob.ar/sites/default/files/xWhatsApp,P20Image,P202023-12-28,P20at,P2010.00.52.jpeg.pagespeed.ic.Uztq6j3KMG.webp",
-        "qualification": null,
-        "price": 0,
-        "state": "Gratis",
-        "type": "Deportivo",
-        "mangrullos": [1, 3, 5, 7]
-    },
-    {
-        "activityName": "Paddleboarding",
-        "description": " Prueba el Paddleboardin o surf de remo en aguas tranquilas. Una actividad relajante para disfrutar del entorno marino acompañado de tu tabla.",
-        "image": "https://watersportspro.co.uk/wp-content/uploads/2022/10/Loose-Weight-Paddleboarding.jpg",
-        "qualification": null,
-        "price": 4800,
-        "state": "Pago",
-        "type": "Deportivo",
-        "mangrullos": [2, 4, 6, 8]
-    },
-    {
-        "activityName": "Entrenamiento Funcional en la Playa",
-        "description": "Participa en sesiones de entrenamiento funcional en la playa. Combina ejercicio y paisajes impresionantes para mantenerte en forma con los mejores instructores de la zona.",
-        "image": "https://lapancartadequintanaroo.com.mx/wp-content/uploads/2022/06/WhatsApp-Image-2022-06-11-at-2.55.40-PM-1.jpeg",
-        "qualification": null,
-        "price": 7500,
-        "state": "Pago",
-        "type": "Deportivo",
-        "mangrullos": [1, 2, 3, 4]
-    },
-    {
-        "activityName": "Surf en las Rios",
-        "description": "Experimenta la emoción del surf en las impresionantes olas de los rios. Ideal para aquellos que buscan aventura y desean mejorar sus habilidades de surf.",
-        "image": "https://surfinglatino.com/wp-content/uploads/2010/08/reef-clasic-1-1024x685.jpg",
-        "qualification": null,
-        "price": 5000,
-        "state": "Pago",
-        "type": "Deportivo",
-        "mangrullos": [3, 5, 7]
-    },
-    {
-        "activityName": "Conciertos Nocturno",
-        "description": "Vive la magia de la música en vivo con conciertos nocturnos en la playa. Disfruta de melodías encantadoras mientras el sol se despide en el horizonte.",
-        "image": "https://cdeluruguay.gob.ar/images/2022/Diciembre/Fiesta_de_la_Playa_varios_aos_2.jpg",
-        "qualification": null,
-        "price": 1000,
-        "state": "Pago",
-        "type": "Cultural",
-        "mangrullos": [2, 4, 6, 8]
-    },
-    {
-        "activityName": "Historias junto al Fuego",
-        "description": "Sumérgete en la tradición con noches de historias junto al fuego en la playa. Comparte cuentos y leyendas mientras las llamas bailan bajo las estrellas.",
-        "image": "https://www.bcsnoticias.mx/wp-content/uploads/2023/03/fogata-fuego-playa-acambar-vacaciones-clima-atardecer-generico-1-990x660.jpg",
-        "qualification": null,
-        "price": 0,
-        "state": "Gratis",
-        "type": "Cultural",
-        "mangrullos": [1, 3, 5, 7]
-    },
-    {
-        "activityName": "Talleres de aventuras",
-        "description": "Descubre el ritmo y la aventura en la playa. Participa en talleres donde podrás aprender a tocar instrumentos musicales mientras las olas acompañan el compás.",
-        "image": "https://publicacionesdelsur.b-cdn.net/articulos/articulos-434193.jpg",
-        "qualification": null,
-        "price": 1500,
-        "state": "Pago",
-        "type": "Cultural",
-        "mangrullos": [4, 2, 3, 7]
-    },
-    {
-        "activityName": "Historias de Rios",
-        "description": "Sumérgete en la tradición con noches de historias junto al fuego en la playa. Comparte cuentos y leyendas mientras las llamas bailan bajo las estrellas.",
-        "image": "https://www.bcsnoticias.mx/wp-content/uploads/2023/03/fogata-fuego-playa-acambar-vacaciones-clima-atardecer-generico-1-990x660.jpg",
-        "qualification": null,
-        "price": 0,
-        "state": "Gratis",
-        "type": "Cultural",
-        "mangrullos": [1, 2, 3, 4]
-    },
-    {
-        "activityName": "Noches de Cine en la Arena",
-        "description": "Disfruta de películas clásicas y estrenos cinematográficos mientras te relajas en la playa. Trae tu manta y palomitas para una experiencia de cine única.",
-        "image": "https://www.diaridetarragona.com/binrepository/768x440/0c8/768d432/none/15017645/JEND/1107-tarragona-cinema-1_241-1078589_20230711103311.jpg",
-        "qualification": null,
-        "price": 0,
-        "state": "Gratis",
-        "type": "Cultural",
-        "mangrullos": [5, 7, 8]
-    },
-    {
-        "activityName": "Conciertos al Atardecer",
-        "description": "Vive la magia de la música en vivo con conciertos al atardecer en la playa. Disfruta de melodías encantadoras mientras el sol se despide en el horizonte.",
-        "image": "https://cdeluruguay.gob.ar/images/2022/Diciembre/Fiesta_de_la_Playa_varios_aos_2.jpg",
-        "qualification": null,
-        "price": 1000,
-        "state": "Pago",
-        "type": "Cultural",
-        "mangrullos": [2, 4, 6, 8]
-    },
-    {
-        "activityName": "Exhibiciones de Arte en la Playa",
-        "description": "Explora exhibiciones de arte al aire libre con obras de artistas locales. Admira pinturas, esculturas y fotografías mientras el arte se fusiona con el entorno natural.",
-        "image": "https://www.valenciabonita.es/wp-content/uploads/2022/05/Festival-arte-urbano-playa-Gandia-750x375.jpg",
-        "qualification": null,
-        "price": 0,
-        "state": "Gratis",
-        "type": "Cultural",
-        "mangrullos": [1, 2, 3, 4]
-    },
-    {
-        "activityName": "Festival de Danzas",
-        "description": "Sumérgete en la cultura tropical con un festival de danzas. Aprende y participa en bailes locales y tradicionales mientras la brisa marina acompaña la música.",
-        "image": "https://tn.com.ar/resizer/ObbodZDIaFhgt2Bciz9XrwnQwQ4=/1440x0/smart/filters:format(webp)/arc-anglerfish-arc2-prod-artear.s3.amazonaws.com/public/47RT2BSJLJ2BJMHIZDVT2LXJRA.jpg",
-        "qualification": null,
-        "price": 0,
-        "state": "Gratis",
-        "type": "Cultural",
-        "mangrullos": [1, 2, 3, 4]
-    },
-    {
-        "activityName": "Talleres de Percusión",
-        "description": "Descubre el ritmo y la percusión en la playa. Participa en talleres donde podrás aprender a tocar instrumentos musicales mientras las olas acompañan el compás.",
-        "image": "https://publicacionesdelsur.b-cdn.net/articulos/articulos-434193.jpg",
-        "qualification": null,
-        "price": 500,
-        "state": "Pago",
-        "type": "Cultural",
-        "mangrullos": [2, 4, 6, 8]
-    },
-    {
-        "activityName": "Relajacion al aire libre",
-        "description": "Relaja cuerpo y mente con una sesión de yoga frente al mar. Experimenta la serenidad y mejora tu bienestar general en un entorno paradisíaco.",
-        "image": "https://adab.red/wp-content/uploads/2016/06/taller-yoga-playa-blanes-adab.jpg",
-        "qualification": null,
-        "price": 0,
-        "state": "Gratis",
-        "type": "Sanitario",
-        "mangrullos": [1, 2, 3, 4]
-    },
-    {
-        "activityName": "Curso RCP y primeros auxilios",
-        "description": "Participa de un taller básico de primeros auxilios y RCP que te permitirá estar preparado para cualquier posible situación que los amerite, cuidarnos es tarea de todos.",
-        "image": "https://www.cruzrojahuesca.org/wp-content/uploads/Simulacro_RCP_PrimerosAuxilios_Playa.jpg",
-        "qualification": null,
-        "price": 0,
-        "state": "Gratis",
-        "type": "Sanitario",
-        "mangrullos": [2, 4, 6, 8]
-    },
-    {
-        "activityName": "limpieza de Playas",
-        "description": "Asume un papel importante en el cuidado de las diferentes playas, comprométete con   el cuidado de la naturaleza y de los espacios.",
-        "image": "https://bravedivers.com/wp-content/uploads/como-debemos-hacer-una-limpieza-de-playas.jpg",
-        "qualification": null,
-        "price": 0,
-        "state": "Gratis",
-        "type": "Sanitario",
-        "mangrullos": [1, 2, 3, 4]
-    },
-    {
-        "activityName": "Yoga al Aire Libre",
-        "description": "Relaja cuerpo y mente con una sesión de yoga frente al mar. Experimenta la serenidad y mejora tu bienestar general en un entorno paradisíaco.",
-        "image": "https://adab.red/wp-content/uploads/2016/06/taller-yoga-playa-blanes-adab.jpg",
-        "qualification": null,
-        "price": 0,
-        "state": "Gratis",
-        "type": "Sanitario",
-        "mangrullos": [2, 4, 6, 8]
+      "zone": "San Clemente del Tuyú, Buenos Aires",
+      "dangerousness": 3,
+      "image": "https://res.cloudinary.com/dh9rajm0q/image/upload/v1707862413/sxxgezuorfudljflmxnp.jpg",
+      "description": "San Clemente del Tuyú es una ciudad costera en la provincia de Buenos Aires, Argentina, famosa por sus playas extensas y su ambiente relajado. Los visitantes pueden disfrutar del surf, la pesca y las caminatas por la playa, además de visitar el cercano parque temático Mundo Marino."
     }
-], 
+  ],
 
-"advice": [
+  "activity": [
     {
-        "title": "Revisa las condiciones climaticas",
-        "comment": "Antes de dirigirte a la playa, asegúrate de conocer las condiciones del mar. Consulta el pronóstico para evitar sorpresas desagradables.",
-        "image": "https://previews.123rf.com/images/mejn/mejn1703/mejn170300021/74791391-termómetro-con-cielo-y-sol-clima-caliente-en-verano-vector-de-dibujos-animados.jpg",
-        "gravity": 3
+      "activityName": "Surf en las Olas",
+      "description": "Experimenta la emoción del surf en las impresionantes olas del océano. Ideal para aquellos que buscan aventura y desean mejorar sus habilidades de surf.",
+      "image": "https://res.cloudinary.com/dh9rajm0q/image/upload/v1707859797/f6ccspp44hhxzxwjl2tm.jpg",
+      "price": 5000,
+      "state": "Pago",
+      "type": "Deportivo",
+      "mangrullos": [1, 2, 3, 4]
     },
     {
-        "title": "Mantén limpio el entorno",
-        "comment": "Colabora con la conservación del medio ambiente y la limpieza de la playa. Recoge tus residuos y fomenta prácticas responsables entre tus compañeros de playa.",
-        "image": "https://jetnews.com.mx/wp-content/uploads/2023/05/amigos-jovenes-recogiendo-basura-basura-playa-tropical-salvando-planeta-ecologia-indonesia-tailandia-filipinas.jpg",
-        "gravity": 3
+      "activityName": "Futbol Playa",
+      "description": "Disfruta de un emocionante partido de futbol playa con amigos y familiares. Una actividad divertida y saludable bajo el sol.",
+      "image": "https://res.cloudinary.com/dh9rajm0q/image/upload/v1707859798/pwwvnn67vsihggh8ksgt.webp",
+      "price": 0,
+      "state": "Gratis",
+      "type": "Deportivo",
+      "mangrullos": [5, 6, 7, 8]
     },
     {
-        "title": "Evita sobrecargar al cuerpo con la comida",
-        "comment": "Es tentador disfrutar de un picnic en la playa, pero recuerda no excederte. La digestión pesada puede hacer que te sientas incómodo bajo el sol.",
-        "image": "https://www.consumidorglobal.com/uploads/s1/14/80/86/comida-playa.jpeg",
-        "gravity": 3
+      "activityName": "Bodyboard",
+      "description": "Atrévete a deslizarte sobre las olas con tu tabla de bodyboard. Una experiencia emocionante y llena de adrenalina.",
+      "image": "https://res.cloudinary.com/dh9rajm0q/image/upload/v1707859798/xs9m71i0an47tcolovlq.jpg",
+      "price": 5500,
+      "state": "Pago",
+      "type": "Deportivo",
+      "mangrullos": [1, 3, 5, 7]
     },
     {
-        "title": "No te alejes demasiado de la orilla",
-        "comment": "Aunque la playa sea hermosa, evita nadar demasiado lejos de la orilla. Mantén siempre contacto visual con la costa y evita correr riesgos innecesarios.",
-        "image": "https://www.infobae.com/new-resizer/05aQeQney17UTqeQ6c5v6WWgRLo=/768x432/filters:format(webp):quality(85)/cloudfront-us-east-1.images.arcpublishing.com/infobae/EE2HNDHNKNHLHM6LTYRJ7ZSUOA.jpg",
-        "gravity": 2
+      "activityName": "Carrera en la Playa",
+      "description": "Participa en una carrera en la arena. Desafía tu resistencia mientras disfrutas del paisaje costero.",
+      "image": "https://res.cloudinary.com/dh9rajm0q/image/upload/v1707859800/epc2mndsmfmintlmvm4t.jpg",
+      "price": 2500,
+      "state": "Pago",
+      "type": "Deportivo",
+      "mangrullos": [2, 4, 6, 8]
     },
     {
-        "title": "Vigila a los niños de cerca",
-        "comment": "Si estás con niños en la playa, mantén una vigilancia cercana en todo momento. El mar puede ser impredecible, y es crucial estar atento para garantizar su seguridad.",
-        "image": "https://www.criarconsentidocomun.com/wp-content/uploads/2019/07/agua1.jpeg",
-        "gravity": 2
+      "activityName": "Vela Recreativa",
+      "description": "Experimenta la emoción de navegar con un velerito recreativo. Ideal para principiantes que quieren disfrutar del mar.",
+      "image": "https://res.cloudinary.com/dh9rajm0q/image/upload/v1707859801/t2qmefdhi8sss142wulq.jpg",
+      "price": 4000,
+      "state": "Pago",
+      "type": "Deportivo",
+      "mangrullos": [1, 2, 3, 4]
     },
     {
-        "title": "Conoce las corrientes y mareas",
-        "comment": "Antes de entrar al agua, familiarízate con las corrientes y mareas locales. Estar informado te ayudará a evitar situaciones peligrosas y a disfrutar de un día seguro en la playa.",
-        "image": "https://tvpacifico.mx/admin/images/summernote/bandera-amarilla.jpg",
-        "gravity": 3
+      "activityName": "Fútbolito Playero",
+      "description": "Organiza un partido de fútbol en la playa con amigos. ¡Arena, sol y goles para una experiencia inolvidable!",
+      "image": "https://res.cloudinary.com/dh9rajm0q/image/upload/v1707859802/kmfopwyaedjj1s84zxrq.jpg",
+      "price": 0,
+      "state": "Gratis",
+      "type": "Deportivo",
+      "mangrullos": [2, 4, 6, 8]
     },
     {
-        "title": "Protégete del sol adecuadamente",
-        "comment": "Usa protector solar, lleva una sombrilla y recuerda hidratarte. La prevención es clave para disfrutar de un día en la playa sin preocupaciones.",
-        "image": "https://images.hola.com/imagenes/estar-bien/20180726127646/protector-solar-errores/0-587-804/errores-cremasolar-t.jpg",
-        "gravity": 3
+      "activityName": "Vóley Playa",
+      "description": "Disfruta de una emocionante partidO de vóley playa con amigos y familiares. Una actividad divertida y saludable bajo el sol.",
+      "image": "https://res.cloudinary.com/dh9rajm0q/image/upload/v1707859803/m2jx2z5781ulrla4pss6.webp",
+      "price": 0,
+      "state": "Gratis",
+      "type": "Deportivo",
+      "mangrullos": [1, 3, 5, 7]
     },
     {
-        "title": "Identifica las zonas seguras para nadar",
-        "comment": "Antes de entrar al agua, familiarízate con las zonas designadas para nadar. Evita áreas con corrientes fuertes y presta atención a las señales de seguridad.",
-        "image": "https://imagenes.eldebate.com/files/vertical_composte_image/uploads/2022/06/25/62b6cb925899e.jpeg",
-        "gravity": 3
+      "activityName": "Paddleboarding",
+      "description": " Prueba el Paddleboardin o surf de remo en aguas tranquilas. Una actividad relajante para disfrutar del entorno marino acompañado de tu tabla.",
+      "image": "https://res.cloudinary.com/dh9rajm0q/image/upload/v1707859804/svjduffqxea8po2k5s1h.jpg",
+      "price": 4800,
+      "state": "Pago",
+      "type": "Deportivo",
+      "mangrullos": [2, 4, 6, 8]
+    },
+    {
+      "activityName": "Entrenamiento Funcional en la Playa",
+      "description": "Participa en sesiones de entrenamiento funcional en la playa. Combina ejercicio y paisajes impresionantes para mantenerte en forma con los mejores instructores de la zona.",
+      "image": "https://res.cloudinary.com/dh9rajm0q/image/upload/v1707859805/qlizonfggmh0uwnf6pqo.jpg",
+      "price": 7500,
+      "state": "Pago",
+      "type": "Deportivo",
+      "mangrullos": [1, 2, 3, 4]
+    },
+    {
+      "activityName": "Surf en las Rios",
+      "description": "Experimenta la emoción del surf en las impresionantes olas de los rios. Ideal para aquellos que buscan aventura y desean mejorar sus habilidades de surf.",
+      "image": "https://res.cloudinary.com/dh9rajm0q/image/upload/v1707859807/acfgexobnjegytaas5nz.jpg",
+      "price": 5000,
+      "state": "Pago",
+      "type": "Deportivo",
+      "mangrullos": [3, 5, 7]
+    },
+    {
+      "activityName": "Conciertos Nocturno",
+      "description": "Vive la magia de la música en vivo con conciertos nocturnos en la playa. Disfruta de melodías encantadoras mientras el sol se despide en el horizonte.",
+      "image": "https://res.cloudinary.com/dh9rajm0q/image/upload/v1707859810/btw7rydpxxq1uqdjfr0h.jpg",
+      "price": 1000,
+      "state": "Pago",
+      "type": "Cultural",
+      "mangrullos": [2, 4, 6, 8]
+    },
+    {
+      "activityName": "Historias junto al Fuego",
+      "description": "Sumérgete en la tradición con noches de historias junto al fuego en la playa. Comparte cuentos y leyendas mientras las llamas bailan bajo las estrellas.",
+      "image": "https://res.cloudinary.com/dh9rajm0q/image/upload/v1707859811/dfd5s0edfk1y6duczbts.jpg",
+      "price": 0,
+      "state": "Gratis",
+      "type": "Cultural",
+      "mangrullos": [1, 3, 5, 7]
+    },
+    {
+      "activityName": "Talleres de aventuras",
+      "description": "Descubre el ritmo y la aventura en la playa. Participa en talleres donde podrás aprender a tocar instrumentos musicales mientras las olas acompañan el compás.",
+      "image": "https://res.cloudinary.com/dh9rajm0q/image/upload/v1707859812/reeds1z9vajcqkbaelrc.jpg",
+      "price": 1500,
+      "state": "Pago",
+      "type": "Cultural",
+      "mangrullos": [4, 2, 3, 7]
+    },
+    {
+      "activityName": "Historias de Rios",
+      "description": "Sumérgete en la tradición con noches de historias junto al fuego en la playa. Comparte cuentos y leyendas mientras las llamas bailan bajo las estrellas.",
+      "image": "https://res.cloudinary.com/dh9rajm0q/image/upload/v1707859813/uuzjptuwp72weltzgudm.jpg",
+      "price": 0,
+      "state": "Gratis",
+      "type": "Cultural",
+      "mangrullos": [1, 2, 3, 4]
+    },
+
+    {
+      "activityName": "Noches de Cine en la Arena",
+      "description": "Disfruta de películas clásicas y estrenos cinematográficos mientras te relajas en la playa. Trae tu manta y palomitas para una experiencia de cine única.",
+      "image": "https://res.cloudinary.com/dh9rajm0q/image/upload/v1707859814/s4e5tnalomxchaira9l9.jpg",
+      "price": 0,
+      "state": "Gratis",
+      "type": "Cultural",
+      "mangrullos": [5, 7, 8]
+    },
+    {
+      "activityName": "Conciertos al Atardecer",
+      "description": "Vive la magia de la música en vivo con conciertos al atardecer en la playa. Disfruta de melodías encantadoras mientras el sol se despide en el horizonte.",
+      "image": "https://res.cloudinary.com/dh9rajm0q/image/upload/v1707859817/jshry4ka1fhyy3uzis9q.jpg",
+      "price": 1000,
+      "state": "Pago",
+      "type": "Cultural",
+      "mangrullos": [2, 4, 6, 8]
+    },
+    {
+      "activityName": "Exhibiciones de Arte en la Playa",
+      "description": "Explora exhibiciones de arte al aire libre con obras de artistas locales. Admira pinturas, esculturas y fotografías mientras el arte se fusiona con el entorno natural.",
+      "image": "https://res.cloudinary.com/dh9rajm0q/image/upload/v1707859819/stfiv9pcueqbkcldfw74.jpg",
+      "price": 0,
+      "state": "Gratis",
+      "type": "Cultural",
+      "mangrullos": [1, 2, 3, 4]
+    },
+    {
+      "activityName": "Festival de Danzas",
+      "description": "Sumérgete en la cultura tropical con un festival de danzas. Aprende y participa en bailes locales y tradicionales mientras la brisa marina acompaña la música.",
+      "image": "https://res.cloudinary.com/dh9rajm0q/image/upload/v1707859819/lbrqxdnqklpqi4jkbkqf.jpg",
+      "price": 0,
+      "state": "Gratis",
+      "type": "Cultural",
+      "mangrullos": [1, 2, 3, 4]
+    },
+    {
+      "activityName": "Talleres de Percusión",
+      "description": "Descubre el ritmo y la percusión en la playa. Participa en talleres donde podrás aprender a tocar instrumentos musicales mientras las olas acompañan el compás.",
+      "image": "https://res.cloudinary.com/dh9rajm0q/image/upload/v1707859820/mxwrhnvmogqjbxwxvjhy.jpg",
+      "price": 500,
+      "state": "Pago",
+      "type": "Cultural",
+      "mangrullos": [2, 4, 6, 8]
+    },
+    {
+      "activityName": "Relajacion al aire libre",
+      "description": "Relaja cuerpo y mente con una sesión de yoga frente al mar. Experimenta la serenidad y mejora tu bienestar general en un entorno paradisíaco.",
+      "image": "https://res.cloudinary.com/dh9rajm0q/image/upload/v1707859821/yqdxtjakjtsuhkwzjdes.jpg",
+      "price": 0,
+      "state": "Gratis",
+      "type": "Sanitario",
+      "mangrullos": [1, 2, 3, 4]
+    },
+    {
+      "activityName": "Curso RCP y primeros auxilios",
+      "description": "Participa de un taller básico de primeros auxilios y RCP que te permitirá estar preparado para cualquier posible situación que los amerite, cuidarnos es tarea de todos.",
+      "image": "https://res.cloudinary.com/dh9rajm0q/image/upload/v1707859823/kovmuydgir69cz6mvv2l.jpg",
+      "price": 0,
+      "state": "Gratis",
+      "type": "Sanitario",
+      "mangrullos": [2, 4, 6, 8]
+    },
+    {
+      "activityName": "limpieza de Playas",
+      "description": "Asume un papel importante en el cuidado de las diferentes playas, comprométete con   el cuidado de la naturaleza y de los espacios.",
+      "image": "https://res.cloudinary.com/dh9rajm0q/image/upload/v1707859824/uz82e2dumqdb36u7rbas.jpg",
+      "price": 0,
+      "state": "Gratis",
+      "type": "Sanitario",
+      "mangrullos": [1, 2, 3, 4]
+    },
+    {
+      "activityName": "Yoga al Aire Libre",
+      "description": "Relaja cuerpo y mente con una sesión de yoga frente al mar. Experimenta la serenidad y mejora tu bienestar general en un entorno paradisíaco.",
+      "image": "https://res.cloudinary.com/dh9rajm0q/image/upload/v1707859825/kn7vlhallv1rjxyonuue.jpg",
+      "price": 0,
+      "state": "Gratis",
+      "type": "Sanitario",
+      "mangrullos": [2, 4, 6, 8]
     }
-]
+  ],
+
+  "advice": [
+    {
+      "title": "Revisa las condiciones climaticas",
+      "comment": "Antes de dirigirte a la playa, asegúrate de conocer las condiciones del mar. Consulta el pronóstico para evitar sorpresas desagradables.",
+      "image": "https://res.cloudinary.com/dh9rajm0q/image/upload/v1707863099/ghzjaj3kgvj8lfn1soef.jpg",
+      "gravity": 3
+    },
+    {
+      "title": "Mantén limpio el entorno",
+      "comment": "Colabora con la conservación del medio ambiente y la limpieza de la playa. Recoge tus residuos y fomenta prácticas responsables entre tus compañeros de playa.",
+      "image": "https://res.cloudinary.com/dh9rajm0q/image/upload/v1707863100/bfgzxhzwnj6evhuwc415.jpg",
+      "gravity": 3
+    },
+    {
+      "title": "Evita sobrecargar al cuerpo con la comida",
+      "comment": "Es tentador disfrutar de un picnic en la playa, pero recuerda no excederte. La digestión pesada puede hacer que te sientas incómodo bajo el sol.",
+      "image": "https://res.cloudinary.com/dh9rajm0q/image/upload/v1707863101/ydvdvn5v8rpntnupw96k.jpg",
+      "gravity": 3
+    },
+    {
+      "title": "No te alejes demasiado de la orilla",
+      "comment": "Aunque la playa sea hermosa, evita nadar demasiado lejos de la orilla. Mantén siempre contacto visual con la costa y evita correr riesgos innecesarios.",
+      "image": "https://res.cloudinary.com/dh9rajm0q/image/upload/v1707863101/ow3akdbpo6ggkyhmyxqq.jpg",
+      "gravity": 2
+    },
+    {
+      "title": "Vigila a los niños de cerca",
+      "comment": "Si estás con niños en la playa, mantén una vigilancia cercana en todo momento. El mar puede ser impredecible, y es crucial estar atento para garantizar su seguridad.",
+      "image": "https://res.cloudinary.com/dh9rajm0q/image/upload/v1707863102/vo6qqej5vwlhaeyh3yny.jpg",
+      "gravity": 2
+    },
+    {
+      "title": "Conoce las corrientes y mareas",
+      "comment": "Antes de entrar al agua, familiarízate con las corrientes y mareas locales. Estar informado te ayudará a evitar situaciones peligrosas y a disfrutar de un día seguro en la playa.",
+      "image": "https://res.cloudinary.com/dh9rajm0q/image/upload/v1707863102/ordohjstpkidciecs28h.jpg",
+      "gravity": 3
+    },
+    {
+      "title": "Protégete del sol adecuadamente",
+      "comment": "Usa protector solar, lleva una sombrilla y recuerda hidratarte. La prevención es clave para disfrutar de un día en la playa sin preocupaciones.",
+      "image": "https://res.cloudinary.com/dh9rajm0q/image/upload/v1707863103/m2gwtlxer0j8dbenohg9.jpg",
+      "gravity": 3
+    },
+    {
+      "title": "Identifica las zonas seguras para nadar",
+      "comment": "Antes de entrar al agua, familiarízate con las zonas designadas para nadar. Evita áreas con corrientes fuertes y presta atención a las señales de seguridad.",
+      "image": "https://res.cloudinary.com/dh9rajm0q/image/upload/v1707863104/qhfq3p3ez32cgbx7yfqw.jpg",
+      "gravity": 3
+    }
+  ]
 }

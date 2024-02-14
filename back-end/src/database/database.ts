@@ -24,14 +24,14 @@ const { DB_HOST, DB_USER, DB_PASSWORD, DB_DATABASE, EXTERNAL_DB_URL }: any =
   process.env;
 
 export const connection = new Sequelize(
-  EXTERNAL_DB_URL,
+  //EXTERNAL_DB_URL,
   {
-    // dialect: "postgres",
-    // host: DB_HOST,
-    // username: DB_USER,
-    // password: DB_PASSWORD,
-    // database: DB_DATABASE,
-    logging: false, //console.log,
+    dialect: "postgres",
+    host: DB_HOST,
+    username: DB_USER,
+    password: DB_PASSWORD,
+    database: DB_DATABASE,
+    logging: false,
     /*   dialectOptions: { ssl: { require: true } }, */
     models: [
       Activity,
@@ -57,7 +57,7 @@ export const connection = new Sequelize(
 
 async function connectionDB() {
   try {
-    await connection.sync({ force: false });
+    await connection.sync({ force: true });
     console.log("Base de dato sincronizada con Exito");
   } catch (error) {
     console.error("Error al sincronizar la base de datos", error);
