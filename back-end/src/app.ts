@@ -29,10 +29,8 @@ const sessionConfig = {
   cookie: { maxAge: 1 * 60 * 60 * 1000 }, // 1 día de duración
 };
 
-// Configuracion para realizar sesion para loguearse con google.
 app.use(session(sessionConfig));
 
-// Inicialización de Passport para loguearse con google.
 app.use(passport.initialize());
 app.use(passport.session());
 
