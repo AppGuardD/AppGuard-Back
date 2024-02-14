@@ -4,7 +4,8 @@ import { deleteImage } from "../helper/deleteImg/deleteImage";
 import path from "path";
 dotenv.config();
 
-const { CLOUDINARY_CLOUD_NAME, CLOUDINARY_API_KEY, CLOUDINARY_API_SECRET } = process.env;
+const { CLOUDINARY_CLOUD_NAME, CLOUDINARY_API_KEY, CLOUDINARY_API_SECRET } =
+  process.env;
 
 cloudinary.config({
   cloud_name: CLOUDINARY_CLOUD_NAME,
@@ -13,22 +14,21 @@ cloudinary.config({
   secure: true,
 });
 
-export interface handlerError {
-  error: string;
-}
-
-export const createImage = async (img: string): Promise<any> => {
+export const createImage = async (image: any): Promise<any> => {
   try {
-    let re = /\.(jpg|jpeg|png|gif|bmp|tiff|webp)$/i;
-    if (!re.test(img)) {
-      throw new Error("el formato de la imagen no es valido");
+    let validate = /\.(jpg|jpeg|png|webp)$/i;
+
+    if (!validate.test(image)) {
+      throw new Error("El formato de la imagen no es valido");
     }
-    const { secure_url }: UploadApiResponse = await cloudinary.uploader.upload(img);
+
+    const { secure_url }: UploadApiResponse =
+      await cloudinary.uploader.upload(image);
+
     deleteImage(path.join(__dirname, "../uploads"));
+
     return secure_url;
-  } catch (error: any) {
-    return {
-      error: error.message,
-    };
+  } catch (error) {
+    return error;
   }
 };

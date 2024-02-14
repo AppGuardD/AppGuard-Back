@@ -1,13 +1,13 @@
 import { Request, Response } from "express";
 import { Activity } from "../../../models/activity/activity";
 import { Mangrullo } from "../../../models/mangrullo/mangrullo";
-import { createImage } from "../../../cloudinary/getStarted";//
 
 export const postActivity = async (req: Request, res: Response) => {
   try {
-    const { activityName, description, type, state, price, mangrullos }
-      = req.body;
+    const { activityName, description, type, state, price, mangrullos, image } =
+      req.body;
 
+    console.log(req.body);
 
     // Validación de mangrullos no puede estar vacío
     if (!mangrullos || mangrullos.length === 0) {
@@ -23,24 +23,22 @@ export const postActivity = async (req: Request, res: Response) => {
         success: false,
         message: "Todos los campos son requeridos",
       });
-
     }
 
     // Validación de existencia de imagen
-    if (!req.file?.path && !req.body.image) {
+    if (!image) {
       return res.status(400).send({
         success: false,
-        message: "La imagen o la URL es requerida",
+        message: "La URL de imagen es requerida",
       });
     }
 
     // Verificar si la actividad ya existe
     const existingActivity = await Activity.findOne({
       where: {
-        activityName: activityName
+        activityName: activityName,
       },
     });
-
 
     if (existingActivity) {
       return res.status(201).send({
@@ -49,34 +47,21 @@ export const postActivity = async (req: Request, res: Response) => {
       });
     }
 
-    // Crear imagen
-    let image;
-    try {
-      image = await createImage(req.file?.path ? req.file.path : req.body.image);
-    } catch (imageError: any) {
-      return res.status(400).send({
-        success: false,
-        message: "Error al crear la imagen.",
-        error: imageError.message,
-      });
-    }
-
-
-
     // Verificar existencia de mangrullos
     const arrayMangrullos: Mangrullo[] = [];
     for (const mangrulloId of mangrullos) {
       try {
         const mangrullo = await Mangrullo.findOne({
           where: {
-            id: mangrulloId
-          }
+            id: mangrulloId,
+          },
         });
 
         if (!mangrullo) {
           return res.status(404).send({
             success: false,
-            message: "El mangrullo con el ID proporcionado no existe en la base de datos"
+            message:
+              "El mangrullo con el ID proporcionado no existe en la base de datos",
           });
         } else {
           arrayMangrullos.push(mangrullo);
@@ -90,7 +75,6 @@ export const postActivity = async (req: Request, res: Response) => {
       }
     }
 
-
     // Crear actividad
     let createdActivity;
     try {
@@ -101,7 +85,7 @@ export const postActivity = async (req: Request, res: Response) => {
         active: true,
         state,
         image,
-        price
+        price,
       });
     } catch (activityError: any) {
       return res.status(500).send({
@@ -113,7 +97,7 @@ export const postActivity = async (req: Request, res: Response) => {
 
     // Asociar mangrullos a la actividad
     try {
-      await createdActivity.$add('Mangrullo', arrayMangrullos);
+      await createdActivity.$add("Mangrullo", arrayMangrullos);
     } catch (associationError: any) {
       return res.status(500).send({
         success: false,
@@ -131,7 +115,8 @@ export const postActivity = async (req: Request, res: Response) => {
     console.error("Error en la creación de la actividad:", error);
     res.status(500).send({
       success: false,
-      message: "Ha ocurrido un error al procesar la solicitud. Por favor, inténtelo de nuevo más tarde."
+      message:
+        "Ha ocurrido un error al procesar la solicitud. Por favor, inténtelo de nuevo más tarde.",
     });
   }
 };

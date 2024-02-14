@@ -12,13 +12,12 @@ import googleRoutes from "./googleRoutes/googleRoutes";
 import donationRoutes from "./donationRoutes/donationRoutes";
 import carRoutes from "./carRoutes/carRoutes";
 import paymentBillRoutes from "./paymentBillRoutes/paymentBillRoutes";
+import preloadRoutes from "./preloadRoutes/preloadRoutes";
+import mercadoPagoRouter from "./mercadoPagoRoutes/mercadoPagoRoute";
+import uploadRoutes from "./uploadRoutes/uploadRoutes";
 //google
 import passport from "passport";
 import { Strategy as GoogleStragy } from "passport-google-oauth20";
-
-import preloadRoutes from "./preloadRoutes/preloadRoutes";
-import mercadoPagoRouter from "./mercadoPagoRoutes/mercadoPagoRoute";
-
 
 const routes = Router();
 
@@ -36,23 +35,22 @@ routes.use("/donation", donationRoutes);
 routes.use("/car", carRoutes);
 routes.use("/paymentBill", paymentBillRoutes);
 routes.use("/preload", preloadRoutes);
+routes.use("/image", uploadRoutes);
 
-
-
-
-
-//ruta de google, maneja un middleware para 
+//ruta de google, maneja un middleware para
 routes.use("/paymentActivities", mercadoPagoRouter);
 //ruta de google, maneja un middleware para
-routes.use("/authgoogle", passport.authenticate("google", {
-  scope: [
-    "email",
-    "profile",
-    "https://www.googleapis.com/auth/userinfo.email",
-    "https://www.googleapis.com/auth/userinfo.profile",
-  ],
-}),
-  googleRoutes
+routes.use(
+  "/authgoogle",
+  passport.authenticate("google", {
+    scope: [
+      "email",
+      "profile",
+      "https://www.googleapis.com/auth/userinfo.email",
+      "https://www.googleapis.com/auth/userinfo.profile",
+    ],
+  }),
+  googleRoutes,
 );
 
 export default routes;
