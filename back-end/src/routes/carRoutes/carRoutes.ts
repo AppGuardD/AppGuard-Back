@@ -9,6 +9,7 @@ import { updateCarrito } from "../../controllers/carrito/updateCarrito/updateCar
 
 import { adminMiddleware } from "../../middlewares/adminMiddlewares/adminMiddleware";
 import { userMiddleware } from "../../middlewares/userMiddlewares/userMiddleware";
+import { deleteAll } from "../../controllers/carrito/deleteAll/deleteAll";
 
 const carRoutes = Router();
 //-----------con webtokens-------------
@@ -17,6 +18,7 @@ carRoutes.get("/getCarrito/:userId", userMiddleware, getCarrito); //user
 carRoutes.post("/addItem", userMiddleware, addItem); //usuario
 carRoutes.post("/createCarrito", userMiddleware, createCarrito); //usuario
 carRoutes.delete("/deleteItem/", userMiddleware, deleteItem); //usuario
+carRoutes.delete("/deleteAll", userMiddleware, deleteAll); //usuario
 carRoutes.put("/removeItem/", userMiddleware, removeItem); //usurio
 carRoutes.delete("/deleteCarrito/:carritoId", adminMiddleware, deleteCarrito); //admin
 carRoutes.put("/updateCarrito/:carritoId", adminMiddleware, updateCarrito); //admin

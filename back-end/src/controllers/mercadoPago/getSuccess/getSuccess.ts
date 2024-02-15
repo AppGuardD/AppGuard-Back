@@ -4,7 +4,7 @@ import * as dotenv from "dotenv";
 dotenv.config();
 export const getSucces = async (
   req: Request<{}, {}, {}, { payment_id: string }>,
-  res: Response
+  res: Response,
 ) => {
   try {
     const info = req.query;
