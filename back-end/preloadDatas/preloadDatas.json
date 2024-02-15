@@ -245,7 +245,7 @@
       "mangrullos": [2, 4, 6, 8]
     },
     {
-      "activityName": "Entrenamiento Funcional en la Playa",
+      "activityName": "Entrenamiento Funcional",
       "description": "Participa en sesiones de entrenamiento funcional en la playa. Combina ejercicio y paisajes impresionantes para mantenerte en forma con los mejores instructores de la zona.",
       "image": "https://res.cloudinary.com/dh9rajm0q/image/upload/v1707859805/qlizonfggmh0uwnf6pqo.jpg",
       "price": 7500,
@@ -318,7 +318,7 @@
       "mangrullos": [2, 4, 6, 8]
     },
     {
-      "activityName": "Exhibiciones de Arte en la Playa",
+      "activityName": "Exhibiciones de Arte",
       "description": "Explora exhibiciones de arte al aire libre con obras de artistas locales. Admira pinturas, esculturas y fotografías mientras el arte se fusiona con el entorno natural.",
       "image": "https://res.cloudinary.com/dh9rajm0q/image/upload/v1707859819/stfiv9pcueqbkcldfw74.jpg",
       "price": 0,

@@ -5,7 +5,6 @@ import { putMangrullo } from "../../controllers/mangrullo/putMangrullo/putMangru
 import { postMangrullos } from "../../controllers/mangrullo/postMangrullo/postMangrullo";
 import { disableMangrullo } from "../../controllers/mangrullo/disableMangrullo/disableMangrullo";
 import { adminMiddleware } from "../../middlewares/adminMiddlewares/adminMiddleware";
-import { upload } from "../../helper/multer/multerConfig";
 import { adminMangrullo } from "../../controllers/mangrullo/adminMangrullo/adminMangrullo";
 import { getAllMangrullos } from "../../controllers/mangrullo/getAllMangrullos/getAllMangrullos";
 
@@ -15,19 +14,9 @@ mangrulloRoutes.get("/admin", adminMiddleware, adminMangrullo);
 mangrulloRoutes.get("/search", getMangrullos);
 mangrulloRoutes.get("/searchAll", getAllMangrullos);
 mangrulloRoutes.get("/search/:id", getIdMangrullo);
-mangrulloRoutes.post(
-  "/create",
-  adminMiddleware,
-  upload.single("image"),
-  postMangrullos,
-);
-mangrulloRoutes.put(
-  "/update/:id",
-  adminMiddleware,
-  upload.single("image"),
-  putMangrullo,
-);
-mangrulloRoutes.put("/deactivate/:id", adminMiddleware, disableMangrullo);
+mangrulloRoutes.post("/create", adminMiddleware, postMangrullos);
+mangrulloRoutes.put("/update/:id", adminMiddleware, putMangrullo);
+mangrulloRoutes.put("/disable/:id", adminMiddleware, disableMangrullo);
 //----------Desarollo------------------
 /* 
 mangrulloRoutes.get("/admin", adminMangrullo);
