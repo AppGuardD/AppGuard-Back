@@ -1,5 +1,6 @@
 import { RequestHandler } from "express";
 import { User } from "../../../models/user/user";
+import { hashPassword } from "../../../helper/encrypt/encrypt";
 
 // Ruta para modificar Users.
 export const putUser: RequestHandler = async (req, res) => {
@@ -7,11 +8,13 @@ export const putUser: RequestHandler = async (req, res) => {
     const { id } = req.params;
     const { userName, email, password, typeIdentification, numberIdentification } = req.body;
 
+    const passwordHash = await hashPassword(password);
+
     await User.update(
       {
         userName,
         email,
-        password,
+        password: passwordHash,
         typeIdentification,
         numberIdentification,
         rol: "Cliente",
