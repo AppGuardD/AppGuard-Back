@@ -6,11 +6,12 @@ import { Mangrullo } from "../../models/mangrullo/mangrullo";
 import { Activity } from "../../models/activity/activity";
 import { Advice } from "../../models/advice/advice";
 import { hashPassword } from "../../helper/encrypt/encrypt";
+import { fillOrders } from "../../services/mercadoPagoServices/fillOrders/fillOrders";
 
 export const preload: RequestHandler = async (_req, res) => {
   try {
     const preloadData = await readJsonFile(
-      path.join(__dirname, "../../../preloadDatas/preloadDatas.json"),
+      path.join(__dirname, "../../../preloadDatas/preloadDatas.json")
     );
     const datosdb = await User.findAll();
 
@@ -30,6 +31,7 @@ export const preload: RequestHandler = async (_req, res) => {
         newActivity.$add("Mangrullo", activity.mangrullos);
       }
 
+      await fillOrders();
       return res.status(201).json(preloadData);
     } else {
       return res.status(201).json({ message: "Datos ya cargados" });

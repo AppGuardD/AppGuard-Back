@@ -2,7 +2,6 @@ import { Order } from "../../../models/Oders/Order";
 
 export const fillOrders = async () => {
   try {
-    await Order.destroy();
     const dataForFill = {
       date: "2024-02-14",
       totalValue: 1500,

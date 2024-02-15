@@ -9,5 +9,4 @@ let PORT = app.get("PORT");
 
 app.listen(PORT, async () => {
   console.log(`Server listening on port ${PORT}`);
-  await fillOrders();
 });
