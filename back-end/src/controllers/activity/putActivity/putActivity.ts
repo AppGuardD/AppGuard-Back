@@ -6,6 +6,7 @@ export const putActivity = async (req: Request, res: Response) => {
     let id: number = parseInt(req.params.id);
 
     let updateData = req.body;
+
     console.log(updateData);
 
     let requestData: Activity | null = await Activity.findOne({
@@ -15,16 +16,13 @@ export const putActivity = async (req: Request, res: Response) => {
     if (!requestData) {
       return res
         .status(201)
-        .send({ success: false, message: "el elemento no existe " });
+        .send({ success: false, message: "El elemento no existe " });
     }
 
     await Activity.update({ ...updateData }, { where: { id } });
 
-    res.status(200).send({
-      success: true,
-      message: "los datos han sido actualizados correctamente",
-    });
+    res.status(201).send({ message: "Actividad Actualizada" });
   } catch (error: any) {
-    res.status(500).send({ success: false, message: error.message });
+    res.status(500).json(error);
   }
 };

@@ -10,17 +10,6 @@ export const getIdMangrullo: RequestHandler = async (req, res) => {
     const mangrullo: Mangrullo | null = await Mangrullo.findByPk(id, {
       include: {
         model: Activity,
-        attributes: [
-          "activityName",
-          "description",
-          "qualification",
-          "price",
-          "state",
-          "type",
-        ],
-        through: {
-          attributes: [],
-        },
       },
     });
 
